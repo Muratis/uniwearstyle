@@ -1,0 +1,40 @@
+.info {
+    margin-top: 15px;
+}
+
+.images{
+    float: left;
+
+ margin-left: 50px;
+    margin-top: 20px;
+}
+
+.main-image img {
+    height: 540px;
+    width: 390px;
+    /*border: 2px solid #000000;*/
+    box-shadow: -2.5px -1px 7px 4px #000000;
+}
+
+.additional_image {
+    margin-top: 15px;
+
+
+}
+
+.additional_image img {
+    height: 150px;
+    width: 115px;
+    margin-left: 9px;
+}
+
+.additional_image img:hover {
+    /*border: 2px solid #000000;*/
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.infoTshirt {
+    float: left;
+    margin-left: 100px;
+}

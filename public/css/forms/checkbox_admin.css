@@ -1,0 +1,20 @@
+h4 {
+    margin-top: 20px;
+}
+
+.checkboxes{
+    margin-bottom: 20px;
+}
+.checkboxes input {
+    width: 20px;
+    height: 20px;
+    /*margin-left: 10px;*/
+
+}
+
+.checkboxes label{
+    margin-left: 10px;
+    font: 15px arial;
+
+
+}

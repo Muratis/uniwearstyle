@@ -1,0 +1,384 @@
+*{
+    /*box-sizing: inherit*/
+}
+
+
+.wrapper {
+    display: table;
+    margin: auto;
+}
+
+
+#head {
+    height: 193px;
+    background-color: #FFFFFF;
+}
+
+#brand {
+    margin-top: 30px;
+}
+
+#brand a {
+    font: bold 70px Arial;
+    color: #0f0f0f;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+
+}
+
+#brand a:hover{
+    /*color: #696969;*/
+    opacity: 0.6;
+}
+
+.search {
+    float: left;
+   position: relative;
+    bottom: 10px;
+    left: 57px;
+}
+
+.search a {
+    color: #0f0f0f;
+    font: 10px arial;
+}
+
+.search a:hover{
+    /*color: #696969;*/
+    opacity: 0.6;
+}
+
+.social {
+    float: right;
+    position: relative;
+    bottom: 17px;
+    right: 57px;
+}
+
+
+.social a {
+    color: #0f0f0f;
+    margin-left: 7px;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+
+.social a:hover{
+    /*color: #696969;*/
+    opacity: 0.6;
+}
+
+
+
+.menu {
+    margin-top: 60px;
+    /*position: relative;*/
+    /*left: 60px;*/
+    /*top: 65px;*/
+}
+.menu ul li a {
+    font: bold 17px arial;
+    text-align: center;
+    color: #000000 !important;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+
+.menu ul li a:hover{
+    opacity: 0.5;
+}
+
+
+.menu ul li  {
+    font: 17px arial;
+    width: 220px;
+    margin-left: 17px;
+}
+
+
+
+
+
+
+
+.menu_college{
+    position: relative;
+    bottom: 20px;
+    /*box-shadow: 1px 4px 13px 3px rgba(199,197,199,3);*/
+    border-bottom: 5px solid lightblue;
+    background-color: #3c3c3c;
+    height: 35px;
+    border-radius: 0px 0px 15px 15px;
+
+}
+
+.menu_college_logo {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-position: center;
+    position: relative;
+    right: 10px;
+
+}
+
+.menu_college li {
+    display: inline-block;
+    height: 41px;
+
+}
+
+
+.menu_college li a {
+    padding: 3px 20px;
+    display: inline-block;
+    color: #FFFFFF;
+    font: 15px arial;
+    /*text-align: center;*/
+    height: 41px;
+    line-height: 35px;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+
+.menu_college a:hover{
+    color: #000000;
+}
+
+
+
+
+#footer {
+    margin-top: 70px;
+}
+
+
+.servises{
+    width: 200px;
+    /*float: left;*/
+}
+
+.nav-item a {
+    font: 14px arial;
+    color: #000000;
+    text-decoration: none;
+    list-style: none;
+    line-height: 20px;
+}
+
+.nav-item a:hover {
+    color: #696969;
+
+}
+.nav-item {
+    list-style: none;
+    margin-top: 10px;
+}
+
+
+.footer_social {
+    /*margin-left: 40px;*/
+    position: relative;
+    left: 40px;
+    top: 50px;
+    /*float: left;*/
+
+}
+
+.footer_social a {
+    color: #0f0f0f;
+    margin-left: 7px;
+
+}
+
+.footer_social a:hover {
+    color: #696969;
+}
+
+.form_for_new{
+    float: right;
+    position: relative;
+    bottom: 165px;
+    right: 150px;
+}
+
+
+
+.form_for_new input {
+    height: 45px;
+    margin-top: 20px;
+
+}
+.form_for_new .input_email {
+    width: 400px;
+}
+
+.btn_black {
+    background-color: #000000;
+    font: 17px arial;
+    color: #FFFFFF;
+    width: 120px;
+    float: right;
+    position: relative;
+    bottom: 65px;
+    left: 115px;
+    border: none;
+}
+
+.btn_black:hover {
+    opacity: 0.6;
+}
+
+.copy {
+    float: right;
+    position: relative;
+    left: 365px;
+    top: 30px;
+
+}
+
+.copy p {
+    float: left;
+    margin-left: 30px;
+    font: 13px arial;
+}
+
+.copy p a {
+    text-decoration: none;
+    color: #000000;
+}
+.copy p a:hover {
+    opacity: 0.6;
+}
+
+
+
+@media(max-width: 991px) {
+
+    .menu{
+        /*background-color: #0000ee;*/
+        /*position: relative;*/
+        /*top: 75px;*/
+        /*margin-top: 35px;*/
+        width: 100%;
+        border: none;
+
+    }
+
+    .menu .menu-mobile {
+        position: relative;
+        bottom: 30px;
+        right: 200px;
+     /*margin-left: 350px;*/
+        width: 600px;
+        border-right: 2px solid #FFFFFF;
+
+    }
+
+   .menu .menu-mobile  li a {
+        font: bold 17px arial;
+        text-align: center;
+       width: 570px;
+       /*box-shadow: 2px 3px 3px 2px #FFFFFF;*/
+       box-shadow: 2px 2px 4px 3px #000000;
+
+        height: 70px;
+       color: #FFFFFF !important;
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        user-select: none;
+       margin-bottom: 15px;
+
+    }
+
+    .menu .menu-mobile  li a:hover{
+        background: none;
+        color: #696969 !important;
+    }
+
+
+    .menu .menu-mobile  li  {
+        font: 17px arial;
+
+        /*width: 220px;*/
+        /*margin-left: 17px;*/
+    }
+
+
+    .college-mobile {
+        display: inline-block;
+          float: left;
+          position: relative;
+        bottom: 390px;
+        left: 420px;
+        width: 400px;
+        height: 0;
+
+        /*max-width: 400px;*/
+
+      }
+
+    .college-mobile li {
+        /*float: left !important;*/
+        width: 80px !important;
+        display: inline-block;
+    }
+
+    .college-mobile li a {
+        float: left !important;
+        width: 70px;
+        margin-top: 40px;
+        margin-left: 10px;
+
+    }
+
+    .college-mobile li a img{
+        width: 70px;
+        height: 70px;
+        margin-bottom: 5px;
+    }
+
+    .navbar-default .navbar-nav>li>a {
+        color: #FFFFFF !important;
+    }
+
+    /*.college-mobile li {*/
+        /*float: left !important;*/
+    /*}*/
+
+    /*.college-mobile li a {*/
+        /*width: 50px!important;*/
+    /*}*/
+
+    .collapse {
+        /*height: 500px;*/
+        position: relative;
+        top: 83px;
+        width: 100%;
+        background: rgba(0,0,0,0.88);
+        border: none;
+        box-shadow: 1px 4px 12px 3px rgba(199,197,199,3);
+        z-index: 1;
+
+        margin: 0;!important;
+
+    }
+
+    .collapsing{
+        border: none;
+        margin-top: 113px;
+        /*background-color: #000000;*/
+        /*opacity: 0.85;*/
+
+        background: rgba(0,0,0,0.88);
+        z-index: 1;
+        box-shadow: 1px 4px 13px 3px rgba(199,197,199,3);
+
+    }
+
+}
