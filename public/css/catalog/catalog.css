@@ -1,0 +1,115 @@
+.cataloge{
+    margin-top: 50px;
+}
+
+
+
+.item_tshirt div {
+    width: 200px;
+    height: 300px;
+    float: left;
+    margin-left: 50px;
+    margin-bottom: 100px;
+    /*margin-top: 20px;*/
+}
+
+
+.item_tshirt div a {
+    color: #000000;
+}
+
+.item_tshirt div a img {
+    width: 210px;
+    height: 300px;
+    /*border: 2px solid #000000;*/
+    /*box-shadow: 3px 3px 12px 3px #8c8c8c;*/
+    box-shadow: 3px 3px 12px 3px #000000;
+
+    margin-bottom: 15px;
+}
+
+.item_tshirt div a:hover{
+    opacity: 0.6;
+    text-decoration: none;
+}
+
+.item_tshirt div p  {
+    color: #000000;
+    font: bold 14px arial;
+    margin-top: 7px;
+    /*margin-left: 10px;*/
+    /*float: right;*/
+}
+
+.filter {
+    float: left;
+    width: 200px;
+    margin-left: 40px;
+    /*height: 1300px;*/
+    /*background-color: #8c8c8c;*/
+}
+
+
+.off-product, .on-product, .off-sizes, .on-sizes {
+    color: #000000;
+    font: bold 18px arial;
+
+}
+
+.off-product i, .on-product i, .off-sizes i, .on-sizes i {
+    margin-right: 10px;
+}
+
+.off-product:hover, .on-product:hover, .off-sizes:hover, .on-sizes:hover {
+    text-decoration: none;
+    color: #000000;
+    cursor: pointer;
+}
+
+
+
+.product {
+    position: relative;
+    top: 10px;
+    right: 15px;
+}
+
+
+
+.product ul li a {
+    color: #000000;
+    font: 17px arial;
+    background-color: #FFFFFF;
+
+}
+
+.product ul li a:hover{
+    background: none;
+    opacity: 0.6;
+
+}
+
+.sizes_product{
+    position: relative;
+    top: 20px;
+}
+
+.sizes_product ul li a{
+    width: 50px;
+    height: 30px;
+    border: 1px solid #aeb3b9;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    float: left;
+    color: #000000;
+    font: 16px arial;
+}
+
+
+
+.sizes_product ul li a:hover{
+    background-color: #000000;
+    opacity: 0.6;
+    color: #FFFFFF;
+
+}

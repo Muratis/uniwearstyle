@@ -19,7 +19,7 @@ AdminSection::registerModel(Tshirt::class, function (ModelConfiguration $model) 
 
 			AdminColumn::datetime('created_at')->setLabel('Дата')->setFormat('d.m.Y')->setWidth('150px')
 		]);
-		$display->paginate(5)
+		$display->paginate(4)
 			->setApply( function ($query) {
                 $query->orderBy('tshirt_id', '0');
 			});
@@ -35,12 +35,8 @@ AdminSection::registerModel(Tshirt::class, function (ModelConfiguration $model) 
 		
 			AdminFormElement::view('widgets/admin_form/checkboxes'),
 
-
-		
-
 //			AdminFormElement::radio('gender', 'Пол', $options = [ 'male', 'female']),
-
-			AdminFormElement::images('image', 'изображение товара')->storeAsComaSeparatedValue()
+			AdminFormElement::images('image', 'изображение товара')->storeAsComaSeparatedValue()->required()
 		)->setAction('/admin/create');
 		return $form;
 	});

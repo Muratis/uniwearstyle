@@ -61,7 +61,7 @@ class TshirtController extends Controller
 	public function getAllTshirt()
 	{
 		$tshirts = $this->tshirt->allTshirts();
-		return view('home/index', array('tshirts' => $tshirts));
+		return view('/cataloge/cataloge', array('tshirts' => $tshirts));
 	}
 	
 }

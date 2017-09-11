@@ -73,13 +73,11 @@
 
 
 .menu {
-    margin-top: 60px;
-    /*position: relative;*/
-    /*left: 60px;*/
-    /*top: 65px;*/
+    margin-top: 55px;
+
 }
 .menu ul li a {
-    font: bold 17px arial;
+    font: 19px arial;
     text-align: center;
     color: #000000 !important;
     -moz-user-select: none;
@@ -88,14 +86,15 @@
 }
 
 .menu ul li a:hover{
-    opacity: 0.5;
+    opacity: 0.7;
+
 }
 
 
 .menu ul li  {
     font: 17px arial;
-    width: 220px;
-    margin-left: 17px;
+    width: 225px;
+    margin-left: 40px;
 }
 
 
@@ -134,6 +133,7 @@
 
 
 .menu_college li a {
+    /*margin-left: 15px;*/
     padding: 3px 20px;
     display: inline-block;
     color: #FFFFFF;

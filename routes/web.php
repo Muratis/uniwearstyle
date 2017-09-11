@@ -15,11 +15,11 @@
 //    return view('welcome');
 //});
 
-//Route::get('/', [
-//    'uses' => 'HomeController@getIndex'
-//]);
-
 Route::get('/', [
+    'uses' => 'HomeController@getIndex'
+]);
+
+Route::get('/cataloge', [
     'uses' => 'TshirtController@getAllTshirt'
 ]);
 Route::get('/sort', [

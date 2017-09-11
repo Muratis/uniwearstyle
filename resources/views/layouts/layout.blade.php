@@ -53,7 +53,7 @@
             <span class="icon-bar"></span>
         </button>
 
-        <div id="brand" class="wrapper row">
+        <div id="brand" class="wrapper">
             <a class="navbar-brand" href="/">UniwearStyle</a>
         </div>
         <div class="search">
@@ -71,13 +71,13 @@
 
 
 
-    <div class="collapse navbar-collapse " id="navbar-collapse-1">
+    <div class="collapse navbar-collapse" id="navbar-collapse-1">
         <nav class="menu wrapper" role="navigation">
 
             <ul class="nav navbar-nav menu-mobile">
 
                 <li>
-                    <a href="/" class="fd">Купить</a>
+                    <a href="/" >Универы</a>
                 </li>
 
                 <li>
@@ -142,7 +142,7 @@
 
 
 
-<div class=" wrapper menu_college hidden-sm hidden-xs" >
+<div class=" wrapper menu_college hidden-sm hidden-xs " >
     <nav role="navigation" class="navbar-collapse">
         <ul class="nav navbar-nav ">
 

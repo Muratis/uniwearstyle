@@ -38,3 +38,51 @@
     float: left;
     margin-left: 100px;
 }
+
+.infoTshirt h2 {
+    font: 30px Arial;
+}
+
+.infoTshirt h4 {
+    font:15px arial;
+    opacity: 0.8;
+}
+
+.infoTshirt h3{
+    font: 20px arial;
+
+}
+
+.size_catalog select {
+    width: 250px;
+
+    font:bold 15px arial;
+}
+
+.size_catalog select option {
+    font:bold 15px arial;
+}
+
+
+.size_catalog .btnSubmit {
+    width: 400px;
+    font: 15px arial;
+    color: #ffffff;
+    background-color: #000000;
+    height: 40px;
+    margin-top: 10px;
+}
+
+.size_catalog .btnSubmit:hover {
+    opacity: 0.8;
+}
+
+.desc {
+    width:400px ;
+}
+
+.desc p {
+    color: #000000;
+    font: 15px arial;
+    opacity: 0.8;
+}

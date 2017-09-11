@@ -42,9 +42,16 @@ return [
     ],
 
     [
-        'title' => 'Добавить в каталог',
+        'title' => 'KPI Style',
         'icon'  => 'fa fa-file-text-o',
-        'url'   => 'admin/tshirts',
+        'pages' => [
+            [
+                'title' => 'Добавить в каталог',
+                'icon'  => 'fa fa-file-text-o',
+                'url'   => 'admin/tshirts',
+            ],
+            
+        ],
     ],
 
     // Examples
