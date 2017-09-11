@@ -69,8 +69,6 @@
         </div>
     </div>
 
-
-
     <div class="collapse navbar-collapse" id="navbar-collapse-1">
         <nav class="menu wrapper" role="navigation">
 
