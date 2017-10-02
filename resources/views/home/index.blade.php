@@ -17,7 +17,7 @@
             <div>
 
                 <div class="item_college">
-                    <a href="/cataloge"><img src="images/college/kpi.jpg"><span class="wrapper">Uniwear KPI Style</span></a>
+                    <a href="/kpi/tshirts"><img src="images/college/kpi.jpg"><span class="wrapper">Uniwear KPI Style</span></a>
                 </div>
 
                 <div class="item_college">

@@ -7,10 +7,13 @@
     "require": {
         "php": ">=5.6.4",
         "barryvdh/laravel-debugbar": "^2.4",
+        "gloudemans/shoppingcart": "^2.4",
         "graham-campbell/exceptions": "^9.3",
         "laravel/framework": "5.3.*",
-        "laravelrus/sleepingowl": "4.*@dev"
+        "laravelrus/sleepingowl": "4.*@dev",
+        "predis/predis": "^1.1"
     },
+
     "require-dev": {
         "filp/whoops": "^2.1",
         "fzaninotto/faker": "~1.4",

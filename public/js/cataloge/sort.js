@@ -4,6 +4,9 @@
 
 $(document).ready(function(){
 
+  
+    // $("#zoom").imageLens();
+
     // $(".product").hide();
     $(".off-product").hide();
 
@@ -45,25 +48,75 @@ $(document).ready(function(){
      */
  
     
-    $(".srt").click(function(){
+    $("#polo").click(function(){
 
         $.ajax({
             type: "GET",
-            data: $("sr"),
-            url: "/sort",
-
             success: function () {
-                $("#sye").append('<p>Успех</p>')
-            },
-            error: function () {
-                $("#sye").append('<p>Провал</p>')
+                    history.pushState(null, null, location.hash +'polo');
             },
             complete: function () {
-                $("#sye").append('<p>Выполнено</p>')
+                location.reload();
             }
         })
 
     })
-    
+
+
+    $("#tshirts").click(function(){
+
+        $.ajax({
+            type: "GET",
+            success: function () {
+                history.pushState(null, null, location.hash +'tshirts');
+            },
+            complete: function () {
+                location.reload();
+            }
+        })
+
+    })
+
+    $("#hoodie").click(function(){
+
+        $.ajax({
+            type: "GET",
+            success: function () {
+                history.pushState(null, null, location.hash +'hoodie');
+            },
+            complete: function () {
+                location.reload();
+            }
+        })
+
+    })
+
+    $("#sweatshirts").click(function(){
+
+        $.ajax({
+            type: "GET",
+            success: function () {
+                history.pushState(null, null, location.hash +'sweatshirts');
+            },
+            complete: function () {
+                location.reload();
+            }
+        })
+
+    })
+
+    $("#hoodie").click(function(){
+
+        $.ajax({
+            type: "GET",
+            success: function () {
+                history.pushState(null, null, location.hash +'hoodie');
+            },
+            complete: function () {
+                location.reload();
+            }
+        })
+
+    })
     
 })

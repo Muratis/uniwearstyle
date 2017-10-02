@@ -1,14 +1,16 @@
 <?php
 use App\Models\Colors;
 use App\Models\Sizes;
-use App\Models\Tshirt;
+use App\Models\Hoodies\Hoodie_NMU;
 use SleepingOwl\Admin\Model\ModelConfiguration;
-AdminSection::registerModel(Tshirt::class, function (ModelConfiguration $model) {
-	$model->setTitle('Добавить в каталог');
+AdminSection::registerModel(Hoodie_NMU::class, function (ModelConfiguration $model) {
 
+	$model->setTitle('Худи NMU Style ');
+	$model->setAlias('hoodies_nmu');
+	$model->setCreateTitle('Добавить в каталог');
 	$model->onDisplay(function () {
 		$display = AdminDisplay::table()->setColumns([
-			AdminColumn::text('tshirt_id', 'Номер товара')->setWidth('200px'),
+			AdminColumn::text('hoodie_id', 'Номер товара')->setWidth('200px'),
 			AdminColumn::text('name', 'название товара')->setWidth('400px'),
 			AdminColumn::text('description', 'Описание товара')->setWidth('400px'),
 			AdminColumn::image('image', 'Изображение товара')->setWidth('400px'),
@@ -21,7 +23,7 @@ AdminSection::registerModel(Tshirt::class, function (ModelConfiguration $model) 
 		]);
 		$display->paginate(4)
 			->setApply( function ($query) {
-                $query->orderBy('tshirt_id', '0');
+				$query->orderBy('hoodie_id', '0');
 			});
 		return $display;
 	});
@@ -32,24 +34,15 @@ AdminSection::registerModel(Tshirt::class, function (ModelConfiguration $model) 
 			AdminFormElement::text('name', 'Название товара')->required(),
 			AdminFormElement::number('price', 'Цена грн')->required(),
 			AdminFormElement::text('description', 'Описание товара'),
-		
-			AdminFormElement::view('widgets/admin_form/checkboxes'),
+
+			AdminFormElement::multiselect('cataloge', 'Выберите размер')->setModelForOptions(new Sizes())->setDisplay('name'),
+
 
 //			AdminFormElement::radio('gender', 'Пол', $options = [ 'male', 'female']),
 			AdminFormElement::images('image', 'изображение товара')->storeAsComaSeparatedValue()->required()
-		)->setAction('/admin/create');
+		);
 		return $form;
 	});
 
-//	$model->onEdit(function () {
-//		$form = AdminForm::panel()->addBody(
-//			AdminFormElement::text('name', 'Название товара')->required(),
-//			AdminFormElement::text('price', 'Цена')->required(),
-//			AdminFormElement::text('description', 'Описание товара')->required()
-////			AdminFormElement::images('image', 'изображение товара')->storeAsJson()->required()
-//		);
-//		return $form;
-//	});
 
-	
 });

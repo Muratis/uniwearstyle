@@ -2,66 +2,54 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Tshirt;
+
+use App\Repositories\TshirtRepository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
 class TshirtController extends Controller
 {
 	public $tshirt;
-
-	/**
-	 * TshirtController constructor.
-	 * @param Tshirt $tshirt
-	 */
-
-	public function __construct(Tshirt $tshirt)
+	
+	public function __construct()
 	{
-		$this->tshirt = $tshirt;
+		$university = $this->getUniversityFromUrl();
+		$this->tshirt = new TshirtRepository($university);
 	}
-
-	/**
-	 * @param Request $request
-	 * @return mixed
-	 */
-
+	
+	
 	public function postAddTshirt(Request $request)
 	{
-		 $this->tshirt->store($request);
-
-		return Redirect::to('admin/tshirts');
+		$this->tshirt->store($request);
+//		return Redirect::to('/admin/tshirts_kpi');
+		return redirect()->back()->with('message','Товар успешно добавлен');
 	}
-
-	/**
-	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-	 */
+	
 
 	public function getSortTshirts()
 	{
 		$tshirts = $this->tshirt->sortTshirts();
 		return view('home/index', array('$tshirts' => $tshirts));
 	}
+	
 
-	/**
-	 *
-	 */
-
-	public function getOneTshirt($tshirt_id)
+	public function getOneTshirt(Request $request)
 	{
-		$tshirt = $this->tshirt->oneTshirt()->where('tshirt_id', '=', $tshirt_id)->first();
-		
-
+		$tshirt = $this->tshirt->oneTshirt($request);
 		return view('/cataloge/tshirt/one', array('tshirt' => $tshirt));
 	}
 
-	/**
-	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-	 */
-
+	
 	public function getAllTshirt()
 	{
 		$tshirts = $this->tshirt->allTshirts();
 		return view('/cataloge/cataloge', array('tshirts' => $tshirts));
 	}
-	
+
+
+	private function getUniversityFromUrl()
+	{
+		$url_parts = explode('/', $_SERVER['REQUEST_URI']);
+		return $url_parts[1];
+	}
 }

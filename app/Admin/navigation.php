@@ -43,67 +43,155 @@ return [
 
     [
         'title' => 'KPI Style',
-        'icon'  => 'fa fa-file-text-o',
+        'icon'  => 'fa fa-university',
         'pages' => [
             [
-                'title' => 'Добавить в каталог',
-                'icon'  => 'fa fa-file-text-o',
-                'url'   => 'admin/tshirts',
+                'title' => 'Футболки',
+//                'icon'  => 'fa fa-file-text-o',
+                'url'   => 'admin/tshirts_kpi',
+            ],
+
+            [
+                'title' => 'Поло',
+//                'icon'  => 'fa fa-file-text-o',
+                'url'   => 'admin/polo_kpi',
+            ],
+//
+            [
+                'title' => 'Свитшоты',
+//                'icon'  => 'fa fa-file-text-o',
+                'url'   => 'admin/sweatshirts_kpi',
+            ],
+//
+            [
+                'title' => 'Худи',
+//                'icon'  => 'fa fa-file-text-o',
+                'url'   => 'admin/hoodies_kpi',
+            ],
+//
+            [
+                'title' => 'Бомберы',
+//                'icon'  => 'fa fa-file-text-o',
+                'url'   => 'admin/bombers_kpi',
             ],
             
         ],
     ],
+    
+    [
+    'title' => 'KNEU Style',
+    'icon'  => 'fa fa-university',
+    'pages' => [
+        [
+            'title' => 'Футболки',
+//                'icon'  => 'fa fa-file-text-o',
+            'url'   => 'admin/tshirts_kneu',
+        ],
 
-    // Examples
-    // [
-    //    'title' => 'Content',
-    //    'pages' => [
-    //
-    //        \App\User::class,
-    //
-    //        // or
-    //
-    //        (new Page(\App\User::class))
-    //            ->setPriority(100)
-    //            ->setIcon('fa fa-user')
-    //            ->setUrl('users')
-    //            ->setAccessLogic(function (Page $page) {
-    //                return auth()->user()->isSuperAdmin();
-    //            }),
-    //
-    //        // or
-    //
-    //        new Page([
-    //            'title'    => 'News',
-    //            'priority' => 200,
-    //            'model'    => \App\News::class
-    //        ]),
-    //
-    //        // or
-    //        (new Page(/* ... */))->setPages(function (Page $page) {
-    //            $page->addPage([
-    //                'title'    => 'Blog',
-    //                'priority' => 100,
-    //                'model'    => \App\Blog::class
-	//		      ));
-    //
-	//		      $page->addPage(\App\Blog::class);
-    //	      }),
-    //
-    //        // or
-    //
-    //        [
-    //            'title'       => 'News',
-    //            'priority'    => 300,
-    //            'accessLogic' => function ($page) {
-    //                return $page->isActive();
-    //		      },
-    //            'pages'       => [
-    //
-    //                // ...
-    //
-    //            ]
-    //        ]
-    //    ]
-    // ]
+            [
+                'title' => 'Поло',
+//                'icon'  => 'fa fa-file-text-o',
+                'url'   => 'admin/polo_kneu',
+            ],
+//
+            [
+                'title' => 'Свитшоты',
+//                'icon'  => 'fa fa-file-text-o',
+                'url'   => 'admin/sweatshirts_kneu',
+            ],
+//
+            [
+                'title' => 'Худи',
+//                'icon'  => 'fa fa-file-text-o',
+            'url'   => 'admin/hoodies_kneu',
+            ],
+//
+            [
+                'title' => 'Бомберы',
+//                'icon'  => 'fa fa-file-text-o',
+                'url'   => 'admin/bombers_kneu',
+            ],
+
+    ],
+
+],
+
+    [
+        'title' => 'KNU Style',
+        'icon'  => 'fa fa-university',
+        'pages' => [
+            [
+                'title' => 'Футболки',
+//                'icon'  => 'fa fa-file-text-o',
+                'url'   => 'admin/tshirts_knu',
+            ],
+
+            [
+                'title' => 'Поло',
+//                'icon'  => 'fa fa-file-text-o',
+                'url'   => 'admin/polo_knu',
+            ],
+//
+            [
+                'title' => 'Свитшоты',
+//                'icon'  => 'fa fa-file-text-o',
+                'url'   => 'admin/sweatshirts_knu',
+            ],
+//
+            [
+                'title' => 'Худи',
+//                'icon'  => 'fa fa-file-text-o',
+                'url'   => 'admin/hoodies_knu',
+            ],
+//
+            [
+                'title' => 'Бомберы',
+//                'icon'  => 'fa fa-file-text-o',
+                'url'   => 'admin/bombers_knu',
+            ],
+
+        ],
+
+    ],
+
+    [
+        'title' => 'NMU Style',
+        'icon'  => 'fa fa-university',
+        'pages' => [
+            [
+                'title' => 'Футболки',
+//                'icon'  => 'fa fa-file-text-o',
+                'url'   => 'admin/tshirts_nmu',
+            ],
+
+            [
+                'title' => 'Поло',
+//                'icon'  => 'fa fa-file-text-o',
+                'url'   => 'admin/polo_nmu',
+            ],
+//
+            [
+                'title' => 'Свитшоты',
+//                'icon'  => 'fa fa-file-text-o',
+                'url'   => 'admin/sweatshirts_nmu',
+            ],
+//
+            [
+                'title' => 'Худи',
+//                'icon'  => 'fa fa-file-text-o',
+                'url'   => 'admin/hoodies_nmu',
+            ],
+//
+            [
+                'title' => 'Бомберы',
+//                'icon'  => 'fa fa-file-text-o',
+                'url'   => 'admin/bombers_nmu',
+            ],
+
+        ],
+
+    ],
+
+
+
 ];

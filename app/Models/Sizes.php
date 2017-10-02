@@ -10,7 +10,7 @@ class Sizes extends Model
 	
 	public function cataloge()
 	{
-		return $this->belongsToMany('App\Models\Tshirt', 'size_tshirt', 'tshirt_id', 'size_id');
+		return $this->belongsToMany('App\Models\Tshirt', 'size_tshirt_KPI', 'tshirt_id', 'size_id');
 	}
 	
 }

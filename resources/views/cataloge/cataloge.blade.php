@@ -11,7 +11,7 @@
     <div class="container cataloge">
 
 
-        <div class="filter" >
+        <div class="filter" style="height: 1300px">
             <div>
                 <a  class="off-product"><i class="fa fa-sort-up"></i>Продукт</a>
                 <a  class="on-product"><i class="fa fa-sort-down"></i>Продукт</a>
@@ -22,23 +22,23 @@
                         </li>
 
                         <li>
-                            <a href="#">Футболки</a>
+                            <a href="#" id="tshirts">Футболки</a>
                         </li>
 
                         <li>
-                            <a href="#">Поло</a>
+                            <a href="#" id="polo">Поло</a>
                         </li>
 
                         <li>
-                            <a href="#">Худи</a>
+                            <a href="#" id="hoodie">Худи</a>
                         </li>
 
                         <li>
-                            <a href="#">Свитшоты</a>
+                            <a href="#" id="sweatshirts">Свитшоты</a>
                         </li>
 
                         <li>
-                            <a href="#">Бомберы</a>
+                            <a href="#" id="bombers">Бомберы</a>
                         </li>
                     </ul>
                 </div>
@@ -83,7 +83,7 @@
 
 
         <div class="tshirts">
-
+        <p id="sye"></p>
             @foreach($tshirts as $cataloge)
 
                 @include('/cataloge/preview/tshirt', array('cataloge' => $cataloge))
