@@ -43,9 +43,9 @@
                                     {{--<input type="submit" class="btn" value="Убрать из корзины">--}}
                             </div>
                         </td>
-                        <td >{{$cart->price}} грн</td>
-                        <td >{{$cart->qty}} </td>
-                        <td >{{$cart->subtotal}} грн</td>
+                        <td  class="totalQty">{{$cart->price}} грн</td>
+                        <td  class="totalQty">{{$cart->qty}} </td>
+                        <td  class="totalQty">{{$cart->subtotal}} грн</td>
 
 
 
@@ -66,7 +66,7 @@
                     <div class="button_cart">
                         <p>Стоимость доставки обсуждается по телефону</p>
                         <div>
-                            <a href="/cataloge" class="btn">Продолжить покупки</a>
+                            <a href="/" class="btn">Продолжить покупки</a>
                             <input type="submit" value="Оформить заказ" class="btn">
                         </div>
                     </div>

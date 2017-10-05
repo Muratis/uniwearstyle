@@ -14,42 +14,32 @@ class PoloController extends Controller
 	public function __construct()
 	{
 		$university = $this->getUniversityFromUrl();
-		$this->polo = new PoloRepository($university);
+
+		$this->polo = new PoloRepository($university[1]);
 	}
 
-
-	public function postAddPolo(Request $request)
-	{
-		$this->polo->store($request);
-//		return Redirect::to('/admin/tshirts_kpi');
-		return redirect()->back()->with('message','Товар успешно добавлен');
-	}
-
-
-	public function getSortPolo()
-	{
-		$polo = $this->polo->sortTshirts();
-		return view('home/index', array('polo' => $polo));
-	}
+	
 
 
 	public function getOnePolo(Request $request)
 	{
-		$polo = $this->polo->onePolo($request);
-		return view('/cataloge/polo/one', array('polo' => $polo));
+		$university = $this->getUniversityFromUrl();
+		$item = $this->polo->onePolo($request);
+		return view('/cataloge/one', array('item' => $item, 'university' => $university[1]));
 	}
 
 
 	public function getAllPolo()
 	{
-		$tshirts = $this->polo->allPolo();
-		return view('/cataloge/cataloge', array('tshirts' => $tshirts));
+		$university = $this->getUniversityFromUrl();
+		$content = $this->polo->allPolo();
+		return view('/cataloge/cataloge', array('content' => $content, 'university' => $university));
 	}
 
 
 	private function getUniversityFromUrl()
 	{
 		$url_parts = explode('/', $_SERVER['REQUEST_URI']);
-		return $url_parts[1];
+		return $url_parts;
 	}
 }

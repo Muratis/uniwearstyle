@@ -2,7 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Carts;
-use App\Models\Tshirt;
+use App\Models\Tshirts\Tshirt_KPI;
 use Gloudemans\Shoppingcart\Cart;
 use Gloudemans\Shoppingcart\CartItem;
 use Illuminate\Http\Request;
@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Redirect;
 class CartController extends Controller
 {
 
-	public function __construct(Carts $carts, Tshirt $tshirt)
+	public function __construct(Carts $carts, Tshirt_KPI $tshirt)
 	{
 		$this->carts = $carts;
  		$this->tshirt = $tshirt;

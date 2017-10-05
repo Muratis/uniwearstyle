@@ -14,42 +14,32 @@ class HoodieController extends Controller
 	public function __construct()
 	{
 		$university = $this->getUniversityFromUrl();
-		$this->hoodie = new HoodieRepository($university);
+		$this->hoodie = new HoodieRepository($university[1]);
 	}
 
-
-	public function postAddHoodie(Request $request)
-	{
-		$this->hoodie->store($request);
-//		return Redirect::to('/admin/tshirts_kpi');
-		return redirect()->back()->with('message','Товар успешно добавлен');
-	}
-
-
-	public function getSortHoodie()
-	{
-		$hoodie = $this->hoodie->sortHoodie();
-		return view('home/index', array('hoodie' => $hoodie));
-	}
+	
+	
 
 
 	public function getOneHoodie(Request $request)
 	{
-		$hoodie = $this->hoodie->oneHoodie($request);
-		return view('/cataloge/tshirt/one', array('hoodie' => $hoodie));
+		$university = $this->getUniversityFromUrl();
+		$item = $this->hoodie->oneHoodie($request);
+		return view('/cataloge/one', array('item' => $item, 'university' => $university[1]));
 	}
 
 
 	public function getAllHoodie()
 	{
-		$tshirts = $this->hoodie->allHoodie();
-		return view('/cataloge/cataloge', array('tshirts' => $tshirts));
+		$university = $this->getUniversityFromUrl();
+		$content = $this->hoodie->allHoodie();
+		return view('/cataloge/cataloge', array('content' => $content, 'university' => $university));
 	}
 
 
 	private function getUniversityFromUrl()
 	{
 		$url_parts = explode('/', $_SERVER['REQUEST_URI']);
-		return $url_parts[1];
+		return $url_parts;
 	}
 }

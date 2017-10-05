@@ -56,16 +56,18 @@
         <div id="brand" class="wrapper">
             <a class="navbar-brand" href="/">UniwearStyle</a>
         </div>
-        <div class="search">
-            <a href="#"><i class="fa fa-search fa-2x "></i></a>
-        </div>
+        {{--<div class="search">--}}
+            {{--<a href="#"><i class="fa fa-search fa-2x "></i></a>--}}
+        {{--</div>--}}
 
         <div class="social">
             <a href="#"><i class="fa fa-vk fa-2x "></i></a>
             <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
             <a href="#"><i class="fa fa-instagram fa-2x"></i></a>
             <a href="#"><i class="fa fa-user fa-2x"></i></a>
-            <a href="#"><i class="fa fa-product fa-2x"></i></a>
+            @if(Cart::count())
+            <a href="/cart"><i class="fa fa-shopping-cart fa-2x"></i><h1 class="countCart">{{Cart::count()}}</h1></a>
+                @endif
         </div>
     </div>
 
@@ -145,19 +147,19 @@
         <ul class="nav navbar-nav ">
 
             <li>
-                <a href="/"><img src="/images/college/logo_kpi.jpg" class="menu_college_logo">KPI</a>
+                <a href="/kpi/tshirt"><img src="/images/college/logo_kpi.jpg" class="menu_college_logo">KPI</a>
             </li>
 
             <li>
-                <a href="/"><img src="/images/college/logo_nmu.jpg" class="menu_college_logo">NMU</a>
+                <a href="/nmu/tshirt"><img src="/images/college/logo_nmu.jpg" class="menu_college_logo">NMU</a>
             </li>
 
             <li>
-                <a href="/"><img src="/images/college/logo_knu.jpg" class="menu_college_logo">KNU</a>
+                <a href="/knu/tshirt"><img src="/images/college/logo_knu.jpg" class="menu_college_logo">KNU</a>
             </li>
 
             <li>
-                <a href="/"><img src="/images/college/logo_kpi.jpg" class="menu_college_logo">KPI</a>
+                <a href="/kneu/tshirt"><img src="/images/college/logo_kpi.jpg" class="menu_college_logo">KNEU</a>
             </li>
 
             <li>

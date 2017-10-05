@@ -2,6 +2,10 @@
     margin-top: 50px;
 }
 
+.content{
+    margin-left: 250px;
+    /*width: 800px;*/
+}
 
 
 .item_tshirt div {
@@ -72,18 +76,22 @@
     position: relative;
     top: 10px;
     right: 15px;
+
 }
 
 
 
-.product ul li a {
+.product ul li button {
     color: #000000;
-    font: 17px arial;
+    font: 18px arial;
     background-color: #FFFFFF;
+    width: 100%;
+    text-align: left;
+    margin-top: 5px;
 
 }
 
-.product ul li a:hover{
+.product ul li button:hover{
     background: none;
     opacity: 0.6;
 
@@ -111,4 +119,36 @@
     background-color: #000000;
     opacity: 0.6;
     color: #FFFFFF;
+}
+
+.activeFilter {
+    background-color: #000000!important;
+    color: #FFFFFF !important;
+    opacity: 0.7;
+}
+
+.pag {
+    /*width: 100%;*/
+    width: 250px;
+    /*float: left;*/
+}
+
+.pag ul li span {
+    width: 100px;
+    background-color: #000000!important;
+    opacity: 0.8;
+    color: #FFFFFF;
+    font: 21px arial;
+    text-align: center;
+    margin-right: 5px;
+}
+
+
+.pag ul li a {
+    width: 100px;
+    background-color: #000000!important;
+    opacity: 0.8;
+    color: #FFFFFF;
+    font: 21px arial;
+    text-align: center;
 }

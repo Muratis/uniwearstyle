@@ -9,6 +9,20 @@
 }
 
 
+.countCart {
+    width: 16px!important;
+    height: 16px!important;
+    background-color: #0b0b0b;
+    color: #FFFFFF;
+    border-radius: 50%;
+    font:  13px arial;
+    text-align: center;
+    float: right;
+    position: relative;
+    bottom: 25px;
+    left: 1px;
+}
+
 #head {
     height: 193px;
     background-color: #FFFFFF;

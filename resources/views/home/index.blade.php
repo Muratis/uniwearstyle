@@ -17,20 +17,20 @@
             <div>
 
                 <div class="item_college">
-                    <a href="/kpi/tshirts"><img src="images/college/kpi.jpg"><span class="wrapper">Uniwear KPI Style</span></a>
+                    <a href="/kpi/tshirt"><img src="images/college/kpi.jpg"><span class="wrapper">Uniwear KPI Style</span></a>
                 </div>
 
                 <div class="item_college">
-                    <a href="#"><img src="images/college/knu.jpg"><span class="wrapper">Uniwear KNU Style</span></a>
+                    <a href="/knu/tshirt"><img src="images/college/knu.jpg"><span class="wrapper">Uniwear KNU Style</span></a>
                 </div>
 
                 <div class="item_college">
-                    <a href="#"><img src="images/college/nmu.jpg"><span class="wrapper">Uniwear NMU Style</span></a>
+                    <a href="/nmu/tshirt"><img src="images/college/nmu.jpg"><span class="wrapper">Uniwear NMU Style</span></a>
 
                 </div>
 
                 <div class="item_college">
-                    <a href="#"><img src="images/college/kpi.jpg"><span class="wrapper">Uniwear KNEU Style</span></a>
+                    <a href="/kneu/tshirt"><img src="images/college/kpi.jpg"><span class="wrapper">Uniwear KNEU Style</span></a>
 
                 </div>
 

@@ -54,21 +54,22 @@ $(document).ready(function(){
             type: "GET",
             success: function () {
                     history.pushState(null, null, location.hash +'polo');
+
             },
             complete: function () {
                 location.reload();
             }
         })
 
-    })
 
+    })
 
     $("#tshirts").click(function(){
 
         $.ajax({
             type: "GET",
             success: function () {
-                history.pushState(null, null, location.hash +'tshirts');
+                history.pushState(null, null, location.hash +'tshirt');
             },
             complete: function () {
                 location.reload();
@@ -96,7 +97,7 @@ $(document).ready(function(){
         $.ajax({
             type: "GET",
             success: function () {
-                history.pushState(null, null, location.hash +'sweatshirts');
+                history.pushState(null, null, location.hash +'sweatshirt');
             },
             complete: function () {
                 location.reload();
@@ -105,12 +106,14 @@ $(document).ready(function(){
 
     })
 
-    $("#hoodie").click(function(){
+
+
+    $("#bombers").click(function(){
 
         $.ajax({
             type: "GET",
             success: function () {
-                history.pushState(null, null, location.hash +'hoodie');
+                history.pushState(null, null, location.hash +'bomber');
             },
             complete: function () {
                 location.reload();

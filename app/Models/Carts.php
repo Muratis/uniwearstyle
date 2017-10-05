@@ -2,6 +2,7 @@
 namespace App\Models;
 
 
+use App\Repositories\TshirtRepository;
 use Illuminate\Database\Eloquent\Model;
 use Gloudemans\Shoppingcart\Contracts\Buyable;
 use Gloudemans\Shoppingcart\Facades\Cart;
@@ -9,15 +10,15 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 class Carts extends Model
 {
 	protected $tshirt;
-	public function __construct(array $attributes = [], Tshirt $tshirt)
+	public function __construct(array $attributes = [])
 	{
 		parent::__construct($attributes);
-		$this->tshirt = $tshirt;
+		$this->tshirt = new TshirtRepository('kpi');
 	}
 
 	public function addCart($data)
 	{
-	$tshirt = $this->tshirt->oneTshirt($data);
+		$tshirt = $this->tshirt->oneTshirt($data);
 		$images = $tshirt->image;
 		$image = explode(',', $images);
 		

@@ -39,35 +39,7 @@ class TshirtRepository
 	}
 
 
-	public function store($data)
-	{
-		//Добавление новости, если не получаеться, то выдает ошибку!
-		try {
-			DB::beginTransaction();
-			$this->saveTshirt($data);
-			$this->saveSizes($data);
-			DB::commit();
-		} catch (Exception $e) {
-			DB::rollback();
-			abort(503);
-		}
-	}
 
-
-	protected function saveTshirt($data)
-	{
-		$this->model->name = $data->name;
-		$this->model->description = $data->description;
-		$this->model->price = $data->price;
-		$this->model->image = $data->image;
-		$this->model->save();
-	}
-
-
-	protected function saveSizes($data)
-	{
-		$this->model->cataloge()->attach($data->sizes);
-	}
 
 
 	private function getTshirtModelByUniversity($university)

@@ -32,7 +32,7 @@ class BomberRepository
 	public function allBombers()
 	{
 		$bombers = $this->model
-			->select('bomber_id', 'name', 'description', 'image', 'price')
+			->select('bomber_id', 'name', 'description', 'image', 'price')->with('cataloge')
 			->latest()->simplePaginate(12);
 
 		return $bombers;

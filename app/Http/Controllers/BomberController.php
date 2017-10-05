@@ -14,7 +14,7 @@ class BomberController extends Controller
 	public function __construct()
 	{
 		$university = $this->getUniversityFromUrl();
-		$this->bomber = new BomberRepository($university);
+		$this->bomber = new BomberRepository($university[1]);
 	}
 	
 	
@@ -22,21 +22,23 @@ class BomberController extends Controller
 
 	public function getOneBomber(Request $request)
 	{
-		$bomber = $this->bomber->oneBomber($request);
-		return view('/cataloge/tshirt/one', array('bomber' => $bomber));
+		$university = $this->getUniversityFromUrl();
+		$item = $this->bomber->oneBomber($request);
+		return view('/cataloge/one', array('item' => $item, 'university' => $university[1]));
 	}
 
 
-	public function getAllBomber()
+	public function getAllBombers()
 	{
-		$bombers = $this->bomber->allBombers();
-		return view('/cataloge/cataloge', array('bombers' => $bombers));
+		$university = $this->getUniversityFromUrl();
+		$content = $this->bomber->allBombers();
+		return view('/cataloge/cataloge', array('content' => $content, 'university' => $university));
 	}
 
 
 	private function getUniversityFromUrl()
 	{
 		$url_parts = explode('/', $_SERVER['REQUEST_URI']);
-		return $url_parts[1];
+		return $url_parts;
 	}
 }

@@ -1,4 +1,8 @@
 
+.universityName {
+    text-transform: uppercase;
+}
+
 .loupe {
     border-radius: 50%;
     box-shadow: -2.5px -1px 7px 4px #000000;
@@ -91,10 +95,18 @@
 }
 
 .desc {
+    margin-top: 40px;
     width:400px ;
 }
 
+.desc h4 {
+
+    font: 20px arial;
+    color: #000000;
+}
+
 .desc p {
+    margin-top: 10px;
     color: #000000;
     font: 15px arial;
     opacity: 0.8;

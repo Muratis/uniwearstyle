@@ -11,34 +11,34 @@
     <div class="container cataloge">
 
 
-        <div class="filter" style="height: 1300px">
+        <div class="filter" >
             <div>
                 <a  class="off-product"><i class="fa fa-sort-up"></i>Продукт</a>
                 <a  class="on-product"><i class="fa fa-sort-down"></i>Продукт</a>
                 <div class="product">
                     <ul class="nav ">
                         <li>
-                            <a href="#">Все</a>
+                            <button id="all" class="btn">Все</button>
                         </li>
 
                         <li>
-                            <a href="#" id="tshirts">Футболки</a>
+                            <button  id="tshirts" class="btn">Футболки</button>
                         </li>
 
                         <li>
-                            <a href="#" id="polo">Поло</a>
+                            <button  id="polo" class="btn">Поло</button>
                         </li>
 
                         <li>
-                            <a href="#" id="hoodie">Худи</a>
+                            <button id="hoodie" class="btn">Худи</button>
                         </li>
 
                         <li>
-                            <a href="#" id="sweatshirts">Свитшоты</a>
+                            <button id="sweatshirts" class="btn">Свитшоты</button>
                         </li>
 
                         <li>
-                            <a href="#" id="bombers">Бомберы</a>
+                            <button id="bombers" class="btn">Бомберы</button>
                         </li>
                     </ul>
                 </div>
@@ -82,23 +82,22 @@
         </div>
 
 
-        <div class="tshirts">
-        <p id="sye"></p>
-            @foreach($tshirts as $cataloge)
+        <div class="content">
+            @foreach($content as $cataloge)
 
-                @include('/cataloge/preview/tshirt', array('cataloge' => $cataloge))
+                @include('/cataloge/preview/item', array('cataloge' => $cataloge, 'university' => $university))
 
             @endforeach
 
+                <div class="wrapper">
+                    <div class="pag">
+                        {{  $content->links() }}
+                    </div>
+
+                </div>
         </div>
 
-        <div class="row">
-            <div class="pag">
-                {{  $tshirts->links() }}
 
-            </div>
-
-        </div>
 
     </div>
 

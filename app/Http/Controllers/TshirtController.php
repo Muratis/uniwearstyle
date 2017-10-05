@@ -14,42 +14,30 @@ class TshirtController extends Controller
 	public function __construct()
 	{
 		$university = $this->getUniversityFromUrl();
-		$this->tshirt = new TshirtRepository($university);
+		$this->tshirt = new TshirtRepository($university[1]);
 	}
 	
-	
-	public function postAddTshirt(Request $request)
-	{
-		$this->tshirt->store($request);
-//		return Redirect::to('/admin/tshirts_kpi');
-		return redirect()->back()->with('message','Товар успешно добавлен');
-	}
-	
-
-	public function getSortTshirts()
-	{
-		$tshirts = $this->tshirt->sortTshirts();
-		return view('home/index', array('$tshirts' => $tshirts));
-	}
 	
 
 	public function getOneTshirt(Request $request)
 	{
-		$tshirt = $this->tshirt->oneTshirt($request);
-		return view('/cataloge/tshirt/one', array('tshirt' => $tshirt));
+		$university = $this->getUniversityFromUrl();
+		$item = $this->tshirt->oneTshirt($request);
+		return view('/cataloge/one', array('item' => $item, 'university' => $university[1]));
 	}
 
 	
 	public function getAllTshirt()
 	{
-		$tshirts = $this->tshirt->allTshirts();
-		return view('/cataloge/cataloge', array('tshirts' => $tshirts));
+		$university = $this->getUniversityFromUrl();
+		$content = $this->tshirt->allTshirts();
+		return view('/cataloge/cataloge', array('content' => $content, 'university' => $university));
 	}
 
 
 	private function getUniversityFromUrl()
 	{
 		$url_parts = explode('/', $_SERVER['REQUEST_URI']);
-		return $url_parts[1];
+		return $url_parts;
 	}
 }

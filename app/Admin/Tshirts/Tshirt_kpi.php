@@ -33,7 +33,7 @@ AdminSection::registerModel(Tshirt_KPI::class, function (ModelConfiguration $mod
 		$form = AdminForm::panel()->addBody(
 			AdminFormElement::text('name', 'Название товара')->required(),
 			AdminFormElement::number('price', 'Цена грн')->required(),
-			AdminFormElement::text('description', 'Описание товара'),
+			AdminFormElement::textarea('description', 'Описание товара'),
 			AdminFormElement::multiselect('cataloge', 'Выберите размер')->setModelForOptions(new Sizes())->setDisplay('name'),
 
 //			AdminFormElement::radio('gender', 'Пол', $options = [ 'male', 'female']),

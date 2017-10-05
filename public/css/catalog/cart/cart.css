@@ -1,5 +1,11 @@
+table {
+    margin-top: 40px;
+}
 
-
+.table-header tr th {
+    font: bold 20px arial;
+    color: #000000;
+}
 .shoppingCart tr {
     border-bottom: 1px solid #d6d4d4;
 }
@@ -55,6 +61,11 @@
 
 .info_product div button:hover {
     opacity: 0.6;
+}
+
+.totalQty{
+    font: 18px arial;
+    color: #000000;
 }
 
 .cart_footer {
