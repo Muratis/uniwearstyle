@@ -35,7 +35,7 @@
                             </div>
 
                             <div>
-                                <p>Size: M</p>
+                                <p>Размер: {{$cart->options->size}}</p>
                             </div>
 
                             <div>

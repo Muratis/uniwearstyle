@@ -6,10 +6,19 @@
 
 @stop
 
+@section('uniwear')
+    {{ strtoupper($university[1]) }}
+@stop
+
 @section('content')
 
-    <div class="container cataloge">
+    <div class="wrapper btnToMainAndCatalog">
+        <a href="/{{$university[1]}}/main" class="btn ">Главная</a>
+        <a href="/{{$university[1]}}/tshirt" class="btn disabled">Каталог</a>
 
+    </div>
+
+    <div class="container cataloge">
 
         <div class="filter" >
             <div>
@@ -67,7 +76,7 @@
                         </li>
 
                         <li>
-                            <a href="#">L</a>
+                            <a href="#" >L</a>
                         </li>
 
                         <li>
@@ -84,17 +93,15 @@
 
         <div class="content">
             @foreach($content as $cataloge)
-
-                @include('/cataloge/preview/item', array('cataloge' => $cataloge, 'university' => $university))
-
+                    @include('/cataloge/preview/item', array('cataloge' => $cataloge, 'university' => $university))
             @endforeach
 
-                <div class="wrapper">
-                    <div class="pag">
-                        {{  $content->links() }}
-                    </div>
+                {{--<div class="wrapper">--}}
+                    {{--<div class="pag">--}}
+                        {{--{{  $content->links() }}--}}
+                    {{--</div>--}}
 
-                </div>
+                {{--</div>--}}
         </div>
 
 

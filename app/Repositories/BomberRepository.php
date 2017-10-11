@@ -22,7 +22,7 @@ class BomberRepository
 	public function oneBomber($data)
 	{
 		$bomber = $this->model
-			->select('bomber_id', 'name', 'description', 'image', 'price')
+			->select('bomber_id', 'name', 'description', 'image', 'price')->with('cataloge')
 			->where('bomber_id', '=', $data->bomber_id)->first();
 
 		return $bomber;
@@ -32,7 +32,7 @@ class BomberRepository
 	public function allBombers()
 	{
 		$bombers = $this->model
-			->select('bomber_id', 'name', 'description', 'image', 'price')->with('cataloge')
+			->select('bomber_id', 'name', 'description', 'image', 'price')
 			->latest()->simplePaginate(12);
 
 		return $bombers;

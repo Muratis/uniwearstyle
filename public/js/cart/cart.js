@@ -5,13 +5,21 @@ $(document).ready(function(){
             type: "POST",
             data: {
                 '_token': $('input[name="_token"]').val(),
-                'tshirt_id' : $('input[id="ajax-tshirt-id"]').val(),
+                'id' : $('input[id="ajax-id"]').val(),
+                'image' : $('input[id="ajax-image"]').val(),
+                'size' : $('select[name="size"]').val(),
+                'name': $('h2[id="tshirt_name"]').text(),
+                'price': $('span[id="price"]').text(),
                
             },
             url: "/cart",
     
             success: function () {
-                $("h2").append('<p>Товар успешно добавлен в корзину</p>')
+                // $("h2").append('<p>Товар успешно добавлен в корзину</p>')
+                $(".successShop").show();
+                $(".successShop").hide(3000);
+                // location.reload();
+                // $("h2").hide(3000)
             },
             error: function () {
                 $("h2").append('<p>Провал</p>')
@@ -23,30 +31,7 @@ $(document).ready(function(){
         })
     })
 
-
-
-    // $(".delete").on('click', function () {
-    //     $.ajax({
-    //         type: "GET",
-    //         // data: {
-    //         //     '_token': $('input[name="_token"]').val(),
-    //         //     'tshirt_id' : $('input[id="ajax-tshirt-id"]').val(),
-    //         //
-    //         // },
-    //         url: "/cart",
-    //
-    //         success: function () {
-    //             $(".cl").append('<a href="{{Cart::remove($cart->rowId)}}">Убрать из корзины</a>')
-    //         },
-    //         error: function () {
-    //             $(".cl").append('<p>Провал</p>')
-    //         },
-    //         complete: function () {
-    //             $(".cl").append('<p>gfgfg</p>');
-    //             // console.log(data)
-    //         }
-    //     })
-    // })
+    
 
 
 
@@ -63,7 +48,7 @@ $(document).ready(function(){
                 location.reload();
             },
             error: function () {
-                $("h2").append('<p>Провал</p>')
+                $("h2").append('<p>Провал</p>');
             },
             complete: function () {
                 $("h2").append('<p></p>');
@@ -71,8 +56,10 @@ $(document).ready(function(){
             }
         })
     })
-    
-    
-    
+
+
+    // if($('select[name="shipping"]').val() == 'new') {
+    //     $("h4").append('<p>Провал</p>')
+    // }
 
 })

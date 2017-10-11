@@ -1,0 +1,70 @@
+.shopItem img{
+    width: 80px;
+    height: 100px;
+    float: left;
+    border: 2px solid #000000;
+}
+.shopItem {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.shopItem div {
+    margin-left: 12px;
+    margin-top: 20px;
+    float: left;
+}
+
+.shopItem div p {
+    font: 17px arial;
+    line-height: 7px;
+}
+
+.shopItem div p + p {
+    font: 13px arial;
+    opacity: 0.7;
+
+}
+
+#price {
+    float: right;
+    color: #000000;
+    font: 17px arial;
+    line-height: 80px;
+    margin-right: 30px;
+}
+
+.total{
+    margin-top: 50px;
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    border-top: 2px solid #b3b3b3;
+}
+
+.total span{
+    font: 18px arial;
+}
+
+.total span + span {
+    float: right;
+    margin-right: 20px;
+    font: 20px arial;
+}
+
+
+#form {
+    width: 570px;
+}
+
+form div div input {
+    height: 41px!important;
+}
+
+form div div {
+    margin-bottom: 20px;
+}
+
+select {
+    height: 41px!important;
+}

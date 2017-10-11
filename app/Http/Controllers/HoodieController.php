@@ -25,7 +25,7 @@ class HoodieController extends Controller
 	{
 		$university = $this->getUniversityFromUrl();
 		$item = $this->hoodie->oneHoodie($request);
-		return view('/cataloge/one', array('item' => $item, 'university' => $university[1]));
+		return view('/cataloge/one', array('item' => $item, 'university' => $university));
 	}
 
 

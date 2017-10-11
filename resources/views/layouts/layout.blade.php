@@ -53,8 +53,13 @@
             <span class="icon-bar"></span>
         </button>
 
+
+
         <div id="brand" class="wrapper">
-            <a class="navbar-brand" href="/">UniwearStyle</a>
+            <div id="logoHead" >
+                {{--<img src="/images/college/logoHeader.png" id="logoHead">--}}
+            </div>
+            <a class="navbar-brand" href="/"><img src="/images/college/logoHeader.png" id="logoHead">Uniwear @yield('uniwear') Style</a>
         </div>
         {{--<div class="search">--}}
             {{--<a href="#"><i class="fa fa-search fa-2x "></i></a>--}}
@@ -147,35 +152,15 @@
         <ul class="nav navbar-nav ">
 
             <li>
-                <a href="/kpi/tshirt"><img src="/images/college/logo_kpi.jpg" class="menu_college_logo">KPI</a>
+                <a href="/kpi/tshirt"><img src="/images/college/logo_kpi.jpg" class="menu_college_logo">КПИ</a>
             </li>
 
             <li>
-                <a href="/nmu/tshirt"><img src="/images/college/logo_nmu.jpg" class="menu_college_logo">NMU</a>
+                <a href="/nmu/tshirt"><img src="/images/college/logo_nmu.jpg" class="menu_college_logo">НМУ</a>
             </li>
 
             <li>
-                <a href="/knu/tshirt"><img src="/images/college/logo_knu.jpg" class="menu_college_logo">KNU</a>
-            </li>
-
-            <li>
-                <a href="/kneu/tshirt"><img src="/images/college/logo_kpi.jpg" class="menu_college_logo">KNEU</a>
-            </li>
-
-            <li>
-                <a href="/"><img src="/images/college/logo_nmu.jpg" class="menu_college_logo">NMU</a>
-            </li>
-
-            <li>
-                <a href="/"><img src="/images/college/logo_knu.jpg" class="menu_college_logo">KNU</a>
-            </li>
-
-            <li>
-                <a href="/"><img src="/images/college/logo_kpi.jpg" class="menu_college_logo">KPI</a>
-            </li>
-
-            <li>
-                <a href="/"><img src="/images/college/logo_nmu.jpg" class="menu_college_logo">NMU</a>
+                <a href="/knu/tshirt"><img src="/images/college/logo_knu.jpg" class="menu_college_logo">КНУ</a>
             </li>
 
         </ul>

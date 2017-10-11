@@ -111,3 +111,8 @@
     font: 15px arial;
     opacity: 0.8;
 }
+
+.successShop {
+    margin-top: 5px;
+    display: none;
+}

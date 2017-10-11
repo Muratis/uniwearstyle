@@ -16,6 +16,11 @@ Route::get('/', [
     'uses' => 'HomeController@getIndex'
 ]);
 
+Route::get('/kpi/main', [
+    'uses' => 'HomeController@getIndexUniwear'
+]);
+
+
 Route::post('/cart', [
 	'uses' => 'CartController@postAdd'
 ]);
@@ -27,12 +32,25 @@ Route::post('/cart/remove', [
 	'uses' => 'CartController@postRemove'
 ]);
 
+Route::get('/cart/checkout', [
+	'uses' => 'CartController@getCheckout'
+]);
+
+Route::post('/cart/add', [
+	'uses' => 'CartController@postAddCart'
+]);
+
 
 
 
 
 							// ALL FOR KPI
 //Route for cataloge
+Route::get('/kpi/all' , [
+	'uses' => 'FilterController@getAllCataloge',
+	'as' => 'Filter_KPI'
+]);
+
 Route::get('/kpi/tshirt' , [
 	'uses' => 'TshirtController@getAllTshirt',
 	'as' => 'Tshirts_KPI'

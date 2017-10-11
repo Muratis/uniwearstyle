@@ -1,8 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
-use App\Models\Carts;
-use App\Models\Tshirts\Tshirt_KPI;
+use App\Repositories\CartRepository;
 use Gloudemans\Shoppingcart\Cart;
 use Gloudemans\Shoppingcart\CartItem;
 use Illuminate\Http\Request;
@@ -10,14 +9,17 @@ use Illuminate\Support\Facades\Redirect;
 
 class CartController extends Controller
 {
-
-	public function __construct(Carts $carts, Tshirt_KPI $tshirt)
+	public function __construct()
 	{
-		$this->carts = $carts;
- 		$this->tshirt = $tshirt;
-	}
-	
+		$this->carts = new CartRepository();
 
+	}
+
+	
+	public function postAddCart()
+	{
+		$this->carts->addCartToBase();
+	}
 
 	public function postAdd(Request $request)
 	{
@@ -25,8 +27,11 @@ class CartController extends Controller
 		
 	}
 
-		public function getAdd() {
-			$carts =$this->carts->showCart();
+
+	public function getAdd() 
+	{
+
+		$carts =$this->carts->showCart();
 		return view('cart/cart', array('carts' => $carts,));
 			
 	}
@@ -36,4 +41,12 @@ class CartController extends Controller
 		$this->carts->removeCart($request);
 	}
 
+
+
+	public function getCheckout()
+	{
+		$carts =$this->carts->showCart();
+		return view('cart/checkout', array('carts' => $carts));
+	}
+	
 }

@@ -74,6 +74,12 @@ return [
 //                'icon'  => 'fa fa-file-text-o',
                 'url'   => 'admin/bombers_kpi',
             ],
+
+            [
+                'title' => 'Новости',
+//                'icon'  => 'fa fa-file-text-o',
+                'url'   => 'admin/articles_kpi',
+            ],
             
         ],
     ],
@@ -111,6 +117,12 @@ return [
 //                'icon'  => 'fa fa-file-text-o',
                 'url'   => 'admin/bombers_kneu',
             ],
+
+        [
+            'title' => 'Новости',
+//                'icon'  => 'fa fa-file-text-o',
+            'url'   => 'admin/articles_kneu',
+        ],
 
     ],
 
@@ -150,6 +162,12 @@ return [
                 'url'   => 'admin/bombers_knu',
             ],
 
+            [
+                'title' => 'Новости',
+//                'icon'  => 'fa fa-file-text-o',
+                'url'   => 'admin/articles_knu',
+            ],
+
         ],
 
     ],
@@ -186,6 +204,12 @@ return [
                 'title' => 'Бомберы',
 //                'icon'  => 'fa fa-file-text-o',
                 'url'   => 'admin/bombers_nmu',
+            ],
+
+            [
+                'title' => 'Новости',
+//                'icon'  => 'fa fa-file-text-o',
+                'url'   => 'admin/articles_nmu',
             ],
 
         ],

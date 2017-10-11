@@ -28,7 +28,7 @@ Class PoloRepository
 	public function onePolo($data)
 	{
 		$polo = $this->model
-			->select('polo_id', 'name', 'description', 'image', 'price')
+			->select('polo_id', 'name', 'description', 'image', 'price')->with('cataloge')
 			->where('polo_id', '=', $data->polo_id)->first();
 
 		return $polo;
@@ -43,38 +43,7 @@ Class PoloRepository
 
 		return $polo;
 	}
-
-
-	public function store($data)
-	{
-		//Добавление новости, если не получаеться, то выдает ошибку!
-		try {
-			DB::beginTransaction();
-			$this->savePolo($data);
-			$this->saveSizes($data);
-			DB::commit();
-		} catch (Exception $e) {
-			DB::rollback();
-			abort(503);
-		}
-	}
-
-
-	protected function savePolo($data)
-	{
-		$this->model->name = $data->name;
-		$this->model->description = $data->description;
-		$this->model->price = $data->price;
-		$this->model->image = $data->image;
-		$this->model->save();
-	}
-
-
-	protected function saveSizes($data)
-	{
-		$this->model->cataloge()->attach($data->sizes);
-	}
-
+	
 
 
 	private function getTshirtModelByUniversity($university)

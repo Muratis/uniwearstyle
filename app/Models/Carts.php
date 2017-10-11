@@ -2,49 +2,25 @@
 namespace App\Models;
 
 
-use App\Repositories\TshirtRepository;
 use Illuminate\Database\Eloquent\Model;
-use Gloudemans\Shoppingcart\Contracts\Buyable;
+
 use Gloudemans\Shoppingcart\Facades\Cart;
+use Illuminate\Support\Facades\DB;
 
 class Carts extends Model
 {
-	protected $tshirt;
-	public function __construct(array $attributes = [])
+
+	protected $table = 'carts';
+	protected $primaryKey = 'cart_id';
+	
+	public function user_cart()
 	{
-		parent::__construct($attributes);
-		$this->tshirt = new TshirtRepository('kpi');
+		return $this->hasOne('App\User', 'cart_id', 'cart_id');
 	}
-
-	public function addCart($data)
-	{
-		$tshirt = $this->tshirt->oneTshirt($data);
-		$images = $tshirt->image;
-		$image = explode(',', $images);
-		
-		$cart = Cart::add ($data->tshirt_id, $tshirt->name, 1, $tshirt->price ,  [ 'image'  =>  $image[0]]);
-		return $cart;
-
-		if ($data->rowId) {
-			Cart::remove($data->rowId);
-		}
-	}
+	
 
 
 
-	public function showCart()
-	{
-		$show = Cart::content();
-		return $show;
-	}
 
-
-	public function removeCart($data)
-	{
-
-		$remove = Cart::remove($data->rowId);
-		return $remove;
-
-	}
 	
 }

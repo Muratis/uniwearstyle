@@ -28,7 +28,7 @@ class SweatshirtRepository
 	public function oneSweatshirt($data)
 	{
 		$sweatshirt = $this->model
-			->select('sweatshirt_id', 'name', 'description', 'image', 'price')
+			->select('sweatshirt_id', 'name', 'description', 'image', 'price')->with('cataloge')
 			->where('sweatshirt_id', '=', $data->sweatshirt_id)->first();
 
 		return $sweatshirt;
@@ -40,6 +40,14 @@ class SweatshirtRepository
 			->select('sweatshirt_id', 'name', 'description', 'image', 'price')
 			->latest()->simplePaginate(12);
 
+		return $sweatshirt;
+	}
+	
+	public function allSweatshirtsForFilter()
+	{
+		$sweatshirt = $this->model
+			->select('sweatshirt_id', 'name', 'description', 'image', 'price');
+		
 		return $sweatshirt;
 	}
 

@@ -24,7 +24,7 @@ class BomberController extends Controller
 	{
 		$university = $this->getUniversityFromUrl();
 		$item = $this->bomber->oneBomber($request);
-		return view('/cataloge/one', array('item' => $item, 'university' => $university[1]));
+		return view('/cataloge/one', array('item' => $item, 'university' => $university));
 	}
 
 

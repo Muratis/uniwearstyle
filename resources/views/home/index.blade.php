@@ -17,32 +17,18 @@
             <div>
 
                 <div class="item_college">
-                    <a href="/kpi/tshirt"><img src="images/college/kpi.jpg"><span class="wrapper">Uniwear KPI Style</span></a>
+                    <a href="/kpi/tshirt"><img src="images/college/kpi.png"><span class="wrapper">Uniwear КПИ Style</span></a>
                 </div>
 
                 <div class="item_college">
-                    <a href="/knu/tshirt"><img src="images/college/knu.jpg"><span class="wrapper">Uniwear KNU Style</span></a>
+                    <a href="/knu/tshirt"><img src="images/college/knu.png"><span class="wrapper">Uniwear КНУ Style</span></a>
                 </div>
 
                 <div class="item_college">
-                    <a href="/nmu/tshirt"><img src="images/college/nmu.jpg"><span class="wrapper">Uniwear NMU Style</span></a>
+                    <a href="/nmu/tshirt"><img src="images/college/nmu.png"><span class="wrapper">Uniwear НМУ Style</span></a>
 
                 </div>
 
-                <div class="item_college">
-                    <a href="/kneu/tshirt"><img src="images/college/kpi.jpg"><span class="wrapper">Uniwear KNEU Style</span></a>
-
-                </div>
-
-                <div class="item_college">
-                    <a href="#"><img src="images/college/knu.jpg"><span class="wrapper">Uniwear KNU Style</span></a>
-
-                </div>
-
-                <div class="item_college">
-                    <a href="#"><img src="images/college/nmu.jpg"><span class="wrapper">Uniwear KPI Style</span></a>
-
-                </div>
 
             </div>
         </div>

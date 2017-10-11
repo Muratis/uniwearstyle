@@ -25,7 +25,7 @@ class SweatshirtController extends Controller
 	{
 		$university = $this->getUniversityFromUrl();
 		$item = $this->sweatshirt->oneSweatshirt($request);
-		return view('/cataloge/one', array('item' => $item, 'university' => $university[1]));
+		return view('/cataloge/one', array('item' => $item, 'university' => $university));
 	}
 
 

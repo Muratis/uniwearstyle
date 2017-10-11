@@ -22,7 +22,7 @@ class TshirtRepository
 	public function oneTshirt($data)
 	{
 		$tshirt = $this->model
-			->select('tshirt_id', 'name', 'description', 'image', 'price')
+			->select('tshirt_id', 'name', 'description', 'image', 'price')->with('cataloge')
 			->where('tshirt_id', '=', $data->tshirt_id)->first();
 
 		return $tshirt;

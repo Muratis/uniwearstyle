@@ -14,8 +14,17 @@ class CreateKNEUshopTable extends Migration
     public function up()
     {
         Schema::enableForeignKeyConstraints();
-        //Футболки
 
+        Schema::create('article_KNEU', function (Blueprint $table) {
+            $table->increments('article_id');
+            $table->text('title');
+            $table->text('image');
+            $table->text('text');
+            $table->timestamps();
+            $table->engine = 'InnoDB';
+        });
+
+        //Футболки
         Schema::create('tshirts_KNEU', function (Blueprint $table) {
             $table->increments('tshirt_id');
             $table->text('name');

@@ -1,0 +1,59 @@
+body {
+    margin-top: 60px;
+
+
+}
+
+#footer{
+    margin-top: 600px;
+}
+#left {
+    width: 59.5%;
+    height: 100%;
+    background-color: #FFFFFF;
+    border-right: 1px solid #bdbdbd;
+    float: left;
+    /*box-shadow: 1px 1px 11px 3px #000000;*/
+}
+
+#right {
+    width: 40%;
+    background-color: #f0f0f0;
+    float: right;
+    box-shadow: 3px 1px 11px 3px #b3b3b3;
+    margin-left: 2px;
+}
+
+.brand {
+    color: #000000;
+    font:bold 40px arial;
+
+}
+
+.brand:hover {
+    opacity: 0.6;
+    color: #000000;
+    text-decoration: none;
+}
+
+.servises {
+
+
+}
+
+.servises ul li {
+    text-decoration: none;
+    list-style: none;
+    float: left;
+    margin-right: 15px;
+}
+
+.servises ul li a {
+    color: #000000;
+    font: 13px arial;
+}
+
+.servises ul li a:hover {
+    text-decoration: none;
+    opacity: 0.6;
+}
