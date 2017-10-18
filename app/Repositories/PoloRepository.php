@@ -28,7 +28,7 @@ Class PoloRepository
 	public function onePolo($data)
 	{
 		$polo = $this->model
-			->select('polo_id', 'name', 'description', 'image', 'price')->with('cataloge')
+			->select('polo_id', 'name', 'description', 'image', 'price', 'created_at')->with('cataloge')
 			->where('polo_id', '=', $data->polo_id)->first();
 
 		return $polo;
@@ -38,7 +38,7 @@ Class PoloRepository
 	public function allPolo()
 	{
 		$polo = $this->model
-			->select('polo_id', 'name', 'description', 'image', 'price')
+			->select('polo_id', 'name', 'description', 'image', 'price', 'created_at')
 			->latest()->simplePaginate(12);
 
 		return $polo;

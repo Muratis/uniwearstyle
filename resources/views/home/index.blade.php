@@ -17,15 +17,15 @@
             <div>
 
                 <div class="item_college">
-                    <a href="/kpi/tshirt"><img src="images/college/kpi.png"><span class="wrapper">Uniwear КПИ Style</span></a>
+                    <a href="/kpi/main"><img src="images/college/kpi.png"><span class="wrapper">Uniwear КПИ Style</span></a>
                 </div>
 
                 <div class="item_college">
-                    <a href="/knu/tshirt"><img src="images/college/knu.png"><span class="wrapper">Uniwear КНУ Style</span></a>
+                    <a href="/knu/main"><img src="images/college/knu.png"><span class="wrapper">Uniwear КНУ Style</span></a>
                 </div>
 
                 <div class="item_college">
-                    <a href="/nmu/tshirt"><img src="images/college/nmu.png"><span class="wrapper">Uniwear НМУ Style</span></a>
+                    <a href="/nmu/main"><img src="images/college/nmu.png"><span class="wrapper">Uniwear НМУ Style</span></a>
 
                 </div>
 

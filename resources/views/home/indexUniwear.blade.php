@@ -2,6 +2,8 @@
 
 @section('head_extra')
     <link rel="stylesheet" href="/css/indexUniwear.css">
+    <link rel="stylesheet" href="/css/articles.css">
+    <script language="javascript" src="/bootstrap/js/masonry.pkgd.min.js"></script>
     {{--<script language="javascript" src="/js/cart/cart.js"></script>--}}
 
 @stop
@@ -66,6 +68,11 @@
     <div class="container">
         <img src="/images/college/{{$university[1]}}.png">
         <h1>Наши новости</h1>
+        <div class="socials">
+            <a href="#"><i class="fa fa-vk fa-2x "></i></a>
+            <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
+            <a href="#"><i class="fa fa-instagram fa-2x"></i></a>
+        </div>
     </div>
 </div>
     <div class="container">
@@ -75,5 +82,17 @@
             </div>
         </div>
     </div>
+
+    <div class="container js-masonry" data-masonry-options='{ "columnWidth": 10, "itemSelector": ".item" }'>
+        @foreach($articles as $article)
+
+            @include('/home/mainUniwear/articles', array('article' => $article, 'university' => $university))
+        @endforeach
+
+        <div class="wrapper">
+            {{$articles->links()}}
+        </div>
+    </div>
+
 
 @stop

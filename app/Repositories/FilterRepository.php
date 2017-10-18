@@ -29,12 +29,30 @@ Class FilterRepository
 
 	public function allCatalog()
 	{
+		$tshirtsData = $this->tshirt->allTshirts();
+		$polosData = $this->polo->allPolo();
+//		$hoodiesData = $this->hoodie->allHoodie();
 
+		foreach ($tshirtsData as $one) {
+			$key = (string)$one->created_at;
+			$tshirts[$key] = $one;
+		}
+
+		foreach ($polosData as $one) {
+			$key = (string)$one->created_at;
+			$polos[$key] = $one;
+		}
+
+		$all = array_merge($tshirts, $polos);
+		krsort($all);
+
+
+		return $all;
 	}
 
-//	public function getAllCatalog()
-//	{
-//		$allCatalog = $this->allCatalog();
-//		return $allCatalog;
-//	}
+	public function getAllCatalog()
+	{
+			
+	}
+
 }

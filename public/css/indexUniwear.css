@@ -80,3 +80,69 @@
     margin-bottom: 4px;
     margin-left: 180px;
 }
+
+
+.socials {
+    float: right;
+    margin-top: 30px;
+}
+
+.socials a {
+    margin-right: 5px;
+}
+
+.socials a i {
+    color: #000000;
+}
+
+.socials a i:hover {
+    opacity: 0.6;
+}
+
+@media(max-width: 1200px) {
+
+    #carousel img {
+        /*width: 100%;*/
+        border-radius: 9px 9px 0 0;
+        height: 520px;
+
+    }
+
+
+
+}
+
+@media(max-width: 890px) {
+
+    #carousel img {
+        /*width: 100%;*/
+        border-radius: 9px 9px 0 0;
+        height: 370px;
+
+    }
+
+    #carousel a span i {
+        position: relative;
+        top: 170px;
+    }
+
+
+
+}
+
+@media(max-width: 710px) {
+
+    #carousel img {
+        /*width: 100%;*/
+        border-radius: 9px 9px 0 0;
+        height: 320px;
+
+    }
+
+    #carousel a span i {
+        position: relative;
+        top: 140px;
+    }
+
+
+}

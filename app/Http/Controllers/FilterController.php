@@ -15,13 +15,13 @@ class FilterController extends Controller
 		$this->filter = new FilterRepository($university[1]);
 	}
 
-//	public function getAllCataloge()
-//	{
-//		$university = $this->getUniversityFromUrl();
-//		$content = $this->filter->allCatalog();
-////		var_dump($content);
-//		return view('/cataloge/cataloge', array('content' => $content, 'university' => $university));
-//	}
+	public function getAllCataloge()
+	{
+		$university = $this->getUniversityFromUrl();
+		$content = $this->filter->allCatalog();
+
+		return view('/cataloge/cataloge', array('content' => $content, 'university' => $university));
+	}
 	
 	
 	private function getUniversityFromUrl()
