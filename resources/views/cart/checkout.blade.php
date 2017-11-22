@@ -11,25 +11,26 @@
     <h4>Оформление заказа</h4>
 
         <div class="form-row" id="form">
-            <div class="col-xs-6"><input type="text" class="form-control" placeholder="Введите имя"></div>
-            <div class="col-xs-6"><input type="text" class="form-control" placeholder="Введите фамилию"></div>
+            <div class="col-xs-6"><input type="text" name="first_name" class="form-control" placeholder="Введите имя"></div>
+            <div class="col-xs-6"><input type="text" name="last_name" class="form-control" placeholder="Введите фамилию"></div>
 
             <div>
                 <label for="shipping">Выберите способ доставки</label>
-                <select class="form-control" name="shipping">
-                    <option value="new">Отправка "Нова пошта"</option>
-                    <option value="ad">Доставка на адресс</option>
+                <select class="form-control" name="shipping" id="method">
+                    <option value="new-post" name="new-post" id="new-post">Отправка "Нова пошта"</option>
+                    <option value="address" name="address" id="address">Доставка на адресс</option>
                 </select>
             </div>
+                <div id="content">
+                    <div class="col-xs-5"><input type="text" name="city" class="form-control" placeholder="Город"></div>
+                    <div class="col-xs-5"><input type="text" name="address_ship" class="form-control" placeholder="Номер Отделения"></div>
+                    <div class=""><input type="text" name="phone" class="form-control" placeholder="Введите номер телефона"></div>
+                </div>
 
-                <div class="col-xs-5"><input type="text" class="form-control" placeholder="Город"></div>
-                <div class="col-xs-5"><input type="text" class="form-control" placeholder="Адресс"></div>
-                <div class="col-xs-2"><input type="text" class="form-control" placeholder="Номер дома/подьезда"></div>
-
-                 <div class=""><input type="text" class="form-control" placeholder="Введите номер телефона"></div>
         </div>
 
     {{csrf_field()}}
+    <input type="hidden" name="id" value="{{rand()}}">
         <input type="submit" class="btn btn-success">
 
 
@@ -39,6 +40,7 @@
 
 @section('content-right')
 
+    {{--{{var_dump($carts)}}--}}
     @foreach($carts as $cart)
         <div class="row shopItem">
             <img src="/{{$cart->options->image}}">

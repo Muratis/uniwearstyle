@@ -15,9 +15,8 @@
     <div class="container">
         <div class="wrapper">
             <div>
-
-                <div class="item_college">
-                    <a href="/kpi/main"><img src="images/college/kpi.png"><span class="wrapper">Uniwear КПИ Style</span></a>
+                <div class="item_college ">
+                    <a href="/kpi/main" ><img src="images/college/kpi.png"><span class="wrapper">Uniwear КПИ Style</span></a>
                 </div>
 
                 <div class="item_college">

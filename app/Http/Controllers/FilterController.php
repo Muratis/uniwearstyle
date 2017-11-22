@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Repositories\FilterRepository;
 
 class FilterController extends Controller
@@ -15,14 +16,26 @@ class FilterController extends Controller
 		$this->filter = new FilterRepository($university[1]);
 	}
 
-	public function getAllCataloge()
+	public function getAllCataloge(Request $request)
 	{
 		$university = $this->getUniversityFromUrl();
-		$content = $this->filter->allCatalog();
+		
+		$size = null;
+		if ($request->size_id) {
+			$size = $request->size_id;
+		}
+		
+		$content = $this->filter->allCatalog($size);
 
-		return view('/cataloge/cataloge', array('content' => $content, 'university' => $university));
+		if ($request->ajax()) {
+			return view('/cataloge/preview/widget_item', array('content' => $content, 'university' => $university));
+		} else {
+			return view('/cataloge/cataloge', array('content' => $content, 'university' => $university));
+		}
 	}
 	
+	
+
 	
 	private function getUniversityFromUrl()
 	{

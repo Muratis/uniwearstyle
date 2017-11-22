@@ -12,8 +12,7 @@ class MainPageUniwearAndArticlesController extends Controller
 
 	public function __construct()
 	{
-		$university = $this->getUniversityFromUrl();
-		$this->article = new ArticleRepository($university[1]);
+		$this->article = new ArticleRepository();
 	}
 	
 
@@ -27,7 +26,7 @@ class MainPageUniwearAndArticlesController extends Controller
 	public function getOneArticle(Request $request)
 	{
 		$university = $this->getUniversityFromUrl();
-		$article = $this->article->oneAricle($request);
+		$article = $this->article->oneArticle($request);
 		return view('/home/mainUniwear/one', array('article' => $article, 'university' => $university));
 	}
 

@@ -50,10 +50,10 @@
 
 
         <div id="brand" class="wrapper">
-            <div id="logoHead" >
-                {{--<img src="/images/college/logoHeader.png" id="logoHead">--}}
-            </div>
-            <a class="navbar-brand" href="/"><img src="/images/college/logoHeader.png" id="logoHead">Uniwear @yield('uniwear') Style</a>
+
+                <a class="navbar-brand" href="/"><img src="/images/college/logoHeader.png" id="logoHead">Uniwear @yield('uniwear') Style</a>
+
+
         </div>
 
 
@@ -82,16 +82,17 @@
                     <a href="/" >Универы</a>
                 </li>
 
+
+                {{--<li>--}}
+                    {{--<a href="/">Принты</a>--}}
+                {{--</li>--}}
+
                 <li>
-                    <a href="/">Принты</a>
+                    <a href="/" >Отзывы</a>
                 </li>
 
                 <li>
-                    <a href="/">Отзывы</a>
-                </li>
-
-                <li>
-                    <a href="/">О нас</a>
+                    <a href="contact-us">О нас</a>
                 </li>
 
                 @if(Sentinel::getUser())
@@ -106,42 +107,19 @@
 
             </ul>
 
-
-
-                    <ul class="nav navbar-nav college-mobile  hidden-lg hidden-md ">
+                    <ul class="nav  college-mobile  hidden-lg hidden-md ">
 
                         <li>
-                            <a href="/"><img src="/images/college/logo_kpi.jpg" class="menu_college_logo">KPI</a>
+                            <a href="/kpi/tshirt"><img src="/images/college/logo_kpi.jpg" class="menu_college_logo">КПИ</a>
                         </li>
 
                         <li>
-                            <a href="/"><img src="/images/college/logo_nmu.jpg" class="menu_college_logo">NMU</a>
+                            <a href="/nmu/tshirt"><img src="/images/college/logo_nmu.jpg" class="menu_college_logo">НМУ</a>
                         </li>
 
                         <li>
-                            <a href="/"><img src="/images/college/logo_knu.jpg" class="menu_college_logo">KNU</a>
+                            <a href="/knu/tshirt"><img src="/images/college/logo_knu.jpg" class="menu_college_logo">КНУ</a>
                         </li>
-
-                        <li>
-                            <a href="/"><img src="/images/college/logo_kpi.jpg" class="menu_college_logo">KPI</a>
-                        </li>
-
-                        <li>
-                            <a href="/"><img src="/images/college/logo_nmu.jpg" class="menu_college_logo">NMU</a>
-                        </li>
-
-                        <li>
-                            <a href="/"><img src="/images/college/logo_knu.jpg" class="menu_college_logo">KNU</a>
-                        </li>
-
-                        <li>
-                            <a href="/"><img src="/images/college/logo_kpi.jpg" class="menu_college_logo">KPI</a>
-                        </li>
-
-                        <li>
-                            <a href="/"><img src="/images/college/logo_nmu.jpg" class="menu_college_logo">NMU</a>
-                        </li>
-
                     </ul>
 
 
@@ -165,7 +143,7 @@
 
                     <div class="omb_login">
                         <h3 class="omb_authTitle">Войти или <a href="{{URL::to('/register')}}">зарегистрироваться</a></h3>
-                        @include('auth.social_buttons')
+                        {{--@include('auth.social_buttons')--}}
                         <div class="row omb_row-sm-offset-3 omb_loginOr">
                             <div class="col-xs-12 col-sm-6">
                                 <hr class="omb_hrOr">
@@ -179,19 +157,10 @@
                                     @include('errors.errmsg')
                                     @include('widgets.form._formitem_text', ['name' => 'email', 'placeholder' => 'Email', 'fa_icon_class' => 'fa-user' ])
                                     @include('widgets.form._formitem_password', ['name' => 'password', 'placeholder' => 'Пароль', 'fa_icon_class' => 'fa-lock' ])
-                                    {{csrf_field()}}
                                     @include('widgets.form._formitem_btn_submit', ['title' => 'Войти'])
+                                    {{csrf_field()}}
                                 </form>
 
-                                {{--<form class="omb_loginForm" action="{{url('/login')}}" method="post">--}}
-                                {{--{{csrf_field()}}--}}
-                                {{--@include('errors.errmsg')--}}
-                                {{--@include('widgets.form._formitem_text')--}}
-                                {{--@include('widgets.form._formitem_password')--}}
-                                {{--<input type="submit" class="btn btn-lg btn-primary btn-block" value="Войти">--}}
-                                {{--@include('widgets.form._formitem_btn_submit', ['title' => 'Войти'])--}}
-
-                                {{--</form>--}}
 
                             </div>
                         </div>
@@ -240,50 +209,52 @@
 
 <div id="footer">
     <div class="container">
-
+        <div class="row">
         <div class="servises">
             <ul>
 
                 <li class="nav-item">
-                    <a href="#"> Обслуживание клиентов</a>
+                    <a href="/customer"> Обслуживание клиентов</a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="#"> Политика конфиденциальности</a>
+                    <a href="/privacy-policy"> Политика конфиденциальности</a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="#"> Политика возврата</a>
+                    <a href="/return--policy"> Политика возврата</a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="#"> Свяжитесь с нами</a>
+                    <a href="/contact-us"> Свяжитесь с нами</a>
                 </li>
 
             </ul>
         </div>
 
-        <div class="footer_social">
+        <div class="footer_social ">
             <a href="#"><i class="fa fa-vk fa-2x "></i></a>
             <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
             <a href="#"><i class="fa fa-instagram fa-2x"></i></a>
         </div>
 
         <div class="form_for_new">
-            <form action="#">
-                <div class="form-group">
-                    <label for="Email">Хотите быть вкурсе всех новинок?</label>
-                    <input name="Email" type="text" class="form-control input_email" placeholder="Email">
-                    <input type="submit" class="btn_black">
-                </div>
-
-            </form>
+             <form action="#">
+                 <div class="form-group ">
+                      <label for="Email">Хотите быть вкурсе всех новинок?</label>
+                     <input name="Email" type="text" class="form-control input_email " placeholder="Email">
+                     <input type="submit" class="btn_black">
+                 </div>
+              </form>
+        </div>
         </div>
 
-        {{--<div class="copy">--}}
-            {{--<p>&copy; UniwearStyle</p>--}}
+        <div class="copy ">
+            <div> &copy;UniwearStyle</div>
+            <div>   CREATED BY <a href="http://kazni/" class="">Kazni</a></div>
+            {{--<p>&copy;UniwearStyle</p>--}}
             {{--<p> CREATED BY <a href="http://kazni/" class="">Kazni</a></p>--}}
-        {{--</div>--}}
+        </div>
 
     </div>
 </div>

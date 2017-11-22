@@ -11,10 +11,30 @@
 |
 */
 
+Route::get('/contact-us', [
+	'uses' => 'HomeController@getContactUs'
+]);
+
+Route::get('/customer', [
+	'uses' => 'HomeController@getCustomer'
+]);
+
+Route::get('/privacy-policy', [
+	'uses' => 'HomeController@getPrivacy'
+]);
+
+Route::get('/return--policy', [
+	'uses' => 'HomeController@getReturn'
+]);
+
+
+
 
 Route::get('/', [
     'uses' => 'HomeController@getIndex'
 ]);
+
+
 
 Route::get('/kpi/main', [
     'uses' => 'MainPageUniwearAndArticlesController@getIndexUniwearWithArticle'
@@ -63,63 +83,80 @@ Route::post('/cart/add', [
 	'uses' => 'CartController@postAddCart'
 ]);
 
+Route::get('/cart/complete', [
+	'uses' => 'CartController@getShoppingComplete',
+	'as' => 'complete_shop'
+]);
 
+
+
+
+Route::get('/order/{cart_id?}', [
+	'uses' => 'CartController@getOrderForAdmin',
+
+]);
+
+
+
+Route::get('/kpi/tshirt/xs' , [
+	'uses' => 'TshirtController@getFilterSizes',
+]);
 
 
 
 							// ALL FOR KPI
 //Route for cataloge
-Route::get('/kpi/all' , [
+Route::get('/kpi/all/{size_id?}' , [
 	'uses' => 'FilterController@getAllCataloge',
 	'as' => 'Filter_KPI'
 ]);
 
-Route::get('/kpi/tshirt' , [
+Route::get('/kpi/tshirt/{size_id?}' , [
 	'uses' => 'TshirtController@getAllTshirt',
 	'as' => 'Tshirts_KPI'
 ]);
 
-Route::get('/kpi/polo' , [
+Route::get('/kpi/polo/{size_id?}' , [
 	'uses' => 'PoloController@getAllPolo',
 	'as' => 'Polo_KPI'
 ]);
 
-Route::get('/kpi/hoodie' , [
+Route::get('/kpi/hoodie/{size_id?}' , [
 	'uses' => 'HoodieController@getAllHoodie',
 	'as' => 'Hoodie_KPI'
 ]);
 
-Route::get('/kpi/sweatshirt' , [
+Route::get('/kpi/sweatshirt/{size_id?}' , [
 	'uses' => 'SweatshirtController@getAllSweatshirt',
 	'as' => 'Sweatshirts_KPI'
 ]);
 
-Route::get('/kpi/bomber' , [
+Route::get('/kpi/bomber/{size_id?}' , [
 	'uses' => 'BomberController@getAllBombers',
 	'as' => 'Bombers_KPI'
 ]);
 
 //Route for one
-Route::get('kpi/tshirt/one/{tshirt_id?}', [
+Route::get('kpi/tshirt/one/{id?}', [
 	'as' => 'one',
 	'uses' => 'TshirtController@getOneTshirt',
 ]);
 
-Route::get('kpi/polo/one/{polo_id?}', [
+Route::get('kpi/polo/one/{id?}', [
 	'as' => 'one',
 	'uses' => 'PoloController@getOnePolo',
 ]);
-Route::get('kpi/sweatshirt/one/{sweatshirt_id?}', [
+Route::get('kpi/sweatshirt/one/{id?}', [
 	'as' => 'one',
 	'uses' => 'SweatshirtController@getOneSweatshirt',
 ]);
 
-Route::get('kpi/hoodie/one/{hoodie_id?}', [
+Route::get('kpi/hoodie/one/{id?}', [
 	'as' => 'one',
 	'uses' => 'HoodieController@getOneHoodie',
 ]);
 
-Route::get('kpi/bomber/one/{bomber_id?}', [
+Route::get('kpi/bomber/one/{id?}', [
 	'as' => 'one',
 	'uses' => 'BomberController@getOneBomber',
 ]);
@@ -129,52 +166,52 @@ Route::get('kpi/bomber/one/{bomber_id?}', [
 
 									//All For KNU
 //Route for catalog
-Route::get('/knu/tshirt/' , [
+Route::get('/knu/tshirt/{size_id?}' , [
 	'uses' => 'TshirtController@getAllTshirt',
 	'as' => 'Tshirts_KNU'
 ]);
 
-Route::get('/knu/polo' , [
+Route::get('/knu/polo/{size_id?}' , [
 	'uses' => 'PoloController@getAllPolo',
 	'as' => 'Polo_KNU'
 ]);
 
-Route::get('/knu/hoodie' , [
+Route::get('/knu/hoodie/{size_id?}' , [
 	'uses' => 'HoodieController@getAllHoodie',
 	'as' => 'Hoodie_KNU'
 ]);
 
-Route::get('/knu/sweatshirt' , [
+Route::get('/knu/sweatshirt/{size_id?}' , [
 	'uses' => 'SweatshirtController@getAllSweatshirt',
 	'as' => 'Sweatshirts_KNU'
 ]);
 
-Route::get('/knu/bomber' , [
+Route::get('/knu/bomber/{size_id?}' , [
 	'uses' => 'BomberController@getAllBombers',
 	'as' => 'Bombers_KNU'
 ]);
 
 //Route for one
-Route::get('knu/tshirt/one/{tshirt_id?}', [
+Route::get('knu/tshirt/one/{id?}', [
 	'as' => 'one',
 	'uses' => 'TshirtController@getOneTshirt',
 ]);
 
-Route::get('knu/polo/one/{polo_id?}', [
+Route::get('knu/polo/one/{id?}', [
 	'as' => 'one',
 	'uses' => 'PoloController@getOnePolo',
 ]);
-Route::get('knu/sweatshirt/one/{sweatshirt_id?}', [
+Route::get('knu/sweatshirt/one/{id?}', [
 	'as' => 'one',
 	'uses' => 'SweatshirtController@getOneSweatshirt',
 ]);
 
-Route::get('knu/hoodie/one/{hoodie_id?}', [
+Route::get('knu/hoodie/one/{id?}', [
 	'as' => 'one',
 	'uses' => 'HoodieController@getOneHoodie',
 ]);
 
-Route::get('knu/bomber/one/{bomber_id?}', [
+Route::get('knu/bomber/one/{id?}', [
 	'as' => 'one',
 	'uses' => 'BomberController@getOneBomber',
 ]);

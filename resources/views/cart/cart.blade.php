@@ -11,7 +11,6 @@
 
     <div class="container">
         <h1 class="wrapper">Ваша корзина</h1>
-        {{--<form>--}}
             <table class="table">
                 <thead class="table-header">
                 <tr>
@@ -40,15 +39,11 @@
 
                             <div>
                                 <button class="btn delete" value="{{$cart->rowId}}">Убрать из корзины</button>
-                                    {{--<input type="submit" class="btn" value="Убрать из корзины">--}}
                             </div>
                         </td>
                         <td  class="totalQty">{{$cart->price}} грн</td>
                         <td  class="totalQty">{{$cart->qty}} </td>
                         <td  class="totalQty">{{$cart->subtotal}} грн</td>
-
-
-
 
                     </tr>
                 @endforeach
@@ -67,34 +62,13 @@
                         <p>Стоимость доставки обсуждается по телефону</p>
                         <div>
                             <a href="/" class="btn">Продолжить покупки</a>
-                            <input type="submit" value="Оформить заказ" class="btn">
+                            <a href="/cart/checkout" class="btn">Оформить заказ</a>
                         </div>
                     </div>
                 </div>
             </footer>
-        {{--</form>--}}
-
 
     </div>
 
-
-
-    {{--@foreach($carts as $cart)--}}
-    {{--<div>--}}
-    {{--<img src="/{{$cart->options->image}}" id="zoom" >--}}
-    {{--</div>--}}
-    {{--<tr>--}}
-    {{--<td>--}}
-    {{--<p><strong>{{$cart->name}}</strong></p>--}}
-
-
-    {{--<p><strong>{{$cart->id}}</strong></p>--}}
-    {{--</td>--}}
-    {{--<td>грн {{$cart->price}}</td>--}}
-    {{--<td>грн {{$cart->options->image}}</td>--}}
-    {{--<td>грн {{$cart->subtotal}}</td>--}}
-    {{--</tr>--}}
-    {{--<input type="hidden" value="{{$cart->rowId}}">--}}
-    {{--@endforeach--}}
 
 @stop

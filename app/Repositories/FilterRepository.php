@@ -18,20 +18,28 @@ Class FilterRepository
 	protected $sweatshirt;
 	protected $bomber;
 
-	public function __construct($university)
+	public function __construct()
 	{
-		$this->tshirt = new TshirtRepository($university);
-		$this->polo = new PoloRepository($university);
-		$this->hoodie = new HoodieRepository($university);
-		$this->bomber = new BomberRepository($university);
-		$this->sweatshirt = new SweatshirtRepository($university);
+		$this->tshirt = new TshirtRepository();
+		$this->polo = new PoloRepository();
+		$this->hoodie = new HoodieRepository();
+		$this->bomber = new BomberRepository();
+		$this->sweatshirt = new SweatshirtRepository();
 	}
 
-	public function allCatalog()
+	public function allCatalog($size = false)
 	{
-		$tshirtsData = $this->tshirt->allTshirts();
-		$polosData = $this->polo->allPolo();
-//		$hoodiesData = $this->hoodie->allHoodie();
+		$tshirtsData = $this->tshirt->allTshirts($size);
+		$polosData = $this->polo->allPolo($size);
+		$hoodiesData = $this->hoodie->allHoodie($size);
+		$bombersData = $this->bomber->allBombers($size);
+		$sweatshirtsData = $this->sweatshirt->allSweatshirts($size);
+
+		$tshirts = [];
+		$polos = [];
+		$bombers = [];
+		$hoodies = [];
+		$sweatshirts = [];
 
 		foreach ($tshirtsData as $one) {
 			$key = (string)$one->created_at;
@@ -43,16 +51,28 @@ Class FilterRepository
 			$polos[$key] = $one;
 		}
 
-		$all = array_merge($tshirts, $polos);
+		foreach ($bombersData as $one) {
+			$key = (string)$one->created_at;
+			$bombers[$key] = $one;
+		}
+
+		foreach ($hoodiesData as $one) {
+			$key = (string)$one->created_at;
+			$hoodies[$key] = $one;
+		}
+
+		foreach ($sweatshirtsData as $one) {
+			$key = (string)$one->created_at;
+			$sweatshirts[$key] = $one;
+		}
+
+		$all = array_merge($tshirts, $polos, $bombers, $hoodies, $sweatshirts);
 		krsort($all);
 
 
 		return $all;
 	}
 
-	public function getAllCatalog()
-	{
-			
-	}
+
 
 }

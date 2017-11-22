@@ -8,53 +8,53 @@
 
 namespace App\Repositories;
 use Illuminate\Support\Facades\DB;
+use App\Models\Cataloge\Hoodies;
 
-Class HoodieRepository
+Class HoodieRepository extends BaseRepository
 {
-	private $model;
-	private $models = [
-		'kpi' => 'Hoodie_KPI',
-		'nmu' => 'Hoodie_NMU',
-		'kneu' => 'Hoodie_KNEU',
-		'knu' => 'Hoodie_KNU',
-	];
 
-	public function __construct($university)
+
+	public function __construct()
 	{
-		$this->getTshirtModelByUniversity($university);
-
+		parent::__construct('hoodie');
+		$this->hoodies = new Hoodies();
 	}
 
 	public function oneHoodie($data)
 	{
-		$polo = $this->model
-			->select('hoodie_id', 'name', 'description', 'image', 'price')->with('cataloge')
-			->where('hoodie_id', '=', $data->hoodie_id)->first();
+		$uniwearsity = $this->getUniversityFromUrl();
+		
+		$polo = $this->hoodies
+			->select('id',$this->clothesTypeDbRaw, 'name', 'description', 'image', 'price', 'stock')->with('cataloge')
+			->where('id', '=', $data->id)->where('university', '=', $uniwearsity)->first();
 
 		return $polo;
 	}
 
 
-	public function allHoodie()
+	public function allHoodie($size = false)
 	{
-		$hoodie = $this->model
-			->select('hoodie_id', 'name', 'description', 'image', 'price')
-			->latest()->simplePaginate(12);
+		$uniwearsity = $this->getUniversityFromUrl();
 
-		return $hoodie;
+		$hoodies = $this->hoodies
+			->select('hoodies.id', $this->clothesTypeDbRaw, 'hoodies.name', 'description', 'image', 'price', 'created_at', 'stock');
+
+		if ((int)$size) {
+			$hoodies = $hoodies->join('sizes_hoodie', 'hoodies.id','=', 'sizes_hoodie.id')
+				->where('sizes_hoodie.size_id', '=', $size);
+		};
+
+		$hoodies = $hoodies->where('university', '=', $uniwearsity)->latest()->simplePaginate(12);
+
+		return $hoodies;
+
+
 	}
-	
-	
-	
 
-	private function getTshirtModelByUniversity($university)
+	private function getUniversityFromUrl()
 	{
-		if (!array_key_exists($university, $this->models)) {
-			abort(404);
-		}
-
-		$tshirt_model = 'App\\Models\\Hoodies\\' . $this->models[$university];
-		$this->model = new $tshirt_model;
+		$url_parts = explode('/', $_SERVER['REQUEST_URI']);
+		return $url_parts[1];
 	}
 
 }

@@ -28,11 +28,22 @@ class BomberController extends Controller
 	}
 
 
-	public function getAllBombers()
+	public function getAllBombers(Request $request)
 	{
 		$university = $this->getUniversityFromUrl();
-		$content = $this->bomber->allBombers();
-		return view('/cataloge/cataloge', array('content' => $content, 'university' => $university));
+
+		$size = null;
+		if ($request->size_id) {
+			$size = $request->size_id;
+		}
+
+		$content = $this->bomber->allBombers($size);
+		
+		if ($request->ajax()) {
+			return view('/cataloge/preview/widget_item', array('content' => $content, 'university' => $university));
+		} else {
+			return view('/cataloge/cataloge', array('content' => $content, 'university' => $university));
+		}
 	}
 
 

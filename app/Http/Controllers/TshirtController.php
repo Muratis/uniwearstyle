@@ -13,8 +13,7 @@ class TshirtController extends Controller
 	
 	public function __construct()
 	{
-		$university = $this->getUniversityFromUrl();
-		$this->tshirt = new TshirtRepository($university[1]);
+		$this->tshirt = new TshirtRepository();
 	}
 	
 	
@@ -27,13 +26,24 @@ class TshirtController extends Controller
 	}
 
 	
-	public function getAllTshirt()
+	public function getAllTshirt(Request $request)
 	{
 		$university = $this->getUniversityFromUrl();
-		$content = $this->tshirt->allTshirts();
-		return view('/cataloge/cataloge', array('content' => $content, 'university' => $university));
+		
+		$size = null;
+		if ($request->size_id) {
+			$size = $request->size_id;
+		}
+		
+		$content = $this->tshirt->allTshirts($size);
+		
+		if ($request->ajax()) {
+			return view('/cataloge/preview/widget_item', array('content' => $content, 'university' => $university));
+		} else {
+			return view('/cataloge/cataloge', array('content' => $content, 'university' => $university));
+		}
 	}
-
+	
 
 	private function getUniversityFromUrl()
 	{

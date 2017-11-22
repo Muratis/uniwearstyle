@@ -27,6 +27,7 @@ return [
         'title' => 'Выйти',
         'icon'  => 'fa fa-sign-out',
         'url'   => '/',
+        'priority' => 600
     ],
 
     [
@@ -42,91 +43,51 @@ return [
     ],
 
     [
+        'title' => 'Размеры',
+        'url'   => 'admin/sizes',
+    ],
+
+
+    [
         'title' => 'KPI Style',
         'icon'  => 'fa fa-university',
         'pages' => [
             [
                 'title' => 'Футболки',
 //                'icon'  => 'fa fa-file-text-o',
-                'url'   => 'admin/tshirts_kpi',
+                'url'   => 'admin/tshirts?university=kpi',
             ],
-
             [
                 'title' => 'Поло',
 //                'icon'  => 'fa fa-file-text-o',
-                'url'   => 'admin/polo_kpi',
+                'url'   => 'admin/poloes?university=kpi',
             ],
 //
             [
                 'title' => 'Свитшоты',
 //                'icon'  => 'fa fa-file-text-o',
-                'url'   => 'admin/sweatshirts_kpi',
+                'url'   => 'admin/sweatshirts?university=kpi',
             ],
 //
             [
                 'title' => 'Худи',
 //                'icon'  => 'fa fa-file-text-o',
-                'url'   => 'admin/hoodies_kpi',
+                'url'   => 'admin/hoodies?university=kpi',
             ],
 //
             [
                 'title' => 'Бомберы',
 //                'icon'  => 'fa fa-file-text-o',
-                'url'   => 'admin/bombers_kpi',
+                'url'   => 'admin/bombers?university=kpi',
             ],
-
             [
                 'title' => 'Новости',
 //                'icon'  => 'fa fa-file-text-o',
-                'url'   => 'admin/articles_kpi',
+                'url'   => 'admin/articles?university=kpi',
             ],
-            
         ],
     ],
-    
-    [
-    'title' => 'KNEU Style',
-    'icon'  => 'fa fa-university',
-    'pages' => [
-        [
-            'title' => 'Футболки',
-//                'icon'  => 'fa fa-file-text-o',
-            'url'   => 'admin/tshirts_kneu',
-        ],
 
-            [
-                'title' => 'Поло',
-//                'icon'  => 'fa fa-file-text-o',
-                'url'   => 'admin/polo_kneu',
-            ],
-//
-            [
-                'title' => 'Свитшоты',
-//                'icon'  => 'fa fa-file-text-o',
-                'url'   => 'admin/sweatshirts_kneu',
-            ],
-//
-            [
-                'title' => 'Худи',
-//                'icon'  => 'fa fa-file-text-o',
-            'url'   => 'admin/hoodies_kneu',
-            ],
-//
-            [
-                'title' => 'Бомберы',
-//                'icon'  => 'fa fa-file-text-o',
-                'url'   => 'admin/bombers_kneu',
-            ],
-
-        [
-            'title' => 'Новости',
-//                'icon'  => 'fa fa-file-text-o',
-            'url'   => 'admin/articles_kneu',
-        ],
-
-    ],
-
-],
 
     [
         'title' => 'KNU Style',
@@ -135,43 +96,38 @@ return [
             [
                 'title' => 'Футболки',
 //                'icon'  => 'fa fa-file-text-o',
-                'url'   => 'admin/tshirts_knu',
+                'url'   => 'admin/tshirts?university=knu',
             ],
-
             [
                 'title' => 'Поло',
 //                'icon'  => 'fa fa-file-text-o',
-                'url'   => 'admin/polo_knu',
+                'url'   => 'admin/poloes?university=knu',
             ],
 //
             [
                 'title' => 'Свитшоты',
 //                'icon'  => 'fa fa-file-text-o',
-                'url'   => 'admin/sweatshirts_knu',
+                'url'   => 'admin/sweatshirts?university=knu',
             ],
 //
             [
                 'title' => 'Худи',
 //                'icon'  => 'fa fa-file-text-o',
-                'url'   => 'admin/hoodies_knu',
+                'url'   => 'admin/hoodies?university=knu',
             ],
 //
             [
                 'title' => 'Бомберы',
 //                'icon'  => 'fa fa-file-text-o',
-                'url'   => 'admin/bombers_knu',
+                'url'   => 'admin/bombers?university=knu',
             ],
-
             [
                 'title' => 'Новости',
 //                'icon'  => 'fa fa-file-text-o',
-                'url'   => 'admin/articles_knu',
+                'url'   => 'admin/articles?university=knu',
             ],
-
         ],
-
     ],
-
     [
         'title' => 'NMU Style',
         'icon'  => 'fa fa-university',
@@ -179,41 +135,37 @@ return [
             [
                 'title' => 'Футболки',
 //                'icon'  => 'fa fa-file-text-o',
-                'url'   => 'admin/tshirts_nmu',
+                'url'   => 'admin/tshirts?university=nmu',
             ],
-
             [
                 'title' => 'Поло',
 //                'icon'  => 'fa fa-file-text-o',
-                'url'   => 'admin/polo_nmu',
+                'url'   => 'admin/poloes?university=nmu',
             ],
 //
             [
                 'title' => 'Свитшоты',
 //                'icon'  => 'fa fa-file-text-o',
-                'url'   => 'admin/sweatshirts_nmu',
+                'url'   => 'admin/sweatshirts?university=nmu',
             ],
 //
             [
                 'title' => 'Худи',
 //                'icon'  => 'fa fa-file-text-o',
-                'url'   => 'admin/hoodies_nmu',
+                'url'   => 'admin/hoodies?university=nmu',
             ],
 //
             [
                 'title' => 'Бомберы',
 //                'icon'  => 'fa fa-file-text-o',
-                'url'   => 'admin/bombers_nmu',
+                'url'   => 'admin/bombers?university=nmu',
             ],
-
             [
                 'title' => 'Новости',
 //                'icon'  => 'fa fa-file-text-o',
-                'url'   => 'admin/articles_nmu',
+                'url'   => 'admin/articles?university=nmu',
             ],
-
         ],
-
     ],
 
 
@@ -237,11 +189,34 @@ return [
                 'icon'  => 'fa fa-key',
                 'url'   => 'admin/permits',
             ],
-        ]
 
+        ],
+        'priority' => 150
 
     ],
 
+
+    [
+        'title' => 'Заказы' ,
+        'icon' => 'fa fa-group',
+        'pages' => [
+            [
+            'title' => 'Активные заказы' ,
+            'icon' => 'fa fa-group',
+            'url' => 'admin/orders?is_active=0', 
+                'priority' => 0,
+            ],
+            [
+                'title' => 'Архив заказов' ,
+                'icon' => 'fa fa-group',
+                'url' => 'admin/orders?is_active=1',
+            ],
+        ],
+
+
+        'priority' => 0,
+
+    ],
 
 
 ];

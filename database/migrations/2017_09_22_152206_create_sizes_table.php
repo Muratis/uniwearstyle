@@ -18,6 +18,7 @@ class CreateSizesTable extends Migration
         Schema::create('sizes', function (Blueprint $table) {
             $table->increments('size_id');
             $table->text('name');
+            $table->timestamps();
             $table->engine = 'InnoDB';
         });
     }

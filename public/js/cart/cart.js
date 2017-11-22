@@ -58,8 +58,53 @@ $(document).ready(function(){
     })
 
 
-    // if($('select[name="shipping"]').val() == 'new') {
-    //     $("h4").append('<p>Провал</p>')
-    // }
+    // $('#method').on('change', function () {
+    //     $.ajax({
+    //         type: "POST",
+    //         data: {
+    //             '_token': $('input[name="_token"]').val(),
+    //             'address' : $('select[name="address"]').val(),
+    //         },
+    //         url: "/cart/method",
+    //
+    //         success: function (data) {
+    //             // $("h4").append(data);
+    //             console.log(data);
+    //         },
+    //         error: function () {
+    //             $("h4").append('<p>Провал</p>');
+    //         },
+    //         complete: function () {
+    //
+    //         }
+    //     })
+    // })
+
+
+    $('#method').change(function () {
+
+        var method_id = $(this).val();
+
+        if (method_id == 'address') {
+            $('#content').html(
+                '<div class="col-xs-5"><input type="text" name="city" class="form-control" placeholder="Город"></div>' +
+                '<div class="col-xs-5"><input type="text" name="address_ship" class="form-control" placeholder="Адресс"></div>' +
+                '<div class=""><input type="text" name="phone" class="form-control" placeholder="Введите номер телефона"></div>'
+            );
+
+        }
+        if (method_id == 'new-post') {
+            $('#content').html(
+                '<div class="col-xs-5"><input type="text" name="city" class="form-control" placeholder="Город"></div>' +
+                '<div class="col-xs-5"><input type="text" name="address_ship" class="form-control" placeholder="Номер Отделения"></div>' +
+                '<div class=""><input type="text" name="phone" class="form-control" placeholder="Введите номер телефона"></div>'
+            );
+
+        }
+
+
+
+    })
+
 
 })

@@ -13,8 +13,28 @@ class HomeController extends Controller
 	//Покажи главную страницу
 	public function getIndex()
 	{
-		$university = '/';
 		return view('home/index');
+	}
+
+
+	public function getContactUs()
+	{
+		return view('/services/contact-us');
+	}
+
+	public function getCustomer()
+	{
+		return view('/services/customer');
+	}
+
+	public function getPrivacy()
+	{
+		return view('/services/privacy-policy');
+	}
+
+	public function getReturn()
+	{
+		return view('/services/return-policy');
 	}
 	
 	

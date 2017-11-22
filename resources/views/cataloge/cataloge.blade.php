@@ -14,7 +14,7 @@
 
     <div class="wrapper btnToMainAndCatalog">
         <a href="/{{$university[1]}}/main" class="btn ">Главная</a>
-        <a href="/{{$university[1]}}/tshirt" class="btn disabled">Каталог</a>
+        <a href="/{{$university[1]}}/all" class="btn disabled">Каталог</a>
 
     </div>
 
@@ -62,25 +62,26 @@
                     <ul class="nav">
 
                         <li>
-                            <a href="#" class="srt" >XS</a>
-                            <input type="hidden" id="sr" value="1">
+                            <button  class="filter_btn" value="1">XS</button>
                         </li>
 
                         <li>
-                            <a href="#"  >S</a>
-                            <input type="hidden"  value="2">
+                            <button  class="filter_btn" value="2">S</button>
                         </li>
 
                         <li>
-                            <a href="#">M</a>
+                            <button  class="filter_btn" value="3">M</button>
                         </li>
 
                         <li>
-                            <a href="#" >L</a>
+                            <button  class="filter_btn" value="4">L</button>
                         </li>
 
                         <li>
-                            <a href="#">XL</a>
+                            <button class="filter_btn" value="5">XL</button>
+                        </li>
+                        <li>
+                            <button class="filter_btn" value="6">XXL</button>
                         </li>
                     </ul>
                 </div>
@@ -91,17 +92,15 @@
         </div>
 
 
-        <div class="content">
-            @foreach($content as $cataloge)
-                    @include('/cataloge/preview/item', array('cataloge' => $cataloge, 'university' => $university))
-            @endforeach
+        <div class="content row">
+                @include('/cataloge/preview/widget_item', array('content' => $content, 'university' => $university))
 
-                {{--<div class="wrapper">--}}
-                    {{--<div class="pag">--}}
-                        {{--{{  $content->links() }}--}}
-                    {{--</div>--}}
+        </div>
+        <div class="wrapper row">
+            <div class="pag">
+                {{ $content->links() }}
+            </div>
 
-                {{--</div>--}}
         </div>
 
 

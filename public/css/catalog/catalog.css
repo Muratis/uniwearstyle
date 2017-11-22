@@ -64,8 +64,19 @@
     font: bold 14px arial;
     margin-top: 7px;
     /*margin-left: 10px;*/
-    /*float: right;*/
 }
+
+.no_stock {
+    opacity: 0.6;
+
+
+}
+
+.no_stock .span_stock {
+    font: bold 14px arial;
+    float: right;
+}
+
 
 .filter {
     float: left;
@@ -124,7 +135,8 @@
     top: 20px;
 }
 
-.sizes_product ul li a{
+.sizes_product ul li button{
+    background-color: #FFFFFF;
     width: 50px;
     height: 30px;
     border: 1px solid #aeb3b9;
@@ -137,7 +149,7 @@
 
 
 
-.sizes_product ul li a:hover{
+.sizes_product ul li button:hover{
     background-color: #000000;
     opacity: 0.6;
     color: #FFFFFF;
@@ -150,13 +162,13 @@
 }
 
 .pag {
-    /*width: 100%;*/
+    margin-left: 200px;
     width: 250px;
     /*float: left;*/
 }
 
 .pag ul li span {
-    width: 100px;
+    /*width: 100px;*/
     background-color: #000000!important;
     opacity: 0.8;
     color: #FFFFFF;

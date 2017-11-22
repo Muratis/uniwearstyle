@@ -12,8 +12,8 @@ class RoleSeeder extends Seeder
     public function run()
     {
         $admin = [
-            'email'    => 'admin@admin.com',
-            'password' => 'adminadmin',
+            'email'    => 'pavel@admin.com',
+            'password' => 'pavel12345',
         ];
         $adminUser = Sentinel::registerAndActivate($admin);
         $role = [

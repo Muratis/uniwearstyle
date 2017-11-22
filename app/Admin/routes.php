@@ -11,3 +11,5 @@ Route::get('information', ['as' => 'admin.information', function () {
 }]);
 
 
+
+

@@ -1,30 +1,28 @@
 <?php
 
 namespace App\Repositories;
+use App\Models\Articles\Articles;
 use Illuminate\Support\Facades\DB;
 
 class ArticleRepository
 {
-	private $model;
-	private $models = [
-		'kpi' => 'Article_KPI',
-		'nmu' => 'Article_NMU',
-		'kneu' => 'Article_KNEU',
-		'knu' => 'Article_KNU',
-	];
 
-	public function __construct($university)
+
+	public function __construct()
 	{
-		$this->getTshirtModelByUniversity($university);
+		$this->articles = new Articles();
 
 	}
 
 
-	public function oneAricle($data)
+	public function oneArticle($data)
 	{
-		$article = $this->model
+		$uniwearsity = $this->getUniversityFromUrl();
+
+
+		$article = $this->articles
 			->select('article_id', 'title', 'text', 'image')
-			->where('article_id', '=', $data->article_id)->first();
+			->where('article_id', '=', $data->article_id)->where('university', '=', $uniwearsity)->first();
 
 		return $article;
 	}
@@ -32,20 +30,20 @@ class ArticleRepository
 
 	public function allArticles()
 	{
-		$articles = $this->model
-			->select('article_id', 'title', 'image')
+		$uniwearsity = $this->getUniversityFromUrl();
+		
+		$articles = $this->articles
+			->select('article_id', 'title', 'image')->where('university', '=', $uniwearsity)
 			->latest()->simplePaginate(6);
 
 		return $articles ;
 	}
 
-	private function getTshirtModelByUniversity($university)
+	private function getUniversityFromUrl()
 	{
-		if (!array_key_exists($university, $this->models)) {
-			abort(404);
-		}
-
-		$tshirt_model = 'App\\Models\\Articles\\' . $this->models[$university];
-		$this->model = new $tshirt_model;
+		$url_parts = explode('/', $_SERVER['REQUEST_URI']);
+		return $url_parts[1];
 	}
+	
+
 }

@@ -1,16 +1,20 @@
 <?php
-$images = $cataloge->image;
-$image = explode(',', $images);
-$item_id = $university[2].'_id';
+$image = explode(',', $cataloge->image);
+
+
 ?>
 
 
-{{--<a href="{{action('TshirtController@getOneTshirt', array($cataloge->tshirt_id)) }}"><img src="/{{$image[0]}}">{{$cataloge->name}}</a>--}}
 
 <div class="item_tshirt ">
-    <div>
-        <a href="/{{$university[1]}}/{{$university[2]}}/one/{{$cataloge->$item_id}}"><img src="/{{$image[0]}}">{{$cataloge->name}}</a>
+    <div @if($cataloge->stock == 0) class="no_stock" @endif>
+
+        <a href="/{{$university[1]}}/{{$cataloge->type}}/one/{{$cataloge->id }}">
+                <img src="/{{$image[0]}}">{{$cataloge->name}}
+            @if($cataloge->stock == 0) <span class="span_stock ">Нет в наличии</span> @endif</a>
+
         <p>{{$cataloge->price}} грн</p>
     </div>
+
 </div>
 

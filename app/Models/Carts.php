@@ -10,12 +10,12 @@ use Illuminate\Support\Facades\DB;
 class Carts extends Model
 {
 
-	protected $table = 'carts';
+	protected $table = 'shoppingcart';
 	protected $primaryKey = 'cart_id';
 	
-	public function user_cart()
+	public function user_carts()
 	{
-		return $this->hasOne('App\User', 'cart_id', 'cart_id');
+		return $this->hasOne('App\Models\shoppingUsers', 'cart_id', 'identifier');
 	}
 	
 

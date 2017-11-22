@@ -54,7 +54,7 @@
 					position: 'absolute',
 					overflow: 'hidden'
 				})
-				.append($big = $('<img />').attr('src', $this.attr($this.is('img') ? 'src' : 'href')).css('position', 'absolute'))
+				.append($big = $('<img  name="zoom_img"/>').attr('src', $this.attr($this.is('img') ? 'src' : 'href')).css('position', 'absolute'))
 				.mousemove(move)
 				.hide()
 				.appendTo('body');

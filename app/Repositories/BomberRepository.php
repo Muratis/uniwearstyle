@@ -1,73 +1,56 @@
 <?php
 namespace App\Repositories;
 use Illuminate\Support\Facades\DB;
+use  App\Models\Cataloge\Bombers;
 
-class BomberRepository
+class BomberRepository extends BaseRepository
 {
-	private $model;
-	private $models = [
-		'kpi' => 'Bomber_KPI',
-		'nmu' => 'Bomber_NMU',
-		'kneu' => 'Bomber_KNEU',
-		'knu' => 'Bomber_KNU',
-	];
 
-	public function __construct($university)
+
+	public function __construct()
 	{
-		$this->getTshirtModelByUniversity($university);
+		parent::__construct('bomber');
+		$this->bombers = new Bombers();
 
 	}
 
 
 	public function oneBomber($data)
 	{
-		$bomber = $this->model
-			->select('bomber_id', 'name', 'description', 'image', 'price')->with('cataloge')
-			->where('bomber_id', '=', $data->bomber_id)->first();
+		$uniwearsity = $this->getUniversityFromUrl();
+
+		$bomber = $this->bombers
+			->select('id', $this->clothesTypeDbRaw, 'name', 'description', 'image', 'price', 'stock')->with('cataloge')
+			->where('id', '=', $data->id)->where('university', '=', $uniwearsity)->first();
 
 		return $bomber;
 	}
 
 
-	public function allBombers()
+	public function allBombers($size = false)
 	{
-		$bombers = $this->model
-			->select('bomber_id', 'name', 'description', 'image', 'price')
-			->latest()->simplePaginate(12);
+		$uniwearsity = $this->getUniversityFromUrl();
+
+		$bombers = $this->bombers
+			->select('bombers.id', $this->clothesTypeDbRaw, 'bombers.name', 'description', 'image', 'price', 'created_at', 'stock');
+
+		if ((int)$size) {
+			$bombers = $bombers->join('sizes_bomber', 'bombers.id','=', 'sizes_bomber.id')
+				->where('sizes_bomber.size_id', '=', $size);
+		};
+
+		$bombers = $bombers->where('university', '=', $uniwearsity)->latest()->simplePaginate(12);
 
 		return $bombers;
+
+
 	}
 
 
-	public function store($data)
+	private function getUniversityFromUrl()
 	{
-		//Добавление новости, если не получаеться, то выдает ошибку!
-		try {
-			DB::beginTransaction();
-			$this->saveBomber($data);
-			$this->saveSizes($data);
-			DB::commit();
-		} catch (Exception $e) {
-			DB::rollback();
-			abort(503);
-		}
+		$url_parts = explode('/', $_SERVER['REQUEST_URI']);
+		return $url_parts[1];
 	}
 
-
-
-	protected function saveSizes($data)
-	{
-		$this->model->cataloge()->attach($data->sizes);
-	}
-
-
-	private function getTshirtModelByUniversity($university)
-	{
-		if (!array_key_exists($university, $this->models)) {
-			abort(404);
-		}
-
-		$tshirt_model = 'App\\Models\\Bombers\\' . $this->models[$university];
-		$this->model = new $tshirt_model;
-	}
 }

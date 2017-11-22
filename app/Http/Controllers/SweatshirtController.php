@@ -29,11 +29,21 @@ class SweatshirtController extends Controller
 	}
 
 
-	public function getAllSweatshirt()
+	public function getAllSweatshirt(Request $request)
 	{
 		$university = $this->getUniversityFromUrl();
-		$content = $this->sweatshirt->allSweatshirts();
-		return view('/cataloge/cataloge', array('content' => $content, 'university' => $university));
+
+		$size = null;
+		if ($request->size_id) {
+			$size = $request->size_id;
+		}
+
+		$content = $this->sweatshirt->allSweatshirts($size);
+		if ($request->ajax()) {
+			return view('/cataloge/preview/widget_item', array('content' => $content, 'university' => $university));
+		} else {
+			return view('/cataloge/cataloge', array('content' => $content, 'university' => $university));
+		}
 	}
 
 

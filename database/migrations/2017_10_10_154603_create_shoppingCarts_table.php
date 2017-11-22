@@ -13,43 +13,36 @@ class CreateShoppingCartsTable extends Migration
      */
     public function up()
     {
-//        Schema::enableForeignKeyConstraints();
-//
-//        Schema::create('carts', function (Blueprint $table) {
-//
-//            $table->increments('cart_id');
-////            $table->integer('cart_id')->unsigned();
-//            $table->text('name');
-//            $table->integer('price');
-//            $table->text('image');
-//            $table->timestamps();
-//            $table->engine = 'InnoDB';
-//
-//
-//        });
-//
-//        Schema::create('shoppingUser', function (Blueprint $table) {
-//            $table->increments('user_id');
-//            $table->text('first_name');
-//            $table->text('last_name');
-//            $table->text('city');
-//            $table->text('address');
-//            $table->integer('phone');
-//            $table->integer('cart_id')->unsigned();
-//            $table->timestamps();
-//            $table->engine = 'InnoDB';
-//
-//
-//        });
-//
-//
-//
-//
-//
-//        Schema::table('users', function ($table) {
-//            $table->foreign('cart_id')->references('cart_id')->on('carts')
-//                ->onDelete('cascade')->onUpdate('cascade');
-//        });
+        Schema::enableForeignKeyConstraints();
+
+
+                Schema::create('shoppingcart', function (Blueprint $table) {
+            $table->string('identifier');
+            $table->string('instance');
+            $table->longText('content');
+            $table->nullableTimestamps();
+
+            $table->primary(['identifier', 'instance']);
+        });
+
+        Schema::create('shoppingUsers', function (Blueprint $table) {
+            $table->increments('user_id');
+            $table->text('first_name');
+            $table->text('last_name');
+            $table->text('methodPost');
+            $table->text('city');
+            $table->text('address');
+            $table->integer('phone');
+            $table->integer('cart_id')->unsigned();
+            $table->boolean('is_active');
+            $table->timestamps();
+            $table->engine = 'InnoDB';
+
+
+        });
+
+
+        
     }
 
     /**
@@ -59,8 +52,8 @@ class CreateShoppingCartsTable extends Migration
      */
     public function down()
     {
-//        Schema::disableForeignKeyConstraints();
-//        Schema::drop('carts');
-//        Schema::drop('users');
+        Schema::disableForeignKeyConstraints();
+        Schema::drop('carts');
+        Schema::drop('shoppingUsers');
     }
 }

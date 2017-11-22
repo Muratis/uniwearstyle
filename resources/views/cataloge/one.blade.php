@@ -22,18 +22,20 @@
         $images = $item->image;
         $image = explode(',', $images);
 
-        $item_id = $university[2].'_id';
 
         ?>
+
+
+
         <div class="main-image" >
 
-                @if(isset($image[0])) <img src="/{{$image[0]}}" id="zoom" > @endif
+                 <img src="/{{$image[0]}}" id="zoom" name="main_img">
 
         </div>
 
         <div class="additional_image">
             @foreach($image as $items)
-                <img src="/{{$items}}">
+                <a href="javascript:l_image ('/{{$items}}')"><img src="/{{$items}}"></a>
             @endforeach
 
         </div>
@@ -57,7 +59,7 @@
                         @endforeach
                 </select>
 
-            <input type="hidden" value="{{$item->$item_id}}" id="ajax-id">
+            <input type="hidden" value="{{$item->id}}" id="ajax-id">
             <input type="hidden" value="{{$image[0]}}" id="ajax-image">
             {{csrf_field()}}
 

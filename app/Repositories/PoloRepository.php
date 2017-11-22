@@ -1,59 +1,52 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Muratis
- * Date: 27.09.2017
- * Time: 22:16
- */
-
 namespace App\Repositories;
 use Illuminate\Support\Facades\DB;
+use  App\Models\Cataloge\Poloes;
 
-Class PoloRepository
+Class PoloRepository extends BaseRepository
 {
-	private $model;
-	private $models = [
-		'kpi' => 'Polo_KPI',
-		'nmu' => 'Polo_NMU',
-		'kneu' => 'Polo_KNEU',
-		'knu' => 'Polo_KNU',
-	];
-
-	public function __construct($university)
+	public function __construct()
 	{
-		$this->getTshirtModelByUniversity($university);
-
+		parent::__construct('polo');
+		$this->poloes = new Poloes();
 	}
 
 	public function onePolo($data)
 	{
-		$polo = $this->model
-			->select('polo_id', 'name', 'description', 'image', 'price', 'created_at')->with('cataloge')
-			->where('polo_id', '=', $data->polo_id)->first();
+		$uniwearsity = $this->getUniversityFromUrl();
+
+		$polo = $this->poloes
+			->select('id', $this->clothesTypeDbRaw, 'name', 'description', 'image', 'price', 'created_at', 'stock')->with('cataloge')
+			->where('id', '=', $data->id)->where('university', '=', $uniwearsity)->first();
 
 		return $polo;
 	}
 
 
-	public function allPolo()
+	public function allPolo($size = false)
 	{
-		$polo = $this->model
-			->select('polo_id', 'name', 'description', 'image', 'price', 'created_at')
-			->latest()->simplePaginate(12);
+		$uniwearsity = $this->getUniversityFromUrl();
 
-		return $polo;
+		$polos = $this->poloes
+			->select('poloes.id', $this->clothesTypeDbRaw, 'poloes.name', 'description', 'image', 'price', 'created_at', 'stock');
+		
+		if ((int)$size) {
+			$polos = $polos->join('sizes_polo', 'poloes.id','=', 'sizes_polo.id')
+				->where('sizes_polo.size_id', '=', $size);
+		};
+		
+		$polos = $polos->where('university', '=', $uniwearsity)->latest()->simplePaginate(12);
+
+		return $polos;
+
+
+	}
+
+	private function getUniversityFromUrl()
+	{
+		$url_parts = explode('/', $_SERVER['REQUEST_URI']);
+		return $url_parts[1];
 	}
 	
-
-
-	private function getTshirtModelByUniversity($university)
-	{
-		if (!array_key_exists($university, $this->models)) {
-			abort(404);
-		}
-
-		$tshirt_model = 'App\\Models\\Polo\\' . $this->models[$university];
-		$this->model = new $tshirt_model;
-	}
 	
 }

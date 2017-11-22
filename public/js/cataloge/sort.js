@@ -121,5 +121,47 @@ $(document).ready(function(){
         })
 
     })
+
+    // $("#all").click(function(){
+    //
+    //     $.ajax({
+    //         type: "GET",
+    //         success: function () {
+    //             history.pushState(null, null, location.hash +'all');
+    //         },
+    //         complete: function () {
+    //             location.reload();
+    //         }
+    //     })
+    //
+    // })
+
+
+
+
+
+    $(".filter_btn").on('click',function () {
+        
+        $.ajax({
+            type: "GET",
+            data: {
+                'size_id': $(this).val(),
+            },
+            url: location,
+
+
+            success: function (data) {
+                $('.content').html(data);
+                $(this).addClass('activeFilter ');
+            },
+            error: function () {
+                $('#test').append('lox')
+            },
+            complete: function () {
+                $('#test').append('XZ');
+                // console.log(data)
+            }
+        })
+    })
     
 })
