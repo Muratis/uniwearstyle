@@ -15,29 +15,23 @@ use Illuminate\Support\Facades\DB;
 
 class CartRepository 
 {
-	private $model;
 
-	public function __construct(Carts $carts, shoppingUsers $shoppingUsers)
+	public function __construct()
 	{
-		$this->cart = $carts;
-		$this->byers = $shoppingUsers;
+		$this->cart = new Carts();
+		$this->byers = new shoppingUsers();
 	}
 
 	public function addCart($data)
 	{
-		$cart = Cart::add ($data->id, $data->name, 1, $data->price ,  [ 'image'  => $data->image, 'size' => $data->size]);
+		$cart = Cart::add ($data->id, $data->name, 1, $data->price ,  [ 'image'  => $data->image, 'size' => $data->size, 'gender' => $data->gender]);
 		return $cart;
 	}
 
-	public function  addCartToBase($data)
+	public function addCartToBase($data)
 	{
-//		$cart = Cart::content();
-//		$r = unserialize(Cart::content());
-
-//		$this->cart->name = $cart;
-//		$this->cart->save();
 		Cart::store($data->id);
-//		var_dump(Cart::content());
+
 		
 
 		$this->byers->first_name = $data->first_name;
@@ -55,10 +49,7 @@ class CartRepository
 
 	public function oneOrder($id)
 	{
-//		$orders = $this->cart
-//			->select('cart_id', 'name')
-//			->where('cart_id', '=', $id)->get();
-//		return $orders;
+
 		$restore = Cart::restore($id);
 		return $restore;
 	}
@@ -77,6 +68,13 @@ class CartRepository
 		$remove = Cart::remove($data->rowId);
 		return $remove;
 
+	}
+
+	public function getCountOrders()
+	{
+		$count = $this->byers->select('user_id')->where('is_active', '=', '0')->count();
+
+		return $count;
 	}
 
 		

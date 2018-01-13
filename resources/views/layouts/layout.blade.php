@@ -79,27 +79,26 @@
             <ul class="nav nav-justified menu-mobile">
 
                 <li>
-                    <a href="/" >Универы</a>
+                    <a href="/" >Інститути</a>
                 </li>
 
-
                 {{--<li>--}}
-                    {{--<a href="/">Принты</a>--}}
+                    {{--<a href="/">Свій стиль</a>--}}
                 {{--</li>--}}
 
                 <li>
-                    <a href="/" >Отзывы</a>
+                    <a href="/reviews" >Відгуки</a>
                 </li>
 
                 <li>
-                    <a href="contact-us">О нас</a>
+                    <a href="/contact-us">Про нас</a>
                 </li>
 
                 @if(Sentinel::getUser())
                     @if(Sentinel::inRole('admin') or Sentinel::inRole('moderator'))
                         <li>
 
-                            <a href="/admin"><i class="fa fa-wrench "></i> Панель админа</a>
+                            <a href="/admin"><i class="fa fa-wrench "></i>Панель адміна</a>
                         </li>
                     @endif
                 @endif
@@ -107,10 +106,10 @@
 
             </ul>
 
-                    <ul class="nav  college-mobile  hidden-lg hidden-md ">
+                    <ul class="nav college-mobile  hidden-lg hidden-md ">
 
                         <li>
-                            <a href="/kpi/tshirt"><img src="/images/college/logo_kpi.jpg" class="menu_college_logo">КПИ</a>
+                            <a href="/kpi/tshirt"><img src="/images/college/logo_kpi.jpg" class="menu_college_logo">КПІ</a>
                         </li>
 
                         <li>
@@ -137,17 +136,18 @@
     <div class="modal-dialog">
         <div class="modal-body">
             <div class="panel panel-default">
-                <div class="panel-heading">Вход</div>
+                <div class="panel-heading">Вхід</div>
                 <div class="panel-body">
 
 
                     <div class="omb_login">
-                        <h3 class="omb_authTitle">Войти или <a href="{{URL::to('/register')}}">зарегистрироваться</a></h3>
+                        <h3 class="omb_authTitle">Увійти або <a href="{{URL::to('/register')}}">
+                                зареєструватися</a></h3>
                         {{--@include('auth.social_buttons')--}}
                         <div class="row omb_row-sm-offset-3 omb_loginOr">
                             <div class="col-xs-12 col-sm-6">
                                 <hr class="omb_hrOr">
-                                <span class="omb_spanOr">или</span>
+                                <span class="omb_spanOr">або</span>
                             </div>
                         </div>
 
@@ -157,7 +157,7 @@
                                     @include('errors.errmsg')
                                     @include('widgets.form._formitem_text', ['name' => 'email', 'placeholder' => 'Email', 'fa_icon_class' => 'fa-user' ])
                                     @include('widgets.form._formitem_password', ['name' => 'password', 'placeholder' => 'Пароль', 'fa_icon_class' => 'fa-lock' ])
-                                    @include('widgets.form._formitem_btn_submit', ['title' => 'Войти'])
+                                    @include('widgets.form._formitem_btn_submit', ['title' => 'Увійти'])
                                     {{csrf_field()}}
                                 </form>
 
@@ -167,7 +167,8 @@
                         <div class="row omb_row-sm-offset-3">
                             <div class="col-xs-12 col-sm-6">
                                 <p class="omb_forgotPwd">
-                                    <a href="{{URL::to('/login')}}">Забыли пароль?</a>
+                                    <a href="{{URL::to('/login')}}">
+                                        Забули пароль?</a>
                                 </p>
                             </div>
                         </div>
@@ -189,7 +190,7 @@
         <ul class="nav navbar-nav ">
 
             <li>
-                <a href="/kpi/tshirt"><img src="/images/college/logo_kpi.jpg" class="menu_college_logo">КПИ</a>
+                <a href="/kpi/tshirt"><img src="/images/college/logo_kpi.jpg" class="menu_college_logo">КПІ</a>
             </li>
 
             <li>
@@ -214,19 +215,19 @@
             <ul>
 
                 <li class="nav-item">
-                    <a href="/customer"> Обслуживание клиентов</a>
+                    <a href="/customer">Обслуговування клієнтів</a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="/privacy-policy"> Политика конфиденциальности</a>
+                    <a href="/privacy-policy"> Політика конфіденційності</a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="/return--policy"> Политика возврата</a>
+                    <a href="/return--policy">Політика повернення</a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="/contact-us"> Свяжитесь с нами</a>
+                    <a href="/contact-us">Зв'яжіться з нами</a>
                 </li>
 
             </ul>
@@ -241,9 +242,9 @@
         <div class="form_for_new">
              <form action="#">
                  <div class="form-group ">
-                      <label for="Email">Хотите быть вкурсе всех новинок?</label>
+                      <label for="Email">Хочете знати про всі новини?</label>
                      <input name="Email" type="text" class="form-control input_email " placeholder="Email">
-                     <input type="submit" class="btn_black">
+                     <input type="submit" class="btn_black" value="Відправити">
                  </div>
               </form>
         </div>

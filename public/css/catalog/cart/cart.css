@@ -17,7 +17,7 @@ table {
 .shoppingCart tr td a img {
     border: 2px solid #000000;
     height: 150px;
-    width: 115px;
+    /*width: 115px;*/
     margin-top: 10px;
     position: relative;
     left: 20px;
@@ -129,4 +129,125 @@ table {
 .button_cart div input:hover {
     color: #FFFFFF;
     opacity: 0.6;
+}
+
+
+@media(max-width: 780px) {
+
+    .qty{
+        display: none;
+    }
+
+    .price_one{
+        display: none;
+    }
+
+    .alls{
+        display: none;
+    }
+
+    .float_rigth {
+        float: none;
+        margin: auto;
+
+    }
+
+    .sumshop {
+        margin: auto!important;
+        width: 100%;
+    }
+
+    .sumshop>span {
+        width: 100%;
+    }
+
+    .sumshop span {
+        color: #000000;
+        font: 18px arial;
+    }
+
+    .cart_footer {
+        padding-top: 30px;
+        display: table;
+        width: 100%;
+        margin: auto;
+
+    }
+
+
+
+    .button_cart div a {
+        color: #000000;
+        background: #FFFFFF;
+        border: 1px solid #c9c9c9;
+        font: 11px arial;
+        height: 40px;
+        width: 40%;
+        padding-top: 10px;
+        float: left;
+
+    }
+
+    .button_cart div a + a {
+        font: 12px arial;
+        width: 40%;
+        float: left;
+    }
+
+    .info_product{
+        float: left;
+    }
+    .info_product div a{
+        color: #000000;
+        margin-top: 10px;
+        font: 13px arial;
+    }
+
+    .shoppingCart tr td {
+        width: inherit !important;
+    }
+
+    .shoppingCart tr td a img {
+        border: 2px solid #000000;
+        height: 150px;
+        /*width: 115px;*/
+        margin-top: 10px;
+        margin-right: 20px;
+        position: relative;
+        left: 20px;
+    }
+
+    .info_product div button {
+        color: #000000;
+        border: 1px solid #c9c9c9;
+        background-color: #FFFFFF;
+        font: 15px arial;
+    }
+
+    #price_mobile {
+        float: right;
+        font: bold 14px arial;
+        margin-right: 10px;
+    }
+}
+
+@media(max-width: 430px) {
+    .button_cart div a {
+        color: #000000;
+        background: #FFFFFF;
+        border: 1px solid #c9c9c9;
+        font:bold 9px arial;
+        height: 40px;
+        width: 40%;
+        padding-top: 10px;
+        float: left;
+
+    }
+
+    .button_cart div a + a {
+        font: bold 9px arial;
+        height: 40px;
+        width: 40%;
+        float: left;
+    }
 }

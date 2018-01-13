@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 use App\Models\Articles\Articles;
+use App\Models\Slides;
 use Illuminate\Support\Facades\DB;
 
 class ArticleRepository
@@ -11,6 +12,7 @@ class ArticleRepository
 	public function __construct()
 	{
 		$this->articles = new Articles();
+		$this->slide = new Slides();
 
 	}
 
@@ -37,6 +39,16 @@ class ArticleRepository
 			->latest()->simplePaginate(6);
 
 		return $articles ;
+	}
+
+	public function getSlides()
+	{
+		$uniwearsity = $this->getUniversityFromUrl();
+		
+		$slides = $this->slide->select('id', 'caption', 'image')
+			->latest()->get();
+		
+		return $slides;
 	}
 
 	private function getUniversityFromUrl()

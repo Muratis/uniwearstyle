@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="/css/indexUniwear.css">
     <link rel="stylesheet" href="/css/articles.css">
     <script language="javascript" src="/bootstrap/js/masonry.pkgd.min.js"></script>
+    <script language="javascript" src="/js/slide.js"></script>
     {{--<script language="javascript" src="/js/cart/cart.js"></script>--}}
 
 @stop
@@ -27,30 +28,37 @@
 <div class="container">
 
     <div id="carousel" class="carousel slide">
-        <ol class="carousel-indicators">
-            <li class="active" data-target="#carousel" data-slide-to="0"></li>
-            <li data-target="#carousel" data-slide-to="1"></li>
-            <li data-target="#carousel" data-slide-to="2"></li>
-        </ol>
-
+        {{--<ol class="carousel-indicators">--}}
+            {{--<li class="active" data-target="#carousel" data-slide-to="0"></li>--}}
+            {{--<li data-target="#carousel" data-slide-to="1"></li>--}}
+            {{--<li data-target="#carousel" data-slide-to="2"></li>--}}
+        {{--</ol>--}}
         <div class="carousel-inner">
-            <div class="item active">
-                <img src="/images/college/all_1.jpg" alt="" class="wrapper">
-            </div>
-            <div class="item">
-                <img src="/images/college/all_2.jpg" alt="" class="wrapper">
-                <div class="carousel-caption">
-                    <h3>Second slide</h3>
-                    <p>State slide</p>
+            @foreach($slides as $slide)
+                <div class="item">
+                    <img src="/{{$slide->image}}" alt="" class="wrapper">
+                    <div class="carousel-caption">
+                         <p>{{$slide->caption  }}</p>
+                    </div>
                 </div>
-            </div>
-            <div class="item">
-                <img src="/images/college/all_3.jpg" alt="" class="wrapper">
-                <div class="carousel-caption">
-                    <h3>tree slide</h3>
-                    <p>State slide</p>
-                </div>
-            </div>
+            @endforeach
+
+            {{--<div class="item active">--}}
+                {{--<img src="/images/college/all_1.jpg" alt="" class="wrapper">--}}
+            {{--</div>--}}
+            {{--<div class="item">--}}
+                {{--<img src="/images/college/all_2.jpg" alt="" class="wrapper">--}}
+                {{--<div class="carousel-caption">--}}
+                    {{--<p>fsdfsdf</p>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+            {{--<div class="item">--}}
+                {{--<img src="/images/college/all_3.jpg" alt="" class="wrapper">--}}
+                {{--<div class="carousel-caption">--}}
+                    {{--<h3>tree slide</h3>--}}
+                    {{--<p>State slide</p>--}}
+                {{--</div>--}}
+            {{--</div>--}}
         </div>
 
         <!--Стрелки переключения слайда-->
@@ -64,7 +72,7 @@
 </div>
 
 
-<div class="news-bag">
+<div class="news-bag col-xs-12">
     <div class="container">
         <img src="/images/college/{{$university[1]}}.png">
         <h1>Наши новости</h1>

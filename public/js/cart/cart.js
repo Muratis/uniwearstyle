@@ -2,34 +2,32 @@ $(document).ready(function(){
 
     $("#add_cart").on('click', function () {
         $.ajax({
-            type: "POST",
-            data: {
-                '_token': $('input[name="_token"]').val(),
-                'id' : $('input[id="ajax-id"]').val(),
-                'image' : $('input[id="ajax-image"]').val(),
-                'size' : $('select[name="size"]').val(),
-                'name': $('h2[id="tshirt_name"]').text(),
-                'price': $('span[id="price"]').text(),
-               
-            },
-            url: "/cart",
-    
-            success: function () {
-                // $("h2").append('<p>Товар успешно добавлен в корзину</p>')
-                $(".successShop").show();
-                $(".successShop").hide(3000);
-                // location.reload();
-                // $("h2").hide(3000)
-            },
-            error: function () {
-                $("h2").append('<p>Провал</p>')
-            },
-            complete: function () {
-                $("h2").append('<p></p>');
-                // console.log(data)
-            }
-        })
+        type: "POST",
+        data: {
+            '_token': $('input[name="_token"]').val(),
+            'id' : $('input[id="ajax-id"]').val(),
+            'image' : $('input[id="ajax-image"]').val(),
+            'size' : $('select[name="size"]').val(),
+            'name': $('h2[id="tshirt_name"]').text(),
+            'price': $('span[id="price"]').text(),
+            'gender': $('span[id="gender"]').text(),
+
+        },
+        url: "/cart",
+
+        success: function () {
+            $(".successShop").show();
+            $(".successShop").hide(3000);
+        },
+        error: function () {
+            $("h2").append('<p>Провал</p>')
+        },
+        complete: function () {
+            $("h2").append('<p></p>');
+            // console.log(data)
+        }
     })
+})
 
     
 
@@ -57,28 +55,7 @@ $(document).ready(function(){
         })
     })
 
-
-    // $('#method').on('change', function () {
-    //     $.ajax({
-    //         type: "POST",
-    //         data: {
-    //             '_token': $('input[name="_token"]').val(),
-    //             'address' : $('select[name="address"]').val(),
-    //         },
-    //         url: "/cart/method",
-    //
-    //         success: function (data) {
-    //             // $("h4").append(data);
-    //             console.log(data);
-    //         },
-    //         error: function () {
-    //             $("h4").append('<p>Провал</p>');
-    //         },
-    //         complete: function () {
-    //
-    //         }
-    //     })
-    // })
+    
 
 
     $('#method').change(function () {

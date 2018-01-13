@@ -1,17 +1,16 @@
 <?php
-
 namespace App\Repositories;
 
 use  Illuminate\Support\Facades\DB;
+use App\Models\Sizes;
 use App\Repositories\BomberRepository;
 use App\Repositories\TshirtRepository;
 use App\Repositories\HoodieRepository;
 use App\Repositories\PoloRepository;
 use App\Repositories\SweatshirtRepository;
 
-Class FilterRepository
+class FilterRepository extends BaseRepository
 {
-
 	protected $tshirt;
 	protected $polo;
 	protected $hoodie;
@@ -20,6 +19,7 @@ Class FilterRepository
 
 	public function __construct()
 	{
+		$this->size = new Sizes();
 		$this->tshirt = new TshirtRepository();
 		$this->polo = new PoloRepository();
 		$this->hoodie = new HoodieRepository();
@@ -27,13 +27,26 @@ Class FilterRepository
 		$this->sweatshirt = new SweatshirtRepository();
 	}
 
-	public function allCatalog($size = false)
+	public function  allCatalog($size = false)
+	{
+		$cataloge = DB::table('tshirts')
+			->union(DB::table('poloes'))
+			->union(DB::table('bombers'))
+			->union(DB::table('sweatshirts'))
+			->union(DB::table('hoodies'))->get();
+
+		return $cataloge;
+	}
+
+	public function allCatalog_old($size = false)
 	{
 		$tshirtsData = $this->tshirt->allTshirts($size);
 		$polosData = $this->polo->allPolo($size);
 		$hoodiesData = $this->hoodie->allHoodie($size);
 		$bombersData = $this->bomber->allBombers($size);
 		$sweatshirtsData = $this->sweatshirt->allSweatshirts($size);
+
+//		var_dump(get_class_methods($tshirtsData));die;
 
 		$tshirts = [];
 		$polos = [];
@@ -66,13 +79,20 @@ Class FilterRepository
 			$sweatshirts[$key] = $one;
 		}
 
+
+
 		$all = array_merge($tshirts, $polos, $bombers, $hoodies, $sweatshirts);
 		krsort($all);
 
-
+		var_dump(count($all));die;
 		return $all;
 	}
 
+	public function getSizeFilter()
+	{
+		$sizes = $this->size->select('size_id', 'name')->latest()->get();
+		return $sizes;
+	}
 
 
 }

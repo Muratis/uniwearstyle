@@ -36,153 +36,85 @@ return [
         'url'   => route('admin.dashboard'),
     ],
 
-    [
-        'title' => 'Information',
-        'icon'  => 'fa fa-exclamation-circle',
-        'url'   => route('admin.information'),
-    ],
 
     [
-        'title' => 'Размеры',
+        'title' => 'Доступні розміри',
+        'icon'  => 'fa fa-expand',
         'url'   => 'admin/sizes',
     ],
 
-
     [
-        'title' => 'KPI Style',
-        'icon'  => 'fa fa-university',
-        'pages' => [
-            [
-                'title' => 'Футболки',
-//                'icon'  => 'fa fa-file-text-o',
-                'url'   => 'admin/tshirts?university=kpi',
-            ],
-            [
-                'title' => 'Поло',
-//                'icon'  => 'fa fa-file-text-o',
-                'url'   => 'admin/poloes?university=kpi',
-            ],
-//
-            [
-                'title' => 'Свитшоты',
-//                'icon'  => 'fa fa-file-text-o',
-                'url'   => 'admin/sweatshirts?university=kpi',
-            ],
-//
-            [
-                'title' => 'Худи',
-//                'icon'  => 'fa fa-file-text-o',
-                'url'   => 'admin/hoodies?university=kpi',
-            ],
-//
-            [
-                'title' => 'Бомберы',
-//                'icon'  => 'fa fa-file-text-o',
-                'url'   => 'admin/bombers?university=kpi',
-            ],
-            [
-                'title' => 'Новости',
-//                'icon'  => 'fa fa-file-text-o',
-                'url'   => 'admin/articles?university=kpi',
-            ],
-        ],
+        'title' => 'Відгуки покупців',
+        'icon'  => 'fa fa-archive',
+        'url'   => 'admin/reviews',
     ],
 
+    [
+        'title' => 'Каталог',
+        'icon'  => 'fa fa-shopping-cart ',
+        'pages' => [
+                        [
+                'title' => 'Футболки',
+//                'icon'  => 'fa  fa-cart-plus',
+                'url'   => 'admin/tshirts',
+            ],
+
+            [
+                'title' => 'Поло',
+//                'icon'  => 'fa  fa-cart-plus',
+                'url'   => 'admin/poloes',
+            ],
+
+                        [
+                'title' => 'Світшоти',
+//              'icon'  => 'fa  fa-cart-plus',
+                'url'   => 'admin/sweatshirts?university',
+            ],
+//
+            [
+                'title' => 'Худі',
+//                'icon'  => 'fa  fa-cart-plus',
+                'url'   => 'admin/hoodies?university',
+            ],
+//
+            [
+                'title' => 'Бомбери',
+//                'icon'  => 'fa  fa-cart-plus',
+                'url'   => 'admin/bombers?university',
+            ],
+        ]
+
+],
 
     [
-        'title' => 'KNU Style',
-        'icon'  => 'fa fa-university',
-        'pages' => [
-            [
-                'title' => 'Футболки',
-//                'icon'  => 'fa fa-file-text-o',
-                'url'   => 'admin/tshirts?university=knu',
-            ],
-            [
-                'title' => 'Поло',
-//                'icon'  => 'fa fa-file-text-o',
-                'url'   => 'admin/poloes?university=knu',
-            ],
-//
-            [
-                'title' => 'Свитшоты',
-//                'icon'  => 'fa fa-file-text-o',
-                'url'   => 'admin/sweatshirts?university=knu',
-            ],
-//
-            [
-                'title' => 'Худи',
-//                'icon'  => 'fa fa-file-text-o',
-                'url'   => 'admin/hoodies?university=knu',
-            ],
-//
-            [
-                'title' => 'Бомберы',
-//                'icon'  => 'fa fa-file-text-o',
-                'url'   => 'admin/bombers?university=knu',
-            ],
-            [
-                'title' => 'Новости',
-//                'icon'  => 'fa fa-file-text-o',
-                'url'   => 'admin/articles?university=knu',
-            ],
-        ],
+        'title' => 'Новини',
+        'icon'  => 'fa fa-newspaper-o',
+        'url'   => 'admin/articles',
     ],
+
     [
-        'title' => 'NMU Style',
-        'icon'  => 'fa fa-university',
-        'pages' => [
-            [
-                'title' => 'Футболки',
-//                'icon'  => 'fa fa-file-text-o',
-                'url'   => 'admin/tshirts?university=nmu',
-            ],
-            [
-                'title' => 'Поло',
-//                'icon'  => 'fa fa-file-text-o',
-                'url'   => 'admin/poloes?university=nmu',
-            ],
-//
-            [
-                'title' => 'Свитшоты',
-//                'icon'  => 'fa fa-file-text-o',
-                'url'   => 'admin/sweatshirts?university=nmu',
-            ],
-//
-            [
-                'title' => 'Худи',
-//                'icon'  => 'fa fa-file-text-o',
-                'url'   => 'admin/hoodies?university=nmu',
-            ],
-//
-            [
-                'title' => 'Бомберы',
-//                'icon'  => 'fa fa-file-text-o',
-                'url'   => 'admin/bombers?university=nmu',
-            ],
-            [
-                'title' => 'Новости',
-//                'icon'  => 'fa fa-file-text-o',
-                'url'   => 'admin/articles?university=nmu',
-            ],
-        ],
+        'title' => 'Слайди',
+        'icon'  => 'fa fa-picture-o ',
+        'url'   => 'admin/slides',
     ],
 
 
 
+
     [
-        'title' => 'Пользователи',
+        'title' => 'Користувачі',
         'icon' => 'fa fa-group',
         'pages' => [
             [
-                'title' => 'Пользователи',
+                'title' => 'Користувачі',
                 'icon'  => 'fa fa-group',
                 'url'   => 'admin/users',
             ],
             [
-                'title' => 'Роли',
+                'title' => 'Ролі',
                 'icon'  => 'fa fa-graduation-cap',
                 'url'   => 'admin/roles',
+                'id'   => 'rolew'
             ],
             [
                 'title' => 'Права',
@@ -197,25 +129,10 @@ return [
 
 
     [
-        'title' => 'Заказы' ,
-        'icon' => 'fa fa-group',
-        'pages' => [
-            [
-            'title' => 'Активные заказы' ,
-            'icon' => 'fa fa-group',
-            'url' => 'admin/orders?is_active=0', 
-                'priority' => 0,
-            ],
-            [
-                'title' => 'Архив заказов' ,
-                'icon' => 'fa fa-group',
-                'url' => 'admin/orders?is_active=1',
-            ],
-        ],
-
-
-        'priority' => 0,
-
+        'title' => 'Замовлення' ,
+        'icon' => 'fa fa-address-book',
+        'url' => 'admin/orders',
+        'priority' => 0
     ],
 
 

@@ -1,0 +1,190 @@
+#add_review {
+    margin-top: 50px;
+}
+
+#add_review div{
+    width: 600px;
+}
+
+#add_review div textarea {
+    width: 600px;
+    height: 200px;
+    font: 16px arial;
+}
+
+#submit_review {
+    background-color: #000000;
+    color: #FFFFFF;
+    font: 17px arial;
+}
+
+.successAdd {
+    /*background-color: #757575;*/
+    height: 70px;
+    font: 18px arial;
+    /*color: #FFFFFF;*/
+    /*border: 1px solid #000000;*/
+    position: relative;
+    bottom: 5px;
+}
+
+
+#succes_review {
+    margin-top: 10px;
+    display: none;
+}
+
+.review {
+    margin-top: 20px;
+}
+
+.review .user_name {
+    position: relative;
+    top: 13px;
+}
+
+.review .user_name p {
+    background-color: #000000;
+    color: #FFFFFF;
+    font: 17px arial;
+    line-height: 30px;
+    width: 100%;
+    padding-top: 3px;
+    padding-right: 7px;
+    padding-left: 7px;
+    border-radius: 7px;
+}
+.review .text_review {
+    background-color: #FFFFFF;
+    font: 15px arial;
+    min-height: 200px;
+    /*border: 2px solid #000000;*/
+    position: relative;
+    width: 600px;
+    box-shadow: 2px 1px 7px 4px #000000;
+
+}
+
+.bd_review {
+    display: inline-block;
+    border-left: 4px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 20px solid #6e6e6e;
+    width: 6px;
+    position: relative;
+    left: 10px;
+    top: 5px;
+}
+
+.btn-to-add {
+    background-color: #000000;
+    color: #FFFFFF;
+    margin-top: 20px;
+}
+
+.btn-to-add:hover {
+    opacity: 0.6;
+    color: #FFFFFF;
+}
+
+.pagination {
+    /*margin-left: 200px;*/
+    width: 250px;
+    /*float: left;*/
+}
+
+
+
+.pagination .active span{
+    /*width: 100px;*/
+    background-color: #000000 !important;
+    opacity: 0.8;
+    color: #FFFFFF;
+    font: 18px arial;
+    text-align: center;
+    margin-left: 2px;
+}
+
+
+
+.pagination li a {
+    color: #000000;
+    font: 18px arial;
+    margin-left: 2px;
+}
+
+.pagination li:first-child a {
+    width: 70px;
+    margin-left: 5px;
+    background-color: #000000 !important;
+    opacity: 0.8;
+    color: #FFFFFF;
+    font: 18px arial;
+    text-align: center;
+}
+
+.pagination li:last-child a{
+    width: 70px;
+    background-color: #000000 !important;
+    opacity: 0.8;
+    color: #FFFFFF;
+    font: 18px arial;
+    text-align: center;
+}
+
+.pagination .disabled span{
+    background-color: #000000!important;
+    opacity: 0.8;
+    color: #FFFFFF;
+    font: 18px arial;
+    text-align: center;
+    margin-left: 2px;
+    /*margin-right: 6px;*/
+}
+
+/*.pagination li span {*/
+    /*!*width: 100px;*!*/
+    /*background-color: #000000!important;*/
+    /*opacity: 0.8;*/
+    /*color: #FFFFFF;*/
+    /*font: 21px arial;*/
+    /*text-align: center;*/
+    /*margin-right: 5px;*/
+/*}*/
+
+
+/*.pagination  li a {*/
+    /*width: 100px;*/
+    /*background-color: #000000!important;*/
+    /*opacity: 0.8;*/
+    /*color: #FFFFFF;*/
+    /*font: 21px arial;*/
+    /*text-align: center;*/
+/*}*/
+
+
+@media(max-width: 670px) {
+
+    .review .text_review {
+        background-color: #FFFFFF;
+        font: 15px arial;
+        min-height: 200px;
+        /*border: 2px solid #000000;*/
+        position: relative;
+        width: 290px;
+        box-shadow: 2px 1px 7px 4px #000000;
+
+    }
+    #add_review div{
+        width: 290px;
+    }
+
+    #add_review div textarea {
+        width: 290px;
+        height: 200px;
+        font: 16px arial;
+    }
+
+}
+
+

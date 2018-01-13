@@ -14,7 +14,6 @@
     height: 1080px;
 }
 
-
 .info {
     margin-top: 15px;
 }
@@ -28,20 +27,15 @@
 
 .main-image img {
     height: 540px;
-    width: 390px;
-    /*border: 2px solid #000000;*/
     box-shadow: -2.5px -1px 7px 4px #000000;
 }
 
 .additional_image {
     margin-top: 15px;
-
-
 }
 
 .additional_image img {
     height: 150px;
-    width: 115px;
     margin-left: 9px;
 }
 
@@ -52,6 +46,7 @@
 }
 
 .infoTshirt {
+    width: 420px;
     float: left;
     margin-left: 100px;
 }
@@ -115,4 +110,68 @@
 .successShop {
     margin-top: 5px;
     display: none;
+}
+
+@media(max-width: 991px) {
+    .images {
+        float: none;
+
+
+        display: table;
+        margin: auto;
+    }
+
+
+
+    .infoTshirt {
+        width: 100%;
+        margin-left: 0px;
+    }
+
+    .size_catalog .btnSubmit {
+        width: 100% !important;
+        font: 15px arial;
+        color: #ffffff;
+        background-color: #000000;
+        height: 45px;
+        margin-top: 15px;
+    }
+
+    .size_catalog select {
+        width: 100%;
+
+        font:bold 15px arial;
+    }
+
+    .desc {
+        display: table;
+        width: 100%;
+    }
+
+    .desc h4 {
+
+        font: 20px arial;
+        color: #000000;
+    }
+
+    .desc p {
+        margin-top: 10px;
+        color: #000000;
+        font: 15px arial;
+        opacity: 0.8;
+    }
+
+}
+
+@media(max-width: 750px) {
+    .main-image img {
+        height: 460px;
+        /*border: 2px solid #000000;*/
+        box-shadow: -2.5px -1px 7px 4px #000000;
+    }
+
+    .additional_image img {
+        height: 120px;
+        margin-left: 9px;
+    }
 }

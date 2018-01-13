@@ -13,6 +13,10 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
+    protected $widgets = [
+        \App\Widgets\DashboardMap::class,
+    ];
+
     public function boot()
     {
         Role::saving(function ($role) {
@@ -27,6 +31,13 @@ class AppServiceProvider extends ServiceProvider
             }
             if ( ! $permits) return;
         });
+
+        $widgetsRegistry = $this->app[\SleepingOwl\Admin\Contracts\Widgets\WidgetsRegistryInterface::class];
+
+        foreach ($this->widgets as $widget) {
+            $widgetsRegistry->registerWidget($widget);
+        }
+
     }
 
     /**

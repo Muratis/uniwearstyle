@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@section('body')
+@section('content')
     <div class="container">
         <div class="omb_login">
             <h3 class="omb_authTitle">Сброс пароля</h3>

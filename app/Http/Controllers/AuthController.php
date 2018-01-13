@@ -1,8 +1,10 @@
 <?php
+
 namespace App\Http\Controllers;
 use Cartalyst\Sentinel\Checkpoints\NotActivatedException;
 use Cartalyst\Sentinel\Checkpoints\ThrottlingException;
 use Illuminate\Http\Request;
+use App\Http\Request\RegisterUsers;
 use App\Http\Requests;
 use Redirect;
 use Sentinel;
@@ -15,6 +17,7 @@ use CurlHttp;
 use Illuminate\Support\Facades\Input;
 use Socialite;
 use Session;
+
 class AuthController extends Controller
 {
 	public $networks = ['vkontakte', 'facebook', 'google'];
@@ -83,7 +86,7 @@ class AuthController extends Controller
 			$code = $activation->code;
 			$sent = Mail::send('mail.account_activate', compact('sentuser', 'code'), function($m) use ($sentuser)
 			{
-				$m->from('noreplay@mysite.com', 'Kazni.com');
+				$m->from('Uniwearstyle@gmail.com', 'Uniwearstyle.com');
 				$m->to($sentuser->email)->subject('Активация аккаунта');
 			});
 			if ($sent === 0)
@@ -105,25 +108,24 @@ class AuthController extends Controller
 	}
 	/**
 	 * Process register user from site
-	 *
-	 * @param Request $request
+	 
 	 * @return $this
 	 */
-	public function registerProcess(Request $request)
+	public function registerProcess(RegisterUsers $request)
 	{
-		$messages = [
-			'email.required'            => 'Введите email',
-			'email.email'               => 'Похоже, что email введен с ошибкой',
-			'password.required'         => 'Введидите пароль',
-			'password_confirm.required' => 'Введидите подтверждение пароля',
-			'password_confirm.same'     => 'Введенные пароли не одинаковы',
-			'password.between'          => 'Минимальная длина пароля - 8 символов',
-		];
-		$this->validate($request, [
-			'email' => 'required|email',
-			'password' => 'required|between:8,100',
-			'password_confirm' => 'required|same:password',
-		], $messages);
+//		$messages = [
+//			'email.required'            => 'Введите email',
+//			'email.email'               => 'Похоже, что email введен с ошибкой',
+//			'password.required'         => 'Введидите пароль',
+//			'password_confirm.required' => 'Введидите подтверждение пароля',
+//			'password_confirm.same'     => 'Введенные пароли не одинаковы',
+//			'password.between'          => 'Минимальная длина пароля - 8 символов',
+//		];
+//		$this->validate($request, [
+//			'email' => 'required|email',
+//			'password' => 'required|between:8,100',
+//			'password_confirm' => 'required|same:password',
+//		], $messages);
 		$input = $request->all();
 		if (Session::get('network_user') && Session::get('network_user')->id) {
 			$input[Session::get('network') . '_id'] = Session::get('network_user')->id;

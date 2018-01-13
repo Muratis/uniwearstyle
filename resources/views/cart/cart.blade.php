@@ -15,9 +15,9 @@
                 <thead class="table-header">
                 <tr>
                     <th colspan="2" class="text-center">Продукт</th>
-                    <th >Цена</th>
-                    <th >Количество</th>
-                    <th  >Всего</th>
+                    <th class="price_one">Ціна</th>
+                    <th class="qty">Кількість</th>
+                    <th class="alls">Всього</th>
                 </tr>
                 </thead>
 
@@ -34,16 +34,18 @@
                             </div>
 
                             <div>
-                                <p>Размер: {{$cart->options->size}}</p>
+                                <p>Розмір: {{$cart->options->size}}</p>
+                                <p>Пол: {{$cart->options->gender}}</p>
+                                <p id="price_mobile">Ціна {{$cart->subtotal}}</p>
                             </div>
 
                             <div>
-                                <button class="btn delete" value="{{$cart->rowId}}">Убрать из корзины</button>
+                                <button class="btn delete" value="{{$cart->rowId}}">Прибрати з корзини</button>
                             </div>
                         </td>
-                        <td  class="totalQty">{{$cart->price}} грн</td>
-                        <td  class="totalQty">{{$cart->qty}} </td>
-                        <td  class="totalQty">{{$cart->subtotal}} грн</td>
+                        <td  class="totalQty price_one">{{$cart->price}} грн</td>
+                        <td  class="totalQty qty">{{$cart->qty}} </td>
+                        <td  class="totalQty alls">{{$cart->subtotal}} грн</td>
 
                     </tr>
                 @endforeach
@@ -52,17 +54,16 @@
             </table>
 
             <footer class="cart_footer">
-                <h2 id="cl"></h2>
                 <div class="float_rigth">
                     <div class="sumshop">
                         <span>За все</span>
                         <span> {{Cart::subtotal()}} грн</span>
                     </div>
                     <div class="button_cart">
-                        <p>Стоимость доставки обсуждается по телефону</p>
+                        <p>Вартість доставки обговорюється по телефону</p>
                         <div>
-                            <a href="/" class="btn">Продолжить покупки</a>
-                            <a href="/cart/checkout" class="btn">Оформить заказ</a>
+                            <a href="/" class="btn">Продовжити покупки</a>
+                            <a href="/cart/checkout" class="btn">Оформити замовлення</a>
                         </div>
                     </div>
                 </div>

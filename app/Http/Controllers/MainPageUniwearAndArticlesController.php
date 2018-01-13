@@ -20,7 +20,8 @@ class MainPageUniwearAndArticlesController extends Controller
 	{
 		$university = $this->getUniversityFromUrl();
 		$articles = $this->article->allArticles();
-		return view('/home/indexUniwear', array('articles' => $articles  ,'university' => $university));
+		$slides = $this->article->getSlides();
+		return view('/home/indexUniwear', array('articles' => $articles, 'slides' => $slides ,'university' => $university));
 	}
 
 	public function getOneArticle(Request $request)
@@ -29,6 +30,7 @@ class MainPageUniwearAndArticlesController extends Controller
 		$article = $this->article->oneArticle($request);
 		return view('/home/mainUniwear/one', array('article' => $article, 'university' => $university));
 	}
+	
 
 
 	private function getUniversityFromUrl()

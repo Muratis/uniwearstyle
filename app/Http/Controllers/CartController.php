@@ -6,6 +6,7 @@ use Gloudemans\Shoppingcart\Cart;
 use Gloudemans\Shoppingcart\CartItem;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use App\Http\Request\SaveCart;
 
 class CartController extends Controller
 {
@@ -15,7 +16,7 @@ class CartController extends Controller
 	}
 
 	
-	public function postAddCart(Request $request)
+	public function postAddCart(SaveCart $request)
 	{
 		$this->carts->addCartToBase($request);
 
@@ -55,11 +56,11 @@ class CartController extends Controller
 		return view('cart/checkout', array('carts' => $carts));
 	}
 	
-	public function postMethod(Request $request)
-	{
-		return $this->carts->methodShoping($request);
-
-	}
+//	public function postMethod(SaveCart $request)
+//	{
+//		return $this->carts->methodShoping($request);
+//
+//	}
 	
 	
 	public function getOrderForAdmin()

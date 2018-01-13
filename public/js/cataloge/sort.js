@@ -122,19 +122,19 @@ $(document).ready(function(){
 
     })
 
-    // $("#all").click(function(){
-    //
-    //     $.ajax({
-    //         type: "GET",
-    //         success: function () {
-    //             history.pushState(null, null, location.hash +'all');
-    //         },
-    //         complete: function () {
-    //             location.reload();
-    //         }
-    //     })
-    //
-    // })
+    $("#all").click(function(){
+
+        $.ajax({
+            type: "GET",
+            success: function () {
+                history.pushState(null, null, location.hash +'all');
+            },
+            complete: function () {
+                location.reload();
+            }
+        })
+
+    })
 
 
 

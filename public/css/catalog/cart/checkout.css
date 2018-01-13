@@ -1,23 +1,29 @@
 .shopItem img{
-    width: 80px;
     height: 100px;
     float: left;
     border: 2px solid #000000;
+    margin-right: 10px;
 }
 .shopItem {
     margin-left: 20px;
     margin-top: 10px;
+    /*padding-right: 20px;*/
+    /*border-bottom: 2px solid red;*/
+}
+hr {
+    border-color: #000000;
 }
 
 .shopItem div {
-    margin-left: 12px;
-    margin-top: 20px;
-    float: left;
+
+    /*margin-top: 20px;*/
+    /*float: left;*/
+    width: 300px;
 }
 
 .shopItem div p {
     font: 17px arial;
-    line-height: 7px;
+    /*line-height: 7px;*/
 }
 
 .shopItem div p + p {
@@ -30,7 +36,6 @@
     float: right;
     color: #000000;
     font: 17px arial;
-    line-height: 80px;
     margin-right: 30px;
 }
 

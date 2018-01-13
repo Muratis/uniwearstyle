@@ -4,24 +4,61 @@ use App\Models\Sizes;
 use App\Models\Articles\Articles;
 use SleepingOwl\Admin\Model\ModelConfiguration;
 AdminSection::registerModel(Articles::class, function (ModelConfiguration $model) {
+	
 
 	$model->setTitle('Новости');
 	$model->setAlias('articles');
 	$model->setCreateTitle('Добавить новость');
 	$model->onDisplay(function () {
-		$display = AdminDisplay::datatables();
-		$display->setFilters(
-			AdminDisplayFilter::field('university')
-		)->setColumns([
-			AdminColumn::text('article_id', 'Номер новости')->setWidth('200px'),
-			AdminColumn::text('title', 'Название новости')->setWidth('400px'),
-			AdminColumn::image('image', 'Картинка новости')->setWidth('400px'),
-			AdminColumn::text('university', 'Универ')->setWidth('400px'),
-			AdminColumn::datetime('created_at')->setLabel('Дата')->setFormat('d.m.Y')->setWidth('150px')
-		]);
-		$display->paginate(8);
+		$display = AdminDisplay::tabbed();
+		$display->SetTabs(function ()
+		{
+			$tabs = [];
+
+			$columns = [
+				AdminColumn::text('article_id', 'Номер новости')->setWidth('200px'),
+				AdminColumn::text('title', 'Название новости')->setWidth('400px'),
+				AdminColumn::image('image', 'Картинка новости')->setWidth('400px'),
+				AdminColumn::text('university', 'Универ')->setWidth('400px'),
+				AdminColumn::datetime('created_at')->setLabel('Дата')->setFormat('d.m.Y')->setWidth('150px')
+			];
+
+			$kpi = AdminDisplay::table();
+			$kpi->setColumns($columns);
+			$kpi->paginate(5)
+				->setApply( function ($query) {
+					$query->orderBy('article_id', '0');
+					$query->where('university', '=', 'kpi');
+				});
+
+			$tabs[] = AdminDisplay::tab($kpi, 'КПІ')->setActive();
+
+			$knu = AdminDisplay::table();
+			$knu->setColumns($columns);
+			$knu->paginate(5)
+				->setApply( function ($query) {
+					$query->orderBy('article_id', '0');
+					$query->where('university', '=', 'knu');
+				});
+
+			$tabs[] = AdminDisplay::tab($knu, 'КНУ');
+
+			$nmu = AdminDisplay::table();
+			$nmu->setColumns($columns);
+			$nmu->paginate(5)
+				->setApply( function ($query) {
+					$query->orderBy('article_id', '0');
+					$query->where('university', '=', 'nmu');
+				});
+
+			$tabs[] = AdminDisplay::tab($nmu, 'НМУ');
+
+			return $tabs;
+		});
+
 		return $display;
 	});
+
 
 
 	$model->onCreateAndEdit(function () {
