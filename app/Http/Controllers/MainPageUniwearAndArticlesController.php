@@ -18,6 +18,7 @@ class MainPageUniwearAndArticlesController extends Controller
 
 	public function getIndexUniwearWithArticle()
 	{
+		
 		$university = $this->getUniversityFromUrl();
 		$articles = $this->article->allArticles();
 		$slides = $this->article->getSlides();

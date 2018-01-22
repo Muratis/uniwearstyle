@@ -13,12 +13,12 @@
 
             <div class="row omb_row-sm-offset-3">
                 <div class="col-xs-12 col-sm-6">
-                    {!! Form::open(['class' => 'omb_loginForm']) !!}
-                    @include('errors.errmsg')
-                    @include('widgets.form._formitem_text', ['name' => 'email', 'placeholder' => 'Email', 'fa_icon_class' => 'fa-user' ])
-                    @include('widgets.form._formitem_password', ['name' => 'password', 'placeholder' => 'Пароль', 'fa_icon_class' => 'fa-lock' ])
-                    @include('widgets.form._formitem_btn_submit', ['title' => 'Войти'])
-                    {!! Form::close() !!}
+                    <form action="{{url('/login')}}" method="post" class="omb_loginForm">
+                        {{csrf_field()}}
+                        @include('errors.errmsg')
+                        @include('widgets.form.login_form')
+                    </form>
+
                 </div>
             </div>
             <div class="row omb_row-sm-offset-3">

@@ -153,12 +153,10 @@
 
                         <div class="row omb_row-sm-offset-3">
                             <div class="col-xs-12 col-sm-6">
-                                <form class="omb_loginForm" action="{{url('/login')}}" method="post">
-                                    @include('errors.errmsg')
-                                    @include('widgets.form._formitem_text', ['name' => 'email', 'placeholder' => 'Email', 'fa_icon_class' => 'fa-user' ])
-                                    @include('widgets.form._formitem_password', ['name' => 'password', 'placeholder' => 'Пароль', 'fa_icon_class' => 'fa-lock' ])
-                                    @include('widgets.form._formitem_btn_submit', ['title' => 'Увійти'])
+                                <form action="{{url('/login')}}" method="post" class="omb_loginForm">
                                     {{csrf_field()}}
+                                    @include('errors.errmsg')
+                                    @include('widgets.form.login_form')
                                 </form>
 
 
@@ -167,7 +165,7 @@
                         <div class="row omb_row-sm-offset-3">
                             <div class="col-xs-12 col-sm-6">
                                 <p class="omb_forgotPwd">
-                                    <a href="{{URL::to('/login')}}">
+                                    <a href="{{URL::to('/reset')}}">
                                         Забули пароль?</a>
                                 </p>
                             </div>

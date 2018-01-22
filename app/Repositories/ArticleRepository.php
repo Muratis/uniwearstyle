@@ -45,7 +45,7 @@ class ArticleRepository
 	{
 		$uniwearsity = $this->getUniversityFromUrl();
 		
-		$slides = $this->slide->select('id', 'caption', 'image')
+		$slides = $this->slide->select('id', 'caption', 'image')->where('is_active','=', '1')
 			->latest()->get();
 		
 		return $slides;

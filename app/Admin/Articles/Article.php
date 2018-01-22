@@ -6,9 +6,9 @@ use SleepingOwl\Admin\Model\ModelConfiguration;
 AdminSection::registerModel(Articles::class, function (ModelConfiguration $model) {
 	
 
-	$model->setTitle('Новости');
+	$model->setTitle('Новини');
 	$model->setAlias('articles');
-	$model->setCreateTitle('Добавить новость');
+	$model->setCreateTitle('Добавити новину');
 	$model->onDisplay(function () {
 		$display = AdminDisplay::tabbed();
 		$display->SetTabs(function ()
@@ -19,7 +19,6 @@ AdminSection::registerModel(Articles::class, function (ModelConfiguration $model
 				AdminColumn::text('article_id', 'Номер новости')->setWidth('200px'),
 				AdminColumn::text('title', 'Название новости')->setWidth('400px'),
 				AdminColumn::image('image', 'Картинка новости')->setWidth('400px'),
-				AdminColumn::text('university', 'Универ')->setWidth('400px'),
 				AdminColumn::datetime('created_at')->setLabel('Дата')->setFormat('d.m.Y')->setWidth('150px')
 			];
 

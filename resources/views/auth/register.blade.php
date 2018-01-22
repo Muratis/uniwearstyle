@@ -17,7 +17,6 @@
                         {{csrf_field()}}
                     @include('errors.errmsg')
                     @include('widgets.form.register_form', ['value' => $email])
-{{--                    @include('widgets.form._formitem_btn_submit', ['title' => 'Зарегистрироваться'])--}}
                     </form>
                 </div>
             </div>
