@@ -11,10 +11,10 @@
 
 
 
-    {{--{{var_dump($order[0])}}--}}
+
     {{Cart::destroy()}}
     {{Cart::restore($id)}}
-    {{--{{var_dump($id)}}--}}
+
 
     <div class="container">
 
@@ -32,12 +32,12 @@
             @foreach(Cart::content() as $cart)
                 <tr>
                     <td>
-                        <a href="{{action('TshirtController@getOneTshirt', array($cart->id)) }}">
+                        <a href="#">
                             <img src="/{{$cart->options->image}}"></a>
                     </td>
                     <td class="info_product">
                         <div>
-                            <a  class="" href="{{action('TshirtController@getOneTshirt', array($cart->id)) }}">{{$cart->name}}</a>
+                            <a  class="" href="#">{{$cart->name}}</a>
                         </div>
 
                         <div>

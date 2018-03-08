@@ -25,7 +25,13 @@ AdminSection::registerModel(shoppingUsers::class, function (ModelConfiguration $
 					AdminColumn::text('city', 'Город'),
 					AdminColumn::text('address', 'Адресс/Отделение'),
 					AdminColumn::text('phone', 'Телефон'),
-					AdminColumn::url('user_carts.identifier', 'Заказ'),
+					AdminColumn::custom('Заказ', function(\Illuminate\Database\Eloquent\Model $model) {
+						Cart::destroy();
+						$order = $model->user_carts->identifier;
+					return view('widgets.admin_form.oneOrder', array('order' => $order));
+						
+					})->setWidth('150px'),
+//					AdminColumn::link('user_carts.identifier', 'Заказ')->setView(''),
 					AdminColumnEditable::checkbox('is_active', 'не активный', 'активный')->setLabel('Активность заказа')->setWidth('30px'),
 //			AdminColumn::lists($cg, 'Заказ'),
 					AdminColumn::datetime('created_at')->setLabel('Дата')->setFormat('d.m.Y')->setWidth('150px')

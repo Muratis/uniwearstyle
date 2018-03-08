@@ -64,7 +64,7 @@
             @if(Sentinel::getUser())
                 <a href="{{ url('/logout') }}"><i class="fa fa-sign-out fa-2x"></i></a>
             @else
-                <button type="button" class="btn btn-logout" data-toggle="modal" data-target="#modal-1"><i class="fa fa-sign-in fa-2x"></i></button>
+                <a href="/login" class="btn  btn-login"><i class="fa fa-sign-in fa-2x"></i></a>
             @endif
 
             @if(Cart::count())
@@ -109,15 +109,35 @@
                     <ul class="nav college-mobile  hidden-lg hidden-md ">
 
                         <li>
-                            <a href="/kpi/tshirt"><img src="/images/college/logo_kpi.jpg" class="menu_college_logo">КПІ</a>
+                            <a href="/kpi/all"><img src="/images/college/kpi.png" class="menu_college_logo">КПІ</a>
                         </li>
 
                         <li>
-                            <a href="/nmu/tshirt"><img src="/images/college/logo_nmu.jpg" class="menu_college_logo">НМУ</a>
+                            <a href="/nmu/all"><img src="/images/college/nmu.png" class="menu_college_logo">НМУ</a>
                         </li>
 
                         <li>
-                            <a href="/knu/tshirt"><img src="/images/college/logo_knu.jpg" class="menu_college_logo">КНУ</a>
+                            <a href="/knu/all"><img src="/images/college/knu.png" class="menu_college_logo">КНУ</a>
+                        </li>
+
+                        <li>
+                            <a href="/kneu/all"><img src="/images/college/kneu.png" class="menu_college_logo">КНЕУ</a>
+                        </li>
+
+                        <li>
+                            <a href="/knteu/all"><img src="/images/college/knteu.png" class="menu_college_logo">КНТЕУ</a>
+                        </li>
+
+                        <li>
+                            <a href="/knukim/all"><img src="/images/college/knukim.png" class="menu_college_logo">КНУКІМ</a>
+                        </li>
+
+                        <li>
+                            <a href="/nau/all"><img src="/images/college/nau.png" class="menu_college_logo">НАУ</a>
+                        </li>
+
+                        <li>
+                            <a href="/nmau/tshirt"><img src="/images/college/nmau.png" class="menu_college_logo">НМАУ</a>
                         </li>
                     </ul>
 
@@ -132,71 +152,41 @@
 
 
 
-<div class="modal" id="modal-1">
-    <div class="modal-dialog">
-        <div class="modal-body">
-            <div class="panel panel-default">
-                <div class="panel-heading">Вхід</div>
-                <div class="panel-body">
-
-
-                    <div class="omb_login">
-                        <h3 class="omb_authTitle">Увійти або <a href="{{URL::to('/register')}}">
-                                зареєструватися</a></h3>
-                        {{--@include('auth.social_buttons')--}}
-                        <div class="row omb_row-sm-offset-3 omb_loginOr">
-                            <div class="col-xs-12 col-sm-6">
-                                <hr class="omb_hrOr">
-                                <span class="omb_spanOr">або</span>
-                            </div>
-                        </div>
-
-                        <div class="row omb_row-sm-offset-3">
-                            <div class="col-xs-12 col-sm-6">
-                                <form action="{{url('/login')}}" method="post" class="omb_loginForm">
-                                    {{csrf_field()}}
-                                    @include('errors.errmsg')
-                                    @include('widgets.form.login_form')
-                                </form>
-
-
-                            </div>
-                        </div>
-                        <div class="row omb_row-sm-offset-3">
-                            <div class="col-xs-12 col-sm-6">
-                                <p class="omb_forgotPwd">
-                                    <a href="{{URL::to('/reset')}}">
-                                        Забули пароль?</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    {{--@include('auth/login')--}}
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
 
 <div class=" wrapper menu_college hidden-sm hidden-xs " >
     <nav role="navigation" class="navbar-collapse">
         <ul class="nav navbar-nav ">
 
             <li>
-                <a href="/kpi/tshirt"><img src="/images/college/logo_kpi.jpg" class="menu_college_logo">КПІ</a>
+                <a href="/kpi/all"><img src="/images/college/kpi.png" class="menu_college_logo">КПІ</a>
             </li>
 
             <li>
-                <a href="/nmu/tshirt"><img src="/images/college/logo_nmu.jpg" class="menu_college_logo">НМУ</a>
+                <a href="/nmu/all"><img src="/images/college/nmu.png" class="menu_college_logo">НМУ</a>
             </li>
 
             <li>
-                <a href="/knu/tshirt"><img src="/images/college/logo_knu.jpg" class="menu_college_logo">КНУ</a>
+                <a href="/knu/all"><img src="/images/college/knu.png" class="menu_college_logo">КНУ</a>
+            </li>
+
+            <li>
+                <a href="/kneu/all"><img src="/images/college/kneu.png" class="menu_college_logo">КНЕУ</a>
+            </li>
+
+            <li>
+                <a href="/knteu/all"><img src="/images/college/knteu.png" class="menu_college_logo">КНТЕУ</a>
+            </li>
+
+            <li>
+                <a href="/knukim/all"><img src="/images/college/knukim.png" class="menu_college_logo">КНУКІМ</a>
+            </li>
+
+            <li>
+                <a href="/nau/all"><img src="/images/college/nau.png" class="menu_college_logo">НАУ</a>
+            </li>
+
+            <li>
+                <a href="/nmau/tshirt"><img src="/images/college/nmau.png" class="menu_college_logo">НМАУ</a>
             </li>
 
         </ul>
@@ -238,21 +228,59 @@
         </div>
 
         <div class="form_for_new">
-             <form action="#">
                  <div class="form-group ">
-                      <label for="Email">Хочете знати про всі новини?</label>
-                     <input name="Email" type="text" class="form-control input_email " placeholder="Email">
-                     <input type="submit" class="btn_black" value="Відправити">
+                      <p>Хочете знати про всі новини?</p>
+                     <button type="button" id="add_email" class="btn_black" data-toggle="modal" data-target="#modal-2">Підписка</button>
                  </div>
-              </form>
         </div>
+
+            <div class="modal" id="modal-2">
+                <div class="modal-dialog">
+                    <div class="modal-body">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Подписка на новини</div>
+                            <div class="panel-body">
+                                <form action="/dispatch/add_email" method="post" class="addEmailforDispatch">
+                                    <label for="kpi_dispatch">КПІ</label>
+                                    <input type="checkbox" value="kpi" name="universities[]">
+
+                                    <label for="nmu_dispatch">НМУ</label>
+                                    <input type="checkbox" value="nmu" name="universities[]">
+
+                                    <label for="knu_dispatch">КНУ</label>
+                                    <input type="checkbox" value="knu" name="universities[]">
+
+                                    <label for="kneu_dispatch">КНЕУ</label>
+                                    <input type="checkbox" value="kneu" name="universities[]">
+
+                                    <label for="knteu_dispatch">КНТЕУ</label>
+                                    <input type="checkbox" value="knteu" name="universities[]">
+
+                                    <label for="knukim_dispatch">КНУКІМ</label>
+                                    <input type="checkbox" value="knukim" name="universities[]">
+
+                                    <label for="nau_dispatch">НАУ</label>
+                                    <input type="checkbox" value="nau" name="universities[]">
+
+                                    <label for="nmau_dispatch">НМАУ</label>
+                                    <input type="checkbox" value="nmau" name="universities[]">
+
+                                    {{csrf_field()}}
+                                    <input name="email_dispatch" type="text" class="form-control input_email" placeholder="Email">
+                                    <input type="submit"  id="add_email" class="add_dispatchEmail" value="Підписатися">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
 
         <div class="copy ">
             <div> &copy;UniwearStyle</div>
             <div>   CREATED BY <a href="http://kazni/" class="">Kazni</a></div>
-            {{--<p>&copy;UniwearStyle</p>--}}
-            {{--<p> CREATED BY <a href="http://kazni/" class="">Kazni</a></p>--}}
         </div>
 
     </div>

@@ -13,7 +13,32 @@
 @stop
 
 @section('uniwear')
-    {{ strtoupper($university[1]) }}
+    {{--{{ strtoupper($university[1]) }}--}}
+    @if($university[1] == 'kpi')
+        @lang('messages.KPI')
+
+    @elseif($university[1] == 'knu')
+        @lang('messages.KNU')
+
+    @elseif($university[1] == 'nmu')
+        @lang('messages.NMU')
+
+    @elseif($university[1] == 'kneu')
+        @lang('messages.KNEU')
+
+    @elseif($university[1] == 'knteu')
+        @lang('messages.KNTEU')
+
+    @elseif($university[1] == 'knukim')
+        @lang('messages.KNUKIM')
+
+    @elseif($university[1] == 'nau')
+        @lang('messages.NAU')
+
+    @elseif($university[1] == 'nmau')
+        @lang('messages.NMAU')
+
+    @endif
 @stop
 
 @section('content')
@@ -21,6 +46,7 @@
 
 
 <div class="container info">
+
     <div class="images">
         <?php
         $images = $item->image;

@@ -7,7 +7,32 @@
 @stop
 
 @section('uniwear')
-    {{ strtoupper($university[1]) }}
+    {{--{{ strtoupper($university[1]) }}--}}
+    @if($university[1] == 'kpi')
+    @lang('messages.KPI')
+
+    @elseif($university[1] == 'knu')
+    @lang('messages.KNU')
+
+    @elseif($university[1] == 'nmu')
+     @lang('messages.NMU')
+
+    @elseif($university[1] == 'kneu')
+        @lang('messages.KNEU')
+
+    @elseif($university[1] == 'knteu')
+        @lang('messages.KNTEU')
+
+    @elseif($university[1] == 'knukim')
+        @lang('messages.KNUKIM')
+
+    @elseif($university[1] == 'nau')
+        @lang('messages.NAU')
+
+    @elseif($university[1] == 'nmau')
+        @lang('messages.NMAU')
+
+    @endif
 @stop
 
 @section('content')
@@ -31,27 +56,27 @@
                 <div class="product">
                     <ul class="nav ">
                         <li>
-                            <button id="all" class="btn">Все</button>
+                            <button  class="btn all">Все</button>
                         </li>
 
                         <li>
-                            <button  id="tshirts" class="btn">Футболки</button>
+                            <button  class="btn tshirts">Футболки</button>
                         </li>
 
                         <li>
-                            <button  id="polo" class="btn">Поло</button>
+                            <button   class="btn polo">Поло</button>
                         </li>
 
                         <li>
-                            <button id="hoodie" class="btn">Худи</button>
+                            <button  class="btn hoodie">Худи</button>
                         </li>
 
                         <li>
-                            <button id="sweatshirts" class="btn">Свитшоты</button>
+                            <button  class="btn sweatshirts">Свитшоты</button>
                         </li>
 
                         <li>
-                            <button id="bombers" class="btn">Бомберы</button>
+                            <button  class="btn bombers">Бомберы</button>
                         </li>
                     </ul>
                 </div>
@@ -86,27 +111,27 @@
                 <div class="product">
                     <ul class="nav ">
                         <li>
-                            <button id="all" class="btn">Все</button>
+                            <button  class="btn all">Все</button>
                         </li>
 
                         <li>
-                            <button  id="tshirts" class="btn">Футболки</button>
+                            <button   class="btn tshirts">Футболки</button>
                         </li>
 
                         <li>
-                            <button  id="polo" class="btn">Поло</button>
+                            <button   class="btn polo">Поло</button>
                         </li>
 
                         <li>
-                            <button id="hoodie" class="btn">Худи</button>
+                            <button  class="btn hoodie">Худи</button>
                         </li>
 
                         <li>
-                            <button id="sweatshirts" class="btn">Свитшоты</button>
+                            <button  class="btn sweatshirts">Свитшоты</button>
                         </li>
 
                         <li>
-                            <button id="bombers" class="btn">Бомберы</button>
+                            <button  class="btn bombers">Бомберы</button>
                         </li>
                     </ul>
                 </div>

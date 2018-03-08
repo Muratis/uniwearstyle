@@ -34,6 +34,10 @@ class CartController extends Controller
 		
 	}
 
+	public function chandeOtdNvPost(Request $request) {
+		$result= $this->carts->nvPost($request);
+		return var_dump($result);
+	}
 
 	public function getAdd() 
 	{

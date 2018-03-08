@@ -7,4 +7,4 @@ $error_class = $errors->has('email') ? ' has-error' : '';
 </div>
 <span class="help-block">{!! $errors->first('email') !!}</span>
 
-<input type="submit" value="Скинути пароль" class="btn btn-lg  btn-block">
+<input type="submit" value="Скинути пароль" class="btn btn-lg  btn-block btnBlackForm">

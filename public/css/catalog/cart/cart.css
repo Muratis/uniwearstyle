@@ -238,7 +238,8 @@ table {
         border: 1px solid #c9c9c9;
         font:bold 9px arial;
         height: 40px;
-        width: 40%;
+        width: auto;
+        /*width: 40%;*/
         padding-top: 10px;
         float: left;
 
@@ -247,7 +248,9 @@ table {
     .button_cart div a + a {
         font: bold 9px arial;
         height: 40px;
-        width: 40%;
+        padding-right: 10px;
+        width: auto;
+        /*width: 40%;*/
         float: left;
     }
 }

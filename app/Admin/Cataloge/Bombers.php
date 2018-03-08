@@ -59,6 +59,61 @@ AdminSection::registerModel(Bombers::class, function (ModelConfiguration $model)
 
 			$tabs[] = AdminDisplay::tab($nmu, 'НМУ');
 
+			$kneu = AdminDisplay::table();
+			$kneu->setColumns($columns);
+			$kneu->paginate(5)
+				->setApply( function ($query) {
+					$query->orderBy('id', '0');
+					$query->where('university', '=', 'kneu');
+					$query->where('clothes_type', '=', 'bomber');
+				});
+
+			$tabs[] = AdminDisplay::tab($kneu, 'КНЕУ');
+
+			$knteu = AdminDisplay::table();
+			$knteu->setColumns($columns);
+			$knteu->paginate(5)
+				->setApply( function ($query) {
+					$query->orderBy('id', '0');
+					$query->where('university', '=', 'knteu');
+					$query->where('clothes_type', '=', 'bomber');
+				});
+
+			$tabs[] = AdminDisplay::tab($knteu, 'КНТЕУ');
+
+			$knukim = AdminDisplay::table();
+			$knukim->setColumns($columns);
+			$knukim->paginate(5)
+				->setApply( function ($query) {
+					$query->orderBy('id', '0');
+					$query->where('university', '=', 'knukim');
+					$query->where('clothes_type', '=', 'bomber');
+				});
+
+			$tabs[] = AdminDisplay::tab($knukim, 'КНУКІМ');
+
+			$nau = AdminDisplay::table();
+			$nau->setColumns($columns);
+			$nau->paginate(5)
+				->setApply( function ($query) {
+					$query->orderBy('id', '0');
+					$query->where('university', '=', 'nau');
+					$query->where('clothes_type', '=', 'bomber');
+				});
+
+			$tabs[] = AdminDisplay::tab($nau, 'НАУ');
+
+			$nmau = AdminDisplay::table();
+			$nmau->setColumns($columns);
+			$nmau->paginate(5)
+				->setApply( function ($query) {
+					$query->orderBy('id', '0');
+					$query->where('university', '=', 'nmau');
+					$query->where('clothes_type', '=', 'bomber');
+				});
+
+			$tabs[] = AdminDisplay::tab($nmau, 'НМАУ');
+
 			return $tabs;
 		});
 
@@ -68,7 +123,8 @@ AdminSection::registerModel(Bombers::class, function (ModelConfiguration $model)
 
 	$model->onCreateAndEdit(function () {
 		$form = AdminForm::panel()->addBody(
-			AdminFormElement::select('university', 'Универ')->setOptions(['kpi'=>'КПИ', 'nmu'=>'НМУ', 'knu'=> 'КНУ']),
+			AdminFormElement::select('university', 'Универ')->setOptions(['kpi'=>'КПІ', 'nmu'=>'НМУ', 'knu'=>'КНУ', 'kneu'=>'КНЕУ',
+				'knteu'=>'КНТЕУ', 'knukim'=>'КНУКІМ', 'nau'=>'НАУ', 'nmau'=>'НМАУ']),
 			AdminFormElement::text('name', 'Название товара')->required(),
 			AdminFormElement::hidden('clothes_type')->setDefaultValue('bomber'),
 			AdminFormElement::number('price', 'Цена грн')->required(),

@@ -98,9 +98,41 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'email' => [
+            'required' => 'Введіть ваш email',
+            'email' => 'Введіть @email',
         ],
+
+        'first_name' => [
+            'required' => 'Введіть ваше ім\'я',
+        ],
+
+        'last_name' => [
+            'required' => 'Введіть ваше прізвище',
+        ],
+        
+        'address_ship' => [
+            'required' => 'Введіть адресу',
+        ],
+        
+        'city' => [
+            'required' => 'Введіть місто',
+        ], 
+        
+        'phone' => [
+            'required' => 'Введіть ваш номер телефону',
+        ],
+
+        'password' => [
+            'required' => 'Введіть пароль',
+            'between' => 'Пароль короткий',
+        ],
+
+        'password_confirm' => [
+            'required' => 'Підтвердіть пароль',
+            'same' => 'Паролі не співпадають',
+        ],
+
     ],
 
     /*

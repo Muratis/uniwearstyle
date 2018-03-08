@@ -30,7 +30,7 @@
     opacity: 0.6;
 }
 
-.item_college a span {
+.item_college a {
     color: #000000;
     text-decoration: none;
     font: 20px arial;
@@ -79,11 +79,7 @@
     .item_college {
         float: left;
         margin-left: 45px;
-        margin-top: 10px;
         width:180px;
-        /*-webkit-box-shadow: 1px 4px 16px 3px rgba(199,197,199,1);*/
-        /*-moz-box-shadow: 1px 4px 16px 3px rgba(199,197,199,1);*/
-        /*box-shadow: 1px 4px 16px 3px rgba(199,197,199,3);*/
         margin-top: 20px;
     }
 }
@@ -105,8 +101,30 @@
     .item_college {
         float: left;
         margin-left: 35px;
-        margin-top: 10px;
         width: 130px;
         margin-top: 20px;
     }
+}
+
+
+
+@media(max-width: 390px) {
+    .item_college a img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .item_college {
+        float: left;
+        margin-left: 10px;
+        width: 130px;
+        margin-top: 20px;
+    }
+
+    .item_college a {
+
+        font: 14px arial;
+
+    }
+
 }

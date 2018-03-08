@@ -10,8 +10,32 @@
 @stop
 
 @section('uniwear')
-    {{ strtoupper($university[1]) }}
+    {{--{{ strtoupper($university[1]) }}--}}
+    @if($university[1] == 'kpi')
+        @lang('messages.KPI')
 
+    @elseif($university[1] == 'knu')
+        @lang('messages.KNU')
+
+    @elseif($university[1] == 'nmu')
+        @lang('messages.NMU')
+
+    @elseif($university[1] == 'kneu')
+        @lang('messages.KNEU')
+
+    @elseif($university[1] == 'knteu')
+        @lang('messages.KNTEU')
+
+    @elseif($university[1] == 'knukim')
+        @lang('messages.KNUKIM')
+
+    @elseif($university[1] == 'nau')
+        @lang('messages.NAU')
+
+    @elseif($university[1] == 'nmau')
+        @lang('messages.NMAU')
+
+    @endif
 @stop
 
 
@@ -43,22 +67,6 @@
                 </div>
             @endforeach
 
-            {{--<div class="item active">--}}
-                {{--<img src="/images/college/all_1.jpg" alt="" class="wrapper">--}}
-            {{--</div>--}}
-            {{--<div class="item">--}}
-                {{--<img src="/images/college/all_2.jpg" alt="" class="wrapper">--}}
-                {{--<div class="carousel-caption">--}}
-                    {{--<p>fsdfsdf</p>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-            {{--<div class="item">--}}
-                {{--<img src="/images/college/all_3.jpg" alt="" class="wrapper">--}}
-                {{--<div class="carousel-caption">--}}
-                    {{--<h3>tree slide</h3>--}}
-                    {{--<p>State slide</p>--}}
-                {{--</div>--}}
-            {{--</div>--}}
         </div>
 
         <!--Стрелки переключения слайда-->
@@ -75,7 +83,7 @@
 <div class="news-bag col-xs-12">
     <div class="container">
         <img src="/images/college/{{$university[1]}}.png">
-        <h1>Наши новости</h1>
+        <h1>Наші новини</h1>
         <div class="socials">
             <a href="#"><i class="fa fa-vk fa-2x "></i></a>
             <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
@@ -97,9 +105,13 @@
             @include('/home/mainUniwear/articles', array('article' => $article, 'university' => $university))
         @endforeach
 
-        <div class="wrapper">
-            {{$articles->links()}}
-        </div>
+
+    </div>
+    <div class="wrapper row">
+    <div class="pag">
+        {{$articles->links()}}
+    </div>
+
     </div>
 
 

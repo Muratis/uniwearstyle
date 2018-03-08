@@ -25,7 +25,10 @@
     margin-top: 20px;
 }
 
+
+
 .main-image img {
+    /*height: auto;*/
     height: 540px;
     box-shadow: -2.5px -1px 7px 4px #000000;
 }
@@ -173,5 +176,18 @@
     .additional_image img {
         height: 120px;
         margin-left: 9px;
+    }
+}
+
+@media(max-width: 400px) {
+    .main-image img {
+        height: 330px;
+        /*border: 2px solid #000000;*/
+        box-shadow: -2.5px -1px 7px 4px #000000;
+    }
+
+    .additional_image img {
+        height: 90px;
+        margin-left: 5px;
     }
 }

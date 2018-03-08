@@ -2,7 +2,10 @@
 use App\Models\Colors;
 use App\Models\Sizes;
 use App\Models\Articles\Articles;
+use App\Models\Dispatch;
+use Illuminate\Support\Facades\Mail;
 use SleepingOwl\Admin\Model\ModelConfiguration;
+use Illuminate\Support\Facades\Input;
 AdminSection::registerModel(Articles::class, function (ModelConfiguration $model) {
 	
 
@@ -52,17 +55,66 @@ AdminSection::registerModel(Articles::class, function (ModelConfiguration $model
 
 			$tabs[] = AdminDisplay::tab($nmu, 'НМУ');
 
+			$kneu = AdminDisplay::table();
+			$kneu->setColumns($columns);
+			$kneu->paginate(5)
+				->setApply( function ($query) {
+					$query->orderBy('article_id', '0');
+					$query->where('university', '=', 'kneu');
+				});
+
+			$tabs[] = AdminDisplay::tab($kneu, 'КНЕУ');
+
+			$knteu = AdminDisplay::table();
+			$knteu->setColumns($columns);
+			$knteu->paginate(5)
+				->setApply( function ($query) {
+					$query->orderBy('article_id', '0');
+					$query->where('university', '=', 'knteu');
+				});
+
+			$tabs[] = AdminDisplay::tab($knteu, 'КНТЕУ');
+
+			$knukim = AdminDisplay::table();
+			$knukim->setColumns($columns);
+			$knukim->paginate(5)
+				->setApply( function ($query) {
+					$query->orderBy('article_id', '0');
+					$query->where('university', '=', 'knukim');
+				});
+
+			$tabs[] = AdminDisplay::tab($knukim, 'КНУКІМ');
+
+			$nau = AdminDisplay::table();
+			$nau->setColumns($columns);
+			$nau->paginate(5)
+				->setApply( function ($query) {
+					$query->orderBy('article_id', '0');
+					$query->where('university', '=', 'nau');
+				});
+
+			$tabs[] = AdminDisplay::tab($nau, 'НАУ');
+
+			$nmau = AdminDisplay::table();
+			$nmau->setColumns($columns);
+			$nmau->paginate(5)
+				->setApply( function ($query) {
+					$query->orderBy('article_id', '0');
+					$query->where('university', '=', 'nmau');
+				});
+
+			$tabs[] = AdminDisplay::tab($nmau, 'НМАУ');
+
 			return $tabs;
 		});
 
 		return $display;
 	});
 
-
-
 	$model->onCreateAndEdit(function () {
 		$form = AdminForm::panel()->addBody(
-			AdminFormElement::select('university', 'Универ')->setOptions(['kpi'=>'КПИ', 'nmu'=>'НМУ', 'knu'=>'КНУ']),
+			AdminFormElement::select('university', 'Универ')->setOptions(['kpi'=>'КПІ', 'nmu'=>'НМУ', 'knu'=>'КНУ', 'kneu'=>'КНЕУ',
+				'knteu'=>'КНТЕУ', 'knukim'=>'КНУКІМ', 'nau'=>'НАУ', 'nmau'=>'НМАУ']),
 			AdminFormElement::text('title', 'Название новости')->required(),
 			AdminFormElement::image('image', 'Картинка для новости')->required(),
 			AdminFormElement::textarea('text', 'Текс новости')->required()
@@ -70,7 +122,25 @@ AdminSection::registerModel(Articles::class, function (ModelConfiguration $model
 		return $form;
 	});
 
+	 $model->created(function () {
+		 $this->email = new Dispatch();
+		 $uniwear_name = Input::get('university');
+		 $title_article = Input::get('title');
+		 $image_atticle = Input::get('image');
+
+		 $emails = $this->email->select('email')->where('university', '=', $uniwear_name )->get();
+
+		 $dispatch_emails = [];
+		 foreach ($emails as $dispatch_email) {
+			 $dispatch_emails[] = $dispatch_email->email;
+		 }
+
+		 Mail::send('mail.dispatch_article', ['title' => $title_article, 'image' => $image_atticle, 'university' => $uniwear_name], function ($m) use ($dispatch_emails, $uniwear_name){
+			 $m->from('UniwearStyle@gmail.com', 'UniwearStyle');
+			 $m->to($dispatch_emails)->subject('Нова новина на Uniwear ' .  strtoupper($uniwear_name) . ' Style');
+		 });
 
 
+	 });
 
 });

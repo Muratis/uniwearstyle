@@ -9,7 +9,7 @@ body {
 }
 #left {
     width: 59.5%;
-    height: 100%;
+    height: auto;
     background-color: #FFFFFF;
     border-right: 1px solid #bdbdbd;
     float: left;
@@ -56,4 +56,29 @@ body {
 .servises ul li a:hover {
     text-decoration: none;
     opacity: 0.6;
+}
+@media(max-width: 770px) {
+    #left {
+        width: 100%;
+        /*height: 500px;*/
+        background-color: #FFFFFF;
+        border-right: 1px solid #bdbdbd;
+        float: none;
+        /*box-shadow: 1px 1px 11px 3px #000000;*/
+    }
+
+    #right {
+        padding-top: 20px;
+        height: auto;
+        margin-top: 50px;
+        width: 100%;
+        background-color: #f0f0f0;
+        float: none;
+        box-shadow: 3px 1px 11px 3px #b3b3b3;
+        margin-left: 2px;
+    }
+
+    #footer{
+        margin-top: 0px;
+    }
 }

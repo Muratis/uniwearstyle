@@ -48,7 +48,7 @@ $(document).ready(function(){
      */
  
     
-    $("#polo").click(function(){
+    $(".polo").click(function(){
 
         $.ajax({
             type: "GET",
@@ -64,7 +64,7 @@ $(document).ready(function(){
 
     })
 
-    $("#tshirts").click(function(){
+    $(".tshirts").click(function(){
 
         $.ajax({
             type: "GET",
@@ -78,7 +78,7 @@ $(document).ready(function(){
 
     })
 
-    $("#hoodie").click(function(){
+    $(".hoodie").click(function(){
 
         $.ajax({
             type: "GET",
@@ -92,7 +92,7 @@ $(document).ready(function(){
 
     })
 
-    $("#sweatshirts").click(function(){
+    $(".sweatshirts").click(function(){
 
         $.ajax({
             type: "GET",
@@ -108,7 +108,7 @@ $(document).ready(function(){
 
 
 
-    $("#bombers").click(function(){
+    $(".bombers").click(function(){
 
         $.ajax({
             type: "GET",
@@ -122,7 +122,7 @@ $(document).ready(function(){
 
     })
 
-    $("#all").click(function(){
+    $(".all").click(function(){
 
         $.ajax({
             type: "GET",
@@ -154,13 +154,7 @@ $(document).ready(function(){
                 $('.content').html(data);
                 $(this).addClass('activeFilter ');
             },
-            error: function () {
-                $('#test').append('lox')
-            },
-            complete: function () {
-                $('#test').append('XZ');
-                // console.log(data)
-            }
+
         })
     })
     

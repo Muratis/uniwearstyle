@@ -9,6 +9,8 @@ use App\Http\Request\LoginUsers;
 use App\Http\Request\ResetUser;
 use App\Http\Request\ResetComplete;
 use App\Http\Requests;
+use Session;
+use App\Repositories\DispatchRepository;
 
 
 class AuthController extends Controller
@@ -16,6 +18,7 @@ class AuthController extends Controller
 
 	public function __construct(){
 		$this->auth = new AuthRepository();
+		$this->dispatch = new DispatchRepository();
 	}
 	public $networks = ['vkontakte', 'facebook', 'google'];
 	/**
@@ -64,8 +67,9 @@ class AuthController extends Controller
 	 * @param Request $request
 	 * @return $this
 	 */
-	public function registerProcess(RegisterUsers $request)
+	public function registerProcess(Request $request)
 	{
+//		$this->dispatch->AddEmailForDispatch($request);
 		$register = $this->auth->registerProcess($request);
 		return $register;
 	}

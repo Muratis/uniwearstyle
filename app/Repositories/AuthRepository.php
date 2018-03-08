@@ -13,11 +13,22 @@ use CurlHttp;
 use Illuminate\Support\Facades\Input;
 use Socialite;
 use Session;
+use App\Models\Dispatch;
 
 class AuthRepository
 {
 
 	public function registerProcess($data){
+
+		if (isset($data->universities)) {
+			$uniwears = $data->universities;
+			foreach ($uniwears as $uniwear) {
+				$university_dispatch = new Dispatch();
+				$university_dispatch->email= $data->email;
+				$university_dispatch->university= $uniwear;
+				$university_dispatch->save();
+			}
+		}
 
 		$input = $data->all();
 		if (Session::get('network_user') && Session::get('network_user')->id) {
@@ -60,6 +71,8 @@ class AuthRepository
 		return Redirect::to('register')
 			->withInput()
 			->withErrors('Помилка реєстрації, спробуйте пізніше.');
+
+
 	}
 
 	public function LoginProcess($data)

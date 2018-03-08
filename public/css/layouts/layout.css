@@ -81,7 +81,7 @@ background-image: url("/images/college/bag.png");
     user-select: none;
 }
 
-.social button {
+.social .btn-login {
     margin-left: 10px;
     background: none;
     border: 1px solid black;
@@ -227,35 +227,47 @@ background-image: url("/images/college/bag.png");
     float: right;
     position: relative;
     bottom: 140px;
+    margin-right: 80px;
     /*left: 100px;*/
-    width: 500px;
+    /*width: 300px;*/
 }
 
 
 
-.form_for_new input {
+.form_for_new button {
     /*float: left;*/
     height: 45px;
     /*margin-top: 30px;*/
 
 
 }
-.form_for_new .input_email {
-    width: 300px;
+.input_email {
+    width: 100%;
     float: left;
 
 
 }
 
+
 .btn_black {
     background-color: #000000;
     font: 17px arial;
     color: #FFFFFF;
-    width: 120px;
+    width: 300px;
     float: left;
     bottom: 65px;
-    left: 115px;
+
     border: none;
+    height: 45px;
+}
+.addEmailforDispatch .add_dispatchEmail{
+    background-color: #000000;
+    font: 17px arial;
+    color: #FFFFFF;
+    width: 100%;
+    margin-top: 10px;
+    border: none;
+    height: 45px;
 }
 
 .btn_black:hover {
@@ -292,8 +304,8 @@ background-image: url("/images/college/bag.png");
 
         float: left;
         background-color: #000000;
-        position: relative;
-        left: 20px;
+        /*position: relative;*/
+        /*left: 20px;*/
         top: 0px;
 
     }
@@ -345,7 +357,7 @@ background-image: url("/images/college/bag.png");
     }
 
     #brand a {
-        font: bold 45px Arial;
+        font: bold 42px Arial;
         line-height: 110px;
     }
 
@@ -362,11 +374,11 @@ background-image: url("/images/college/bag.png");
 
     .menu .menu-mobile {
         float: left;
-        margin-top: 50px;
+        margin-top: 30px;
         position: relative;
         right: 50px;
         width: 405px;
-
+        padding-bottom: 40px;
         border-right: 2px solid #FFFFFF;
 
     }
@@ -399,7 +411,8 @@ background-image: url("/images/college/bag.png");
 
 
     .college-mobile {
-        margin-top: 40px;
+
+        margin-top: 20px;
         position: absolute;
         padding-right: 40px;
         margin-left: 330px;
@@ -413,11 +426,12 @@ background-image: url("/images/college/bag.png");
     }
 
     .college-mobile li a {
+        /*padding-bottom: 30px;*/
         color: #FFFFFF !important;
         width: 60px;
         margin-top: 0px;
         margin-left: 10px;
-
+        text-align: center;
     }
 
     .college-mobile li a:hover {
@@ -494,7 +508,7 @@ background-image: url("/images/college/bag.png");
 
     .college-mobile li a {
         font:  12px arial !important;
-        padding-right: 30px;
+       text-align: center;
     }
 
     .college-mobile li a img{
@@ -506,17 +520,19 @@ background-image: url("/images/college/bag.png");
 
 
     .form_for_new{
-        width: 370px;
+        margin-right: 50px;
+        /*width: 370px;*/
     }
 
-
-    .form_for_new .input_email {
-        width: 170px;
+    .form_for_new p {
+        font: 12px arial;
     }
 
     .btn_black {
+        float: right;
+        margin-left: 50px;
         font: 14px arial;
-        width: 80px;
+        width: 100%;
     }
 
 }
@@ -531,7 +547,7 @@ background-image: url("/images/college/bag.png");
     }
 
     #brand a {
-        font: bold 30px Arial;
+        font: bold 26px Arial;
         line-height: 80px;
     }
 
@@ -619,21 +635,18 @@ background-image: url("/images/college/bag.png");
     .copy div{
         float: none;
         margin-bottom: 8px;
-        /*width: 100px;*/
+
     }
 
     .form_for_new{
-        display: none;
+        /*display: none;*/
     }
 
 
 
 
 }
-.container{
-    /*min-width:450px !important;*/
 
-}
 @media(max-width: 516px) {
 
     .menu .menu-mobile {
@@ -686,7 +699,7 @@ background-image: url("/images/college/bag.png");
     }
 
     .form_for_new{
-        display: none;
+        /*display: none;*/
     }
 
     #logoHead{
@@ -694,7 +707,7 @@ background-image: url("/images/college/bag.png");
     }
 
     #brand a {
-        font: bold 24px Arial;
+        font: bold 21px Arial;
         line-height: 70px;
     }
 }
@@ -711,8 +724,10 @@ background-image: url("/images/college/bag.png");
     }
 
     #brand a {
-        font: bold 16px Arial;
+        font: bold 14px Arial;
         line-height: 50px;
+        margin-left: 0;
+
     }
 
     .social {
@@ -739,7 +754,7 @@ background-image: url("/images/college/bag.png");
 
 
     .menu .menu-mobile {
-        width: 250px;
+        width: 230px;
 
     }
 
@@ -748,7 +763,7 @@ background-image: url("/images/college/bag.png");
     }
 
     .menu .menu-mobile  li a {
-        width: 220px;
+        width: 200px;
         padding-right: 30px;
         font: bold 16px arial;
         height: 50px;
@@ -756,7 +771,7 @@ background-image: url("/images/college/bag.png");
     }
 
     .college-mobile {
-        margin-left: 180px;
+        margin-left: 160px;
         padding-right: 40px;
 
     }
@@ -768,7 +783,8 @@ background-image: url("/images/college/bag.png");
     }
 
     .college-mobile li a {
-        padding-right: -30px;
+        font:  9px arial !important;
+        text-align: center;
     }
 
     .college-mobile li a img{
@@ -787,4 +803,35 @@ background-image: url("/images/college/bag.png");
 
     }
 
+    .form_for_new{
+        margin-right: 5px;
+        position: relative;
+        top: -120px;
+        /*width: 370px;*/
+    }
+
+    .form_for_new p {
+        font: 10px arial;
+    }
+
+    .btn_black {
+
+        font: 14px arial;
+        width: 100%;
+    }
+
+    .servises ul li a {
+        line-height: 10px;
+        font: 10px arial;
+    }
+
+    .servises ul li {
+        margin-top: 5px;
+    }
+
+    .servises ul {
+        padding-left: 20px;
+    }
+
 }
+

@@ -1,4 +1,4 @@
-<div class="form-row " id="form">
+<div  id="form">
     <div class="names">
         <div class="col-xs-6"><input type="text" name="first_name" class="form-control" placeholder="Введите имя" value="{{old('first_name')}}"></div>
         <div class="col-xs-6"><input type="text" name="last_name" class="form-control" placeholder="Введите фамилию" value="{{old('last_name')}}"></div>
@@ -33,9 +33,13 @@
         </select>
     </div>
     <div id="content">
-        <div class="col-xs-5"><input type="text" name="city" class="form-control" placeholder="Город" value="{{old('city')}}"></div>
-        <div class="col-xs-5"><input type="text" name="address_ship" class="form-control" placeholder="Номер Отделения" value="{{old('address_ship')}}"></div>
+        
+        <div class="col-xs-5"><input type="text" name="city"  id="city" class="form-control" placeholder="Город" value="{{old('city')}}"></div>
+
+        <div class="col-xs-5" id="otd"><input type="text" name="address_ship" class="form-control" placeholder="Номер Отделения" value="{{old('address_ship')}}"></div>
+
         <div class=""><input type="text" name="phone" class="form-control" placeholder="Введите номер телефона" value="{{old('phone')}}"></div>
+
     </div>
     @if ($errors->first('city'))
 

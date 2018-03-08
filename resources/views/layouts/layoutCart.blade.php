@@ -35,7 +35,7 @@
 </head>
 <body>
 
-<div class="container cd">
+<div class="container ">
 
     <div id="left">
 
@@ -48,31 +48,32 @@
 
         @yield('content-left')
 
-        <div id="footer">
-            <hr>
-            <div class="servises">
-                <ul >
-
-                    <li class="nav-item">
-                        <a href="#"> Обслуживание клиентов</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="#"> Политика конфиденциальности</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="#"> Политика возврата</a>
-                    </li>
-
-                </ul>
-                </div>
-        </div>
 
     </div>
 
     <div id="right">
         @yield('content-right')
+    </div>
+
+    <div id="footer">
+        <hr>
+        <div class="servises">
+            <ul >
+
+                <li class="nav-item">
+                    <a href="#"> Обслуживание клиентов</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#"> Политика конфиденциальности</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#"> Политика возврата</a>
+                </li>
+
+            </ul>
+        </div>
     </div>
 </div>
 

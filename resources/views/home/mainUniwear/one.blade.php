@@ -7,8 +7,17 @@
 @stop
 
 @section('uniwear')
-    {{ strtoupper($university[1]) }}
+    {{--{{ strtoupper($university[1]) }}--}}
+    @if($university[1] == 'kpi')
+        @lang('messages.KPI')
 
+    @elseif($university[1] == 'knu')
+        @lang('messages.KNU')
+
+    @elseif($university[1] == 'nmu')
+        @lang('messages.NMU')
+
+    @endif
 @stop
 
 @section('content')

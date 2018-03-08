@@ -31,6 +31,14 @@ return [
     ],
 
     [
+        'title' => 'Логи',
+        'icon'  => 'fa fa-cogs',
+        'url'   => '/admin/logs',
+        'priority' => 600
+    ],
+
+
+    [
         'title' => 'Dashboard',
         'icon'  => 'fa fa-dashboard',
         'url'   => route('admin.dashboard'),

@@ -22,4 +22,4 @@ $error_class = $errors->has('password_confirm') ? ' has-error' : ''; ?>
 </div>
 <span class="help-block">{!! $errors->first('password_confirm') !!}</span>
 
-<input type="submit" value="Підтвердити оновлення пароля" class="btn btn-lg  btn-block">
+<input type="submit" value="Підтвердити оновлення пароля" class="btn btn-lg  btn-block btnBlackForm">

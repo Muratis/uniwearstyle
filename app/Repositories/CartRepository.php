@@ -12,6 +12,7 @@ use App\Models\shoppingUsers;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Gloudemans\Shoppingcart\Contracts\Buyable;
 use Illuminate\Support\Facades\DB;
+use LisDev\Delivery\NovaPoshtaApi2;
 
 class CartRepository 
 {
@@ -20,6 +21,7 @@ class CartRepository
 	{
 		$this->cart = new Carts();
 		$this->byers = new shoppingUsers();
+
 	}
 
 	public function addCart($data)
@@ -61,6 +63,38 @@ class CartRepository
 
 	}
 
+	public function nvPost($data) {
+		$np = new NovaPoshtaApi2(
+			'7ba897ef2759418c79501fb2f4b55526'
+		);
+
+		$city = $np->getCity('Киев');
+		$result = $np->getWarehouses($city);
+
+		return $result;
+
+//		$result = $np
+//			->model('Address')
+//			->method('getCities')
+//			->params(array(
+//				"FindByString" => "Вишневое"
+//
+//			))
+//			->execute();
+//
+//		$result2 = $np
+//			->model('Address')
+//			->method('getWarehouses')
+//			->params(array(
+//				"CityRef" => '38263fa1-b23e-11de-8bdf-000c2965ae0e'
+//
+//			))
+//			->execute();
+//		foreach ($result as $city) {
+//			var_dump($city);
+//		}
+//		return $result[6];
+	}
 
 	public function removeCart($data)
 	{

@@ -16,14 +16,15 @@ $(document).ready(function(){
         url: "/cart",
 
         success: function () {
+            location.reload();
             $(".successShop").show();
-            $(".successShop").hide(3000);
+            $(".successShop").hide(4000);
         },
         error: function () {
             $("h2").append('<p>Провал</p>')
         },
         complete: function () {
-            $("h2").append('<p></p>');
+            // location.reload();
             // console.log(data)
         }
     })
@@ -72,15 +73,35 @@ $(document).ready(function(){
         }
         if (method_id == 'new-post') {
             $('#content').html(
-                '<div class="col-xs-5"><input type="text" name="city" class="form-control" placeholder="Город"></div>' +
+                '<div class="col-xs-5"><input type="text" name="city"  id="city" class="form-control" placeholder="Город"></div>' +
                 '<div class="col-xs-5"><input type="text" name="address_ship" class="form-control" placeholder="Номер Отделения"></div>' +
                 '<div class=""><input type="text" name="phone" class="form-control" placeholder="Введите номер телефона"></div>'
             );
 
+
+
+
+
         }
 
+    })
+
+    $("#city").keyup(function(){
+
+        $.ajax({
+            type: "GET",
+            data: {
+                'city': $(this).val(),
+            },
+            url: '/checkout/chandeotd',
 
 
+            success: function (data) {
+                $('#otd').html(data);
+
+            },
+
+        })
     })
 
 

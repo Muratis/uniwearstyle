@@ -3,6 +3,19 @@
         margin-left: 25%;
     }
 }
+.omb_loginForm .btnBlackForm {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+#change_dispatch {
+    width: 15px;
+    height: 15px;
+    margin-left: 5px;
+}
+.chande_university {
+    padding-bottom: 10px;
+    display: none;
+}
 .omb_login .omb_authTitle {
     text-align: center;
     line-height: 300%;
@@ -11,7 +24,7 @@
 
 .omb_login .omb_socialButtons a {
     color: white; // In yourUse @body-bg
-opacity:0.9;
+            opacity:0.9;
 }
 .omb_login .omb_socialButtons a:hover {
     color: white;

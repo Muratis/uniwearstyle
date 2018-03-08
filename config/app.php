@@ -77,7 +77,7 @@ return [
     |
     */
 
-    'locale' => 'ru',
+    'locale' => 'uk',
 
     /*
     |--------------------------------------------------------------------------
@@ -176,6 +176,7 @@ return [
         Cartalyst\Sentinel\Laravel\SentinelServiceProvider::class,
         \SocialiteProviders\Manager\ServiceProvider::class,
         Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
+        Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
 
 
         //

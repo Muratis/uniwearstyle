@@ -59,7 +59,7 @@ hr {
 
 
 #form {
-    width: 570px;
+    max-width: 570px;
 }
 
 form div div input {
@@ -72,4 +72,8 @@ form div div {
 
 select {
     height: 41px!important;
+}
+
+@media(max-width: 770px) {
+
 }

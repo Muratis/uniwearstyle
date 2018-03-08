@@ -10,14 +10,12 @@
 @section('content-left')
     <form action="/cart/add" method="post">
         <h4>Оформление заказа</h4>
-
         @include('/cart/forms/check-out_form')
     </form>
 @stop
 
 @section('content-right')
 
-    {{--{{var_dump($carts)}}--}}
     @foreach($carts as $cart)
         <div class="row shopItem">
             <img src="/{{$cart->options->image}}">

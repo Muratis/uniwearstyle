@@ -1,27 +1,50 @@
+.pag {
+    margin-left: 50px;
+    width: 250px;
+    /*float: left;*/
+}
+
+.pag ul li span {
+    /*width: 100px;*/
+    background-color: #000000!important;
+    opacity: 0.8;
+    color: #FFFFFF;
+    font: 21px arial;
+    text-align: center;
+    margin-right: 5px;
+}
+
+
+.pag ul li a {
+    width: 100px;
+    background-color: #000000!important;
+    opacity: 0.8;
+    color: #FFFFFF;
+    font: 21px arial;
+    text-align: center;
+}
+
 .article {
     width: 560px;
     /*background-color: #000000;*/
     float: left;
     margin-left: 10px;
     /*box-shadow: 1px 1px 12px 3px #000000;*/
-    background-color: #e5e5e5;
+    background-color: #636363;
     border: 3px solid #d4d4d4;
     margin-top: 10px;
     border-radius: 12px;
+    padding: 5px;
 }
 
 .article img {
-    /*width: 100%;*/
     height: 300px;
     margin-top: 10px;
-    /*margin-right: 2px;*/
-
 }
 
 .article .imgs {
     height: 315px;
     width: 550px;
-
 }
 
 .article:hover{
@@ -43,9 +66,7 @@
 
 .bd-shadow {
     box-shadow: 3px 3px 12px 4px #000000;
-    /*border: 1px solid #000000;*/
-    /*width: 600px;*/
-    /*height: 600px;*/
+
 }
 
 .bd-shadow img {
@@ -66,3 +87,92 @@
 .content {
     margin-top: 20px;
 }
+
+@media (min-width: 870px) and (max-width: 1200px) {
+.article {
+    width: 380px;
+    float: left;
+    margin-left: 30px;
+    background-color: #e5e5e5;
+    border: 3px solid #d4d4d4;
+    margin-top: 10px;
+    border-radius: 12px;
+}
+
+.article img {
+    height: 200px;
+    /*width: 80%;*/
+    margin-top: 10px;
+}
+
+.article .imgs {
+    height: 215px;
+    width: 370px;
+}
+
+.nameArticle h1 {
+    font: 18px arial;
+    color: #000000;
+}
+
+}
+
+@media (min-width: 475px) and (max-width: 710px) {
+    .article {
+        width: 410px;
+        /*background-color: #000000;*/
+        float: left;
+        margin-left: 10px;
+        /*box-shadow: 1px 1px 12px 3px #000000;*/
+        border: 3px solid #d4d4d4;
+        margin-top: 10px;
+        border-radius: 12px;
+    }
+
+    .article img {
+        height: 220px;
+        margin-top: 10px;
+    }
+
+    .article .imgs {
+        height: 275px;
+        width: 400px;
+    }
+
+    .nameArticle h1 {
+        font: 18px arial;
+        color: #000000;
+    }
+
+}
+
+
+@media (min-width: 210px) and (max-width: 475px) {
+    .article {
+        width: 300px;
+        /*background-color: #000000;*/
+        float: left;
+        margin-left: 10px;
+        /*box-shadow: 1px 1px 12px 3px #000000;*/
+        border: 3px solid #d4d4d4;
+        margin-top: 10px;
+        border-radius: 12px;
+    }
+
+    .article img {
+        height: 160px;
+        margin-top: 10px;
+    }
+
+    .article .imgs {
+        height: 180px;
+        width: 290px;
+    }
+
+    .nameArticle h1 {
+        font: 18px arial;
+        color: #000000;
+    }
+
+}
+

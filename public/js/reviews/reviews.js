@@ -1,13 +1,6 @@
 $(document).ready(function(){
     $("#submit_review").on('click', function () {
-
-        // if ($('.user_name').val() == '') {
-        //     $('.sd').append('dsfsdf');
-        //     return false;
-        // } else {
-        //     return true;
-        // }
-
+        
         $.ajax({
             type: "POST",
             data: {
@@ -18,6 +11,8 @@ $(document).ready(function(){
             url: "/review/add",
 
             success: function () {
+                $('input[name="name"]').val('');
+                $('textarea[name="text"]').val('');
                 $("#succes_review").show(1000);
             },
 

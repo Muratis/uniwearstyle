@@ -51,11 +51,17 @@ class ArticleRepository
 		return $slides;
 	}
 
+	public function dispatchArticles()
+	{
+		
+	}
+
 	private function getUniversityFromUrl()
 	{
 		$url_parts = explode('/', $_SERVER['REQUEST_URI']);
 		return $url_parts[1];
 	}
-	
+
+
 
 }
