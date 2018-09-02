@@ -74,6 +74,23 @@ select {
     height: 41px!important;
 }
 
-@media(max-width: 770px) {
+.ship_to_addres {
+    display: none;
+}
 
+#npCities{
+   width: 100%;
+    font: 12px arial;
+}
+
+#npCities option {
+    font: 12px arial;
+    width: 300px !important;
+}
+
+@media(max-width: 600px) {
+   .ship_to_nv{
+       float: none;
+       width: 100%;
+   }
 }

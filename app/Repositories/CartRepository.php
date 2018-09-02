@@ -39,8 +39,12 @@ class CartRepository
 		$this->byers->first_name = $data->first_name;
 		$this->byers->last_name = $data->last_name;
 		$this->byers->methodPost = $data->shipping;
+		if (!empty($data->address_ship)) {
+			$this->byers->address = $data->address_ship;
+		} elseif (!empty($data->warehouse)) {
+			$this->byers->address = $data->warehouse;
+		}
 		$this->byers->city = $data->city;
-		$this->byers->address = $data->address_ship;
 		$this->byers->phone = $data->phone;
 		$this->byers->cart_id = $data->id;
 		$this->byers->save();
@@ -68,32 +72,31 @@ class CartRepository
 			'7ba897ef2759418c79501fb2f4b55526'
 		);
 
-		$city = $np->getCity('Киев');
-		$result = $np->getWarehouses($city);
+		$city = $np
+			->model('Address')
+			->method('getCities')
+			->params(array(
+				"FindByString" => $data->city,
+//				"Ref" => ""
+
+			))->execute();
+
+		$cityRef = $city['data'][0]['Ref'];
+		$warehouses = $np->getWarehouses($cityRef);
+		$result = json_encode($warehouses);
 
 		return $result;
 
-//		$result = $np
-//			->model('Address')
-//			->method('getCities')
-//			->params(array(
-//				"FindByString" => "Вишневое"
-//
-//			))
-//			->execute();
-//
+
 //		$result2 = $np
 //			->model('Address')
 //			->method('getWarehouses')
 //			->params(array(
 //				"CityRef" => '38263fa1-b23e-11de-8bdf-000c2965ae0e'
-//
+
 //			))
 //			->execute();
-//		foreach ($result as $city) {
-//			var_dump($city);
-//		}
-//		return $result[6];
+
 	}
 
 	public function removeCart($data)

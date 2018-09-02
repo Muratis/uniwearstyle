@@ -56,53 +56,63 @@ $(document).ready(function(){
         })
     })
 
+
+
+    $('.ship_to_addres').hide();
     
-
-
     $('#method').change(function () {
 
         var method_id = $(this).val();
 
         if (method_id == 'address') {
-            $('#content').html(
-                '<div class="col-xs-5"><input type="text" name="city" class="form-control" placeholder="Город"></div>' +
-                '<div class="col-xs-5"><input type="text" name="address_ship" class="form-control" placeholder="Адресс"></div>' +
-                '<div class=""><input type="text" name="phone" class="form-control" placeholder="Введите номер телефона"></div>'
-            );
+            // $('form').trigger('reset');
+            $('.ship_to_addres input').val('');
+            $('.ship_to_nv').hide();
+            $('.ship_to_addres').show();
 
         }
         if (method_id == 'new-post') {
-            $('#content').html(
-                '<div class="col-xs-5"><input type="text" name="city"  id="city" class="form-control" placeholder="Город"></div>' +
-                '<div class="col-xs-5"><input type="text" name="address_ship" class="form-control" placeholder="Номер Отделения"></div>' +
-                '<div class=""><input type="text" name="phone" class="form-control" placeholder="Введите номер телефона"></div>'
-            );
-
-
-
-
-
+            // $('form').trigger('reset');
+            $('.ship_to_nv input').val('');
+            $('.ship_to_addres').hide();
+            $('.ship_to_nv').show();
         }
 
     })
 
-    $("#city").keyup(function(){
+    $("#city").on('keyup',function(){
 
-        $.ajax({
-            type: "GET",
-            data: {
-                'city': $(this).val(),
-            },
-            url: '/checkout/chandeotd',
+        var $this = $(this);
+        var $delay = 700;
+
+        clearTimeout($this.data('timer'));
+
+        $this.data('timer', setTimeout(function () {
+            $this.removeData('timer');
+
+            $.ajax({
+                type: "GET",
+                data: {
+                    'city': $("#city").val(),
+                },
+                url: "/checkout/chandeotd",
+                success: function (data) {
+                    var npData = JSON.parse(data);
+                    $("#warehouses").html('<select id="npCities" name="warehouse"></select>');
+                    var $npCities = $("#warehouses").find("select#npCities");
+                    $npCities.empty();
+                    var cities = npData['data'];
+
+                    for (var city in cities) {
+                        var description = cities[city]["Description"];
+                        $npCities.append("<option value='" + description + "'>" + description + "</option>");
+                    }
+                },
+            });
+        }, $delay));
 
 
-            success: function (data) {
-                $('#otd').html(data);
-
-            },
-
-        })
-    })
+    });
 
 
 })

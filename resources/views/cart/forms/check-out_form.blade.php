@@ -1,7 +1,7 @@
 <div  id="form">
     <div class="names">
-        <div class="col-xs-6"><input type="text" name="first_name" class="form-control" placeholder="Введите имя" value="{{old('first_name')}}"></div>
-        <div class="col-xs-6"><input type="text" name="last_name" class="form-control" placeholder="Введите фамилию" value="{{old('last_name')}}"></div>
+        <div class="col-xs-6"><input type="text" name="first_name" class="form-control" placeholder="Им`я" value="{{old('first_name')}}"></div>
+        <div class="col-xs-6"><input type="text" name="last_name" class="form-control" placeholder="Прізвище" value="{{old('last_name')}}"></div>
     </div>
 
 
@@ -26,19 +26,25 @@
         @endif
 
     <div>
-        <label for="shipping">Выберите способ доставки</label>
+        <label for="shipping">Вибрати спосіб доставки</label>
         <select class="form-control" name="shipping" id="method" value="{{old('shipping')}}" >
-            <option value="new-post" name="new-post" id="new-post">Отправка "Нова пошта"</option>
-            <option value="address" name="address" id="address">Доставка на адресс</option>
+            <option value="new-post" name="new-post" id="new-post">Відправка "Нова пошта"</option>
+            <option value="address" name="address" id="address">Доставка за адресою</option>
         </select>
     </div>
     <div id="content">
-        
-        <div class="col-xs-5"><input type="text" name="city"  id="city" class="form-control" placeholder="Город" value="{{old('city')}}"></div>
+        <div class="col-xs-5 ship_to_addres"><input type="text" name="city" class="form-control" placeholder="Місто"></div>
+        <div class="col-xs-5 ship_to_addres"><input type="text" name="address_ship" class="form-control" placeholder="Адреса"></div>
+        <div class=" ship_to_addres"><input type="text" name="phone" class="form-control" placeholder="Номер телефону"></div>
 
-        <div class="col-xs-5" id="otd"><input type="text" name="address_ship" class="form-control" placeholder="Номер Отделения" value="{{old('address_ship')}}"></div>
 
-        <div class=""><input type="text" name="phone" class="form-control" placeholder="Введите номер телефона" value="{{old('phone')}}"></div>
+        <div class="col-xs-5 ship_to_nv"><input type="text" name="city"  id="city" class="form-control" placeholder="Місто" value="{{old('city')}}"></div>
+        <div class="col-xs-5 ship_to_nv" id="warehouses">
+          <select id="npCities" name="address_ship">
+
+          </select>
+        </div>
+        <div class=" ship_to_nv"><input type="text" name="phone" class="form-control" placeholder="Номер телефону" value="{{old('phone')}}"></div>
 
     </div>
     @if ($errors->first('city'))
@@ -76,4 +82,4 @@
 
 {{csrf_field()}}
 <input type="hidden" name="id" value="{{rand()}}">
-<input type="submit" class="btn btn-success">
+<input type="submit" class="btn btn-success" value="Відправити">

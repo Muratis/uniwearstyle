@@ -24,12 +24,12 @@ class SaveCart extends FormRequest
 	public function rules()
 	{
 		return [
-			'first_name' => 'required',
-			'last_name' => 'required',
-			'shipping' => 'required',
-			'address_ship' => 'required',
-			'city' => 'required',
-			'phone' => 'required',
+//			'first_name' => 'required',
+//			'last_name' => 'required',
+//			'shipping' => 'required',
+////			'address_ship' => 'required',
+//			'city' => 'required',
+//			'phone' => 'required',
 		];
 	}
 }
